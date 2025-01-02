@@ -6,11 +6,67 @@ apis:
   - aid: mx-platform:mx-platform
     name: MX Platform
     tags:
-      - API
+      - Mx_platform
+      - Categories
+      - Default
+      - Credit_card_product_guid
+      - Favorites
+      - Institution_code
+      - Credentials
+      - Merchant_location_guid
+      - Merchants
+      - Transactions
+      - Enhance
+      - Users
+      - Accounts
+      - Account_numbers
+      - Holdings
+      - Insights
+      - Budgets
+      - Generate
+      - Connect_widget_url
+      - Goals
+      - Scheduled_payments
+      - Managed_members
+      - Members
+      - Account_owners
+      - Aggregate
+      - Challenges
+      - Check_balance
+      - Extend_history
+      - Fetch_rewards
+      - Fetch_statements
+      - Fetch_tax_documents
+      - Identify
+      - Oauth_window_uri
+      - Resume
+      - Rewards
+      - Statements
+      - .Pdf
+      - Status
+      - Tax_documents
+      - Verify
+      - Micro_deposits
+      - Microdeposits
+      - Microdeposit_guid
+      - Monthly_cash_flow_profile
+      - Spending_plans
+      - Iterations
+      - Current
+      - Spending Plan
+      - Spending_plan_accounts
+      - Iteration_item_guid
+      - Taggings
+      - Tags
+      - Transaction_rules
+      - Split
+      - Widget_urls
     humanURL: https://docs.mx.com/
     properties:
       - url: https://docs.mx.com/
         type: Documentation
+      - type: OpenAPI
+        url: properties/mx-platform-openapi.yml
     description: |-
 
       The MX Platform API is a powerful, fully-featured API designed to make
