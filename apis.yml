@@ -16,8 +16,8 @@ apis:
   - aid: mx-platform:mx-platform
     name: MX Platform API
     tags:
-      - Financial Data
       - Aggregation
+      - Financial Data
     humanURL: https://docs.mx.com/
     properties:
       - url: https://docs.mx.com/
