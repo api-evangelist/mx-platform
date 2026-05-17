@@ -48,17 +48,17 @@ apis:
         url: https://docs.mx.com/support
 common:
   - url: https://github.com/mxenabled
-    type: GitHub Organization
+    type: GitHubOrganization
   - url: https://docs.mx.com/
     type: Portal
   - url: https://docs.mx.com/connect
     type: Widgets
   - url: https://docs.mx.com/resources/status-page
-    type: Status
+    type: StatusPage
   - url: https://docs.mx.com/resources/test-platform
     type: Testing
   - url: https://docs.mx.com/resources/changelog/platform
-    type: Change Log
+    type: ChangeLog
   - url: https://docs.mx.com/resources/glossary/
     type: Glossary
   - url: https://docs.mx.com/resources/oauth-guide
@@ -68,9 +68,9 @@ common:
   - url: https://docs.mx.com/support
     type: Support
   - url: https://www.mx.com/privacy/
-    type: Privacy Policy
+    type: PrivacyPolicy
   - url: https://www.mx.com/terms/
-    type: Terms of Service
+    type: TermsOfService
   - url: https://www.mx.com/brand-trademark-policy/
     type: Trademark
   - url: https://dashboard.mx.com/sign_up
