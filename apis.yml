@@ -47,6 +47,8 @@ apis:
       - FN: MX Support
         url: https://docs.mx.com/support
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/mxenabled
   - url: https://github.com/mxenabled
     type: GitHubOrganization
   - url: https://docs.mx.com/
