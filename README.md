@@ -2,15 +2,13 @@
 
 The MX Platform API is a powerful, fully-featured API designed to make aggregating and enhancing financial data easy and reliable. It can seamlessly connect your app or website to tens of thousands of financial institutions.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/mx-platform/refs/heads/main/apis.yml)
+**APIs.json:** [https://docs.mx.com/](https://docs.mx.com/)
 
 ## Scope
 
 - **Type:** Index
-- **Position:** Consuming
-- **Access:** 3rd-Party
 
-## Tags:
+## Tags
 
 - Aggregation
 - Banking
@@ -28,11 +26,10 @@ The MX Platform API is a powerful, fully-featured API designed to make aggregati
 
 The MX Platform API is a powerful, fully-featured API designed to make aggregating and enhancing financial data easy and reliable. It can seamlessly connect your app or website to tens of thousands of financial institutions.
 
-**Human URL:** [https://docs.mx.com/](https://docs.mx.com/)
+- **Human URL:** [https://docs.mx.com/](https://docs.mx.com/)
+- **Base URL:** `https://api.mx.com`
 
-**Base URL:** `https://api.mx.com`
-
-#### Tags:
+#### Tags
 
 - Aggregation
 - Banking
@@ -41,22 +38,23 @@ The MX Platform API is a powerful, fully-featured API designed to make aggregati
 #### Properties
 
 - [Documentation](https://docs.mx.com/)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/mx-platform/main/openapi/mx-platform-openapi.yml)
+- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/mx-platform/main/openapi/mx-platform-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
 - [Sign Up](https://dashboard.mx.com/sign_up)
 - [Login](https://dashboard.mx.com/sign_in)
-- [OAuth Guide](https://docs.mx.com/resources/oauth-guide)
+- [O Auth](https://docs.mx.com/resources/oauth-guide)
 - [Webhooks](https://docs.mx.com/resources/webhooks)
 
 ## Common Properties
 
+- [LinkedIn](https://www.linkedin.com/company/mxenabled)
 - [GitHub Organization](https://github.com/mxenabled)
 - [Portal](https://docs.mx.com/)
 - [Widgets](https://docs.mx.com/connect)
-- [Status](https://docs.mx.com/resources/status-page)
+- [Status Page](https://docs.mx.com/resources/status-page)
 - [Testing](https://docs.mx.com/resources/test-platform)
-- [Change Log](https://docs.mx.com/resources/changelog/platform)
+- [Changelog](https://docs.mx.com/resources/changelog/platform)
 - [Glossary](https://docs.mx.com/resources/glossary/)
-- [OAuth](https://docs.mx.com/resources/oauth-guide)
+- [O Auth](https://docs.mx.com/resources/oauth-guide)
 - [Webhooks](https://docs.mx.com/resources/webhooks)
 - [Support](https://docs.mx.com/support)
 - [Privacy Policy](https://www.mx.com/privacy/)
@@ -72,5 +70,4 @@ The MX Platform API is a powerful, fully-featured API designed to make aggregati
 ## Maintainers
 
 **FN:** Kin Lane
-
 **Email:** kin@apievangelist.com
