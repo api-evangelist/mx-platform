@@ -5,7 +5,7 @@ description: >-
   aggregating and enhancing financial data easy and reliable. It can seamlessly
   connect your app or website to tens of thousands of financial institutions.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://docs.mx.com/
 created: '2024-11-07'
 modified: '2026-04-28'
@@ -23,7 +23,7 @@ apis:
       aggregating and enhancing financial data easy and reliable. It can
       seamlessly connect your app or website to tens of thousands of financial
       institutions.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.mx.com/
     baseURL: https://api.mx.com
     tags:
