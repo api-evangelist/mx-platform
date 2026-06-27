@@ -35,7 +35,7 @@ apis:
         url: https://docs.mx.com/
       - type: OpenAPI
         url: https://raw.githubusercontent.com/api-evangelist/mx-platform/main/openapi/mx-platform-openapi.yml
-      - type: SignUp
+      - type: Signup
         url: https://dashboard.mx.com/sign_up
       - type: Login
         url: https://dashboard.mx.com/sign_in
@@ -76,7 +76,7 @@ common:
   - url: https://www.mx.com/brand-trademark-policy/
     type: Trademark
   - url: https://dashboard.mx.com/sign_up
-    type: SignUp
+    type: Signup
   - url: https://dashboard.mx.com/sign_in
     type: Login
   - url: https://www.mx.com/webinars/
