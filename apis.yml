@@ -47,6 +47,10 @@ apis:
       - FN: MX Support
         url: https://docs.mx.com/support
 common:
+  - type: VulnerabilityDisclosure
+    url: security/mx-platform-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/mx-platform-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/mxenabled
   - url: https://github.com/mxenabled
@@ -87,6 +91,8 @@ common:
     type: Trust
   - url: https://www.mx.com/news/
     type: News
+  - url: https://www.mx.com/blog/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
