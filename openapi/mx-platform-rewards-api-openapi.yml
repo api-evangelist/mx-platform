@@ -1,0 +1,194 @@
+openapi: 3.0.0
+info:
+  contact:
+    name: MX Platform API
+    url: https://www.mx.com/products/platform-api
+  description: '
+
+    The MX Platform API is a powerful, fully-featured API designed to make
+
+    aggregating and enhancing financial data easy and reliable. It can
+
+    seamlessly connect your app or website to tens of thousands of financial
+
+    institutions.'
+  title: MX Platform Rewards API
+  version: 0.1.0
+servers:
+- url: https://api.mx.com
+- url: https://int-api.mx.com
+security:
+- basicAuth: []
+tags:
+- name: Rewards
+paths:
+  /users/{user_guid}/members/{member_guid}/rewards:
+    get:
+      description: Use this endpoint to list all the `rewards` associated with a specified `member`.
+      operationId: listRewards
+      parameters:
+      - description: The unique id for a `user`.
+        example: USR-fa7537f3-48aa-a683-a02a-b18940482f54
+        in: path
+        name: user_guid
+        required: true
+        schema:
+          type: string
+      - description: The unique identifier for the member. Defined by MX.
+        example: MBR-fa7537f3-48aa-a683-a02a-b18345562f54
+        in: path
+        name: member_guid
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/vnd.mx.api.v1+json:
+              schema:
+                $ref: '#/components/schemas/RewardsResponseBody'
+          description: OK
+      summary: List Rewards
+      tags:
+      - Rewards
+  /users/{user_guid}/members/{member_guid}/rewards/{reward_guid}:
+    get:
+      description: Use this endpoint to read a specific `reward` based on its unique GUID..
+      operationId: readRewards
+      parameters:
+      - description: The unique id for a `user`.
+        example: USR-fa7537f3-48aa-a683-a02a-b18940482f54
+        in: path
+        name: user_guid
+        required: true
+        schema:
+          type: string
+      - description: The unique identifier for the member. Defined by MX.
+        example: MBR-fa7537f3-48aa-a683-a02a-b18345562f54
+        in: path
+        name: member_guid
+        required: true
+        schema:
+          type: string
+      - description: The unique identifier for the rewards. Defined by MX.
+        example: RWD-fa7537f3-48aa-a683-a02a-b324322f54
+        in: path
+        name: reward_guid
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/vnd.mx.api.v1+json:
+              schema:
+                $ref: '#/components/schemas/RewardResponseBody'
+          description: OK
+      summary: Read Reward
+      tags:
+      - Rewards
+components:
+  schemas:
+    RewardResponseBody:
+      properties:
+        reward:
+          $ref: '#/components/schemas/RewardResponse'
+      type: object
+    RewardsResponseBody:
+      properties:
+        rewards:
+          items:
+            $ref: '#/components/schemas/RewardsResponse'
+          type: array
+        pagination:
+          $ref: '#/components/schemas/PaginationResponse'
+      type: object
+    PaginationResponse:
+      properties:
+        current_page:
+          example: 1
+          type: integer
+        per_page:
+          example: 25
+          type: integer
+        total_entries:
+          example: 1
+          type: integer
+        total_pages:
+          example: 1
+          type: integer
+      type: object
+    RewardsResponse:
+      properties:
+        account_guid:
+          example: ACT-1234
+          type: string
+        balance_type:
+          example: EXPIRING_BALANCE
+          type: string
+        balance:
+          example: 102
+          type: integer
+        created_at:
+          example: 2020-01-28T21:09:01+0000
+          type: string
+        description:
+          example: A description of the reward.
+          type: string
+        expires_on:
+          example: '2020-02-28T00:00:00.000Z'
+          type: string
+        guid:
+          example: RWD-1234
+          type: string
+        member_guid:
+          example: MBR-4567
+          type: string
+        unit_type:
+          example: POINTS
+          type: string
+        updated_at:
+          example: '2023-06-01T19:18:06.000Z'
+          type: string
+        user_guid:
+          example: USR-1234
+          type: string
+    RewardResponse:
+      properties:
+        account_guid:
+          example: ACT-1234
+          type: string
+        balance_type:
+          example: EXPIRING_BALANCE
+          type: string
+        balance:
+          example: 102
+          type: integer
+        created_at:
+          example: 2020-01-28T21:09:01+0000
+          type: string
+        description:
+          example: A description of the reward.
+          type: string
+        expires_on:
+          example: '2020-02-28T00:00:00.000Z'
+          type: string
+        guid:
+          example: RWD-1234
+          type: string
+        member_guid:
+          example: MBR-4567
+          type: string
+        unit_type:
+          example: POINTS
+          type: string
+        updated_at:
+          example: '2023-06-01T19:18:06.000Z'
+          type: string
+        user_guid:
+          example: USR-1234
+          type: string
+  securitySchemes:
+    basicAuth:
+      scheme: basic
+      type: http

@@ -1,0 +1,103 @@
+openapi: 3.0.0
+info:
+  contact:
+    name: MX Platform API
+    url: https://www.mx.com/products/platform-api
+  description: '
+
+    The MX Platform API is a powerful, fully-featured API designed to make
+
+    aggregating and enhancing financial data easy and reliable. It can
+
+    seamlessly connect your app or website to tens of thousands of financial
+
+    institutions.'
+  title: MX Platform .Pdf API
+  version: 0.1.0
+servers:
+- url: https://api.mx.com
+- url: https://int-api.mx.com
+security:
+- basicAuth: []
+tags:
+- name: .Pdf
+paths:
+  /users/{user_guid}/members/{member_guid}/statements/{statement_guid}.pdf:
+    get:
+      description: Use this endpoint to download a specified statement PDF.
+      operationId: downloadStatementPDF
+      parameters:
+      - description: The unique id for a `member`.
+        example: MBR-7c6f361b-e582-15b6-60c0-358f12466b4b
+        in: path
+        name: member_guid
+        required: true
+        schema:
+          type: string
+      - description: The unique id for a `statement`.
+        example: STA-737a344b-caae-0f6e-1384-01f52e75dcb1
+        in: path
+        name: statement_guid
+        required: true
+        schema:
+          type: string
+      - description: The unique id for a `user`.
+        example: USR-fa7537f3-48aa-a683-a02a-b18940482f54
+        in: path
+        name: user_guid
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/vnd.mx.api.v1+pdf:
+              schema:
+                format: binary
+                type: string
+          description: OK
+      summary: Download statement pdf
+      tags:
+      - .Pdf
+  /users/{user_guid}/members/{member_guid}/tax_documents/{tax_document_guid}.pdf:
+    get:
+      description: Use this endpoint to download a PDF version of the specified tax document. The endpoint URL is the base URL appended with the uri of the tax_document.
+      operationId: downloadTaxDocument
+      parameters:
+      - description: The unique id for a `tax_document`.
+        example: TAX-987dfds1b-e582-15b6-60c0-358f12466b4b
+        in: path
+        name: tax_document_guid
+        required: true
+        schema:
+          type: string
+      - description: The unique id for a `member`.
+        example: MBR-7c6f361b-e582-15b6-60c0-358f12466b4b
+        in: path
+        name: member_guid
+        required: true
+        schema:
+          type: string
+      - description: The unique id for a `user`.
+        example: USR-fa7537f3-48aa-a683-a02a-b18940482f54
+        in: path
+        name: user_guid
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/vnd.mx.api.v1+pdf:
+              schema:
+                format: binary
+                type: string
+          description: OK
+      summary: Download a Tax Document PDF
+      tags:
+      - .Pdf
+components:
+  securitySchemes:
+    basicAuth:
+      scheme: basic
+      type: http

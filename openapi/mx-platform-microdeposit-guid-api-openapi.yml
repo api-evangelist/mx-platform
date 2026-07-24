@@ -1,0 +1,117 @@
+openapi: 3.0.0
+info:
+  contact:
+    name: MX Platform API
+    url: https://www.mx.com/products/platform-api
+  description: '
+
+    The MX Platform API is a powerful, fully-featured API designed to make
+
+    aggregating and enhancing financial data easy and reliable. It can
+
+    seamlessly connect your app or website to tens of thousands of financial
+
+    institutions.'
+  title: MX Platform Microdeposit_guid API
+  version: 0.1.0
+servers:
+- url: https://api.mx.com
+- url: https://int-api.mx.com
+security:
+- basicAuth: []
+tags:
+- name: Microdeposit_guid
+paths:
+  /micro_deposits/{microdeposit_guid}/verify:
+    put:
+      tags:
+      - Microdeposit_guid
+      summary: Verify a Microdeposit
+      description: Use this endpoint to verify the amounts deposited into the account during a microdeposit verification. The verification has not successfully completed until the `status` is `VERIFIED`. Poll the `/users/{user_guid}/micro_deposits/{micro_deposit_guid}` (read microdeposit) endpoint until you see this status or an error state.
+      parameters:
+      - name: microdeposit_guid
+        description: The unique identifier for the microdeposit. Defined by MX.
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MicrodepositVerifyRequestBody'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MicrodepositResponseBody'
+components:
+  schemas:
+    MicrodepositVerifyRequestBody:
+      properties:
+        micro_deposit:
+          $ref: '#/components/schemas/MicrodepositVerifyRequest'
+      type: object
+    MicrodepositResponse:
+      properties:
+        account_name:
+          type: string
+          example: My test account
+        account_number:
+          type: string
+          example: 3331261
+        account_type:
+          type: string
+          example: CHECKING
+        email:
+          type: string
+          example: joshyboy2@example.com
+        first_name:
+          type: string
+          example: Joshy
+        last_name:
+          type: string
+          example: Grobanne
+        routing_number:
+          type: string
+          example: 91000019
+        error_message:
+          type: string
+          example: null
+        guid:
+          type: string
+          example: MIC-09ba578e-8448-4f7f-89e1-b62ff2517edb
+        institution_code:
+          example: mxbank
+          type: string
+        institution_name:
+          example: MX Bank
+          type: string
+        status:
+          example: INITIATED
+          type: string
+        updated_at:
+          example: '2023-06-01T19:18:06.000Z'
+          type: string
+        verified_at:
+          example: null
+          type: string
+    MicrodepositVerifyRequest:
+      properties:
+        deposit_amount_1:
+          type: integer
+          example: 0.09
+        deposit_amount_2:
+          type: integer
+          example: 0.09
+    MicrodepositResponseBody:
+      properties:
+        micro_deposit:
+          $ref: '#/components/schemas/MicrodepositResponse'
+      type: object
+  securitySchemes:
+    basicAuth:
+      scheme: basic
+      type: http

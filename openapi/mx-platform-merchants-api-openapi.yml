@@ -1,0 +1,176 @@
+openapi: 3.0.0
+info:
+  contact:
+    name: MX Platform API
+    url: https://www.mx.com/products/platform-api
+  description: '
+
+    The MX Platform API is a powerful, fully-featured API designed to make
+
+    aggregating and enhancing financial data easy and reliable. It can
+
+    seamlessly connect your app or website to tens of thousands of financial
+
+    institutions.'
+  title: MX Platform Merchants API
+  version: 0.1.0
+servers:
+- url: https://api.mx.com
+- url: https://int-api.mx.com
+security:
+- basicAuth: []
+tags:
+- name: Merchants
+paths:
+  /merchants:
+    get:
+      description: This endpoint returns a paginated list of all the merchants in the MX system.
+      operationId: listMerchants
+      parameters:
+      - description: Specify current page.
+        example: 1
+        in: query
+        name: page
+        schema:
+          type: integer
+      - description: Specify records per page.
+        example: 10
+        in: query
+        name: records_per_page
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/vnd.mx.api.v1+json:
+              schema:
+                $ref: '#/components/schemas/MerchantsResponseBody'
+          description: OK
+      summary: List merchants
+      tags:
+      - Merchants
+  /merchants/{merchant_guid}:
+    get:
+      description: Returns information about a particular merchant, such as a logo, name, and website.
+      operationId: readMerchant
+      parameters:
+      - description: The unique id for a `merchant`.
+        example: MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b
+        in: path
+        name: merchant_guid
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/vnd.mx.api.v1+json:
+              schema:
+                $ref: '#/components/schemas/MerchantResponseBody'
+          description: OK
+      summary: Read merchant
+      tags:
+      - Merchants
+  /users/{user_guid}/insights/{insight_guid}/merchants:
+    get:
+      description: Use this endpoint to list all the merchants associated with the insight.
+      operationId: listMerchantsInsight
+      parameters:
+      - description: The unique identifier for the user. Defined by MX.
+        example: USR-1234-abcd
+        in: path
+        name: user_guid
+        required: true
+        schema:
+          type: string
+      - description: The unique identifier for the insight. Defined by MX.
+        example: BET-1234-abcd
+        in: path
+        name: insight_guid
+        required: true
+        schema:
+          type: string
+      - description: Specify current page.
+        example: 1
+        in: query
+        name: page
+        schema:
+          type: integer
+      - description: Specify records per page.
+        example: 10
+        in: query
+        name: records_per_page
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/vnd.mx.api.v1+json:
+              schema:
+                $ref: '#/components/schemas/MerchantsResponseBody'
+          description: OK
+      summary: List all merchants associated with an insight.
+      tags:
+      - Merchants
+components:
+  schemas:
+    MerchantResponse:
+      properties:
+        created_at:
+          example: '2017-04-20T19:30:12.000Z'
+          nullable: true
+          type: string
+        guid:
+          example: MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b
+          nullable: true
+          type: string
+        logo_url:
+          example: https://s3.amazonaws.com/MD_Assets/merchant_logos/comcast.png
+          nullable: true
+          type: string
+        name:
+          example: Comcast
+          nullable: true
+          type: string
+        updated_at:
+          example: '2018-09-28T21:13:53.000Z'
+          nullable: true
+          type: string
+        website_url:
+          example: https://www.xfinity.com
+          nullable: true
+          type: string
+      type: object
+    MerchantsResponseBody:
+      properties:
+        merchants:
+          items:
+            $ref: '#/components/schemas/MerchantResponse'
+          type: array
+        pagination:
+          $ref: '#/components/schemas/PaginationResponse'
+      type: object
+    PaginationResponse:
+      properties:
+        current_page:
+          example: 1
+          type: integer
+        per_page:
+          example: 25
+          type: integer
+        total_entries:
+          example: 1
+          type: integer
+        total_pages:
+          example: 1
+          type: integer
+      type: object
+    MerchantResponseBody:
+      properties:
+        merchant:
+          $ref: '#/components/schemas/MerchantResponse'
+      type: object
+  securitySchemes:
+    basicAuth:
+      scheme: basic
+      type: http

@@ -1,0 +1,148 @@
+openapi: 3.0.0
+info:
+  contact:
+    name: MX Platform API
+    url: https://www.mx.com/products/platform-api
+  description: '
+
+    The MX Platform API is a powerful, fully-featured API designed to make
+
+    aggregating and enhancing financial data easy and reliable. It can
+
+    seamlessly connect your app or website to tens of thousands of financial
+
+    institutions.'
+  title: MX Platform Fetch_rewards API
+  version: 0.1.0
+servers:
+- url: https://api.mx.com
+- url: https://int-api.mx.com
+security:
+- basicAuth: []
+tags:
+- name: Fetch_rewards
+paths:
+  /users/{user_guid}/members/{member_guid}/fetch_rewards:
+    post:
+      description: Calling this endpoint initiates an aggregation-type event which will gather the member's rewards information, as well as account and transaction information. Rewards data is also gathered with daily background aggregations.
+      operationId: fetchRewards
+      parameters:
+      - description: The unique id for a `user`.
+        example: USR-fa7537f3-48aa-a683-a02a-b18940482f54
+        in: path
+        name: user_guid
+        required: true
+        schema:
+          type: string
+      - description: The unique identifier for the member. Defined by MX.
+        example: MBR-fa7537f3-48aa-a683-a02a-b18345562f54
+        in: path
+        name: member_guid
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/vnd.mx.api.v1+json:
+              schema:
+                $ref: '#/components/schemas/MemberResponseBody'
+          description: OK
+      summary: Fetch Rewards
+      tags:
+      - Fetch_rewards
+components:
+  schemas:
+    MemberResponse:
+      properties:
+        aggregated_at:
+          example: '2016-10-13T18:07:57.000Z'
+          nullable: true
+          type: string
+        background_aggregation_is_disabled:
+          example: false
+          type: boolean
+        connection_status:
+          example: CONNECTED
+          nullable: true
+          type: string
+        guid:
+          example: MBR-7c6f361b-e582-15b6-60c0-358f12466b4b
+          nullable: true
+          type: string
+        id:
+          example: unique_id
+          nullable: true
+          type: string
+        institution_code:
+          example: chase
+          nullable: true
+          type: string
+        is_being_aggregated:
+          example: false
+          nullable: true
+          type: boolean
+        is_managed_by_user:
+          example: false
+          nullable: true
+          type: boolean
+        is_manual:
+          example: false
+          nullable: true
+          type: boolean
+        is_oauth:
+          example: false
+          nullable: true
+          type: boolean
+        metadata:
+          example: '\"credentials_last_refreshed_at\": \"2015-10-15\"'
+          nullable: true
+          type: string
+        most_recent_job_detail_code:
+          example: (deprecated)
+          nullable: true
+          type: string
+        most_recent_job_detail_text:
+          example: (deprecated)
+          nullable: true
+          type: string
+        name:
+          example: Chase Bank
+          nullable: true
+          type: string
+        oauth_window_uri:
+          example: https://mxbank.mx.com/oauth/authorize?client_id=b8OikQ4Ep3NuSUrQ13DdvFuwpNx-qqoAsJDVAQCyLkQ&redirect_uri=https%3A%2F%2Fint-app.moneydesktop.com%2Foauth%2Fredirect_from&response_type=code&scope=openid&state=d745bd4ee6f0f9c184757f574bcc2df2
+          nullable: true
+          type: string
+        successfully_aggregated_at:
+          example: '2016-10-13T17:57:38.000Z'
+          nullable: true
+          type: string
+        use_cases:
+          example:
+          - PFM
+          - IAV
+          nullable: true
+          type: array
+          items:
+            example: PFM
+            nullable: false
+            type: string
+        user_guid:
+          example: USR-fa7537f3-48aa-a683-a02a-b18940482f54
+          nullable: true
+          type: string
+        user_id:
+          example: user123
+          nullable: true
+          type: string
+      type: object
+    MemberResponseBody:
+      properties:
+        member:
+          $ref: '#/components/schemas/MemberResponse'
+      type: object
+  securitySchemes:
+    basicAuth:
+      scheme: basic
+      type: http

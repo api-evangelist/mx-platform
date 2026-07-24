@@ -1,0 +1,401 @@
+openapi: 3.0.0
+info:
+  contact:
+    name: MX Platform API
+    url: https://www.mx.com/products/platform-api
+  description: '
+
+    The MX Platform API is a powerful, fully-featured API designed to make
+
+    aggregating and enhancing financial data easy and reliable. It can
+
+    seamlessly connect your app or website to tens of thousands of financial
+
+    institutions.'
+  title: MX Platform Categories API
+  version: 0.1.0
+servers:
+- url: https://api.mx.com
+- url: https://int-api.mx.com
+security:
+- basicAuth: []
+tags:
+- name: Categories
+paths:
+  /categories/default:
+    get:
+      description: Use this endpoint to retrieve a list of all the default categories and subcategories offered within the MX Platform API. In other words, each item in the returned list will have its `is_default` field set to `true`. There are currently 119 default categories and subcategories. Both the _list default categories_ and _list default categories by user_ endpoints return the same results. The different routes are provided for convenience.
+      operationId: listDefaultCategories
+      parameters:
+      - description: Specify current page.
+        example: 1
+        in: query
+        name: page
+        schema:
+          type: integer
+      - description: Specify records per page.
+        example: 10
+        in: query
+        name: records_per_page
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/vnd.mx.api.v1+json:
+              schema:
+                $ref: '#/components/schemas/CategoriesResponseBody'
+          description: OK
+      summary: List default categories
+      tags:
+      - Categories
+  /categories/{category_guid}:
+    get:
+      description: Use this endpoint to read the attributes of a default category.
+      operationId: readDefaultCategory
+      parameters:
+      - description: The unique id for a `category`.
+        example: CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874
+        in: path
+        name: category_guid
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/vnd.mx.api.v1+json:
+              schema:
+                $ref: '#/components/schemas/CategoryResponseBody'
+          description: OK
+      summary: Read a default category
+      tags:
+      - Categories
+  /users/{user_guid}/categories:
+    get:
+      description: Use this endpoint to list all categories associated with a `user`, including both default and custom categories.
+      operationId: listCategories
+      parameters:
+      - description: Specify current page.
+        example: 1
+        in: query
+        name: page
+        schema:
+          type: integer
+      - description: Specify records per page.
+        example: 10
+        in: query
+        name: records_per_page
+        schema:
+          type: integer
+      - description: The unique id for a `user`.
+        example: USR-fa7537f3-48aa-a683-a02a-b18940482f54
+        in: path
+        name: user_guid
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/vnd.mx.api.v1+json:
+              schema:
+                $ref: '#/components/schemas/CategoriesResponseBody'
+          description: OK
+      summary: List categories
+      tags:
+      - Categories
+    post:
+      description: Use this endpoint to create a new custom category for a specific `user`.
+      operationId: createCategory
+      parameters:
+      - description: The unique id for a `user`.
+        example: USR-fa7537f3-48aa-a683-a02a-b18940482f54
+        in: path
+        name: user_guid
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CategoryCreateRequestBody'
+        description: Custom category object to be created
+        required: true
+      responses:
+        '200':
+          content:
+            application/vnd.mx.api.v1+json:
+              schema:
+                $ref: '#/components/schemas/CategoryResponseBody'
+          description: OK
+      summary: Create category
+      tags:
+      - Categories
+  /users/{user_guid}/categories/default:
+    get:
+      description: Use this endpoint to retrieve a list of all the default categories and subcategories, scoped by user, offered within the MX Platform API. In other words, each item in the returned list will have its `is_default` field set to `true`. There are currently 119 default categories and subcategories. Both the _list default categories_ and _list default categories by user_ endpoints return the same results. The different routes are provided for convenience.
+      operationId: listDefaultCategoriesByUser
+      parameters:
+      - description: Specify current page.
+        example: 1
+        in: query
+        name: page
+        schema:
+          type: integer
+      - description: Specify records per page.
+        example: 10
+        in: query
+        name: records_per_page
+        schema:
+          type: integer
+      - description: The unique id for a `user`.
+        example: USR-fa7537f3-48aa-a683-a02a-b18940482f54
+        in: path
+        name: user_guid
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/vnd.mx.api.v1+json:
+              schema:
+                $ref: '#/components/schemas/CategoriesResponseBody'
+          description: OK
+      summary: List default categories by user
+      tags:
+      - Categories
+  /users/{user_guid}/categories/{category_guid}:
+    delete:
+      description: Use this endpoint to delete a specific custom category according to its unique GUID. The API will respond with an empty object and a status of `204 No Content`.
+      operationId: deleteCategory
+      parameters:
+      - description: The unique id for a `category`.
+        example: CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874
+        in: path
+        name: category_guid
+        required: true
+        schema:
+          type: string
+      - description: The unique id for a `user`.
+        example: USR-fa7537f3-48aa-a683-a02a-b18940482f54
+        in: path
+        name: user_guid
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No Content
+      summary: Delete category
+      tags:
+      - Categories
+    get:
+      description: Use this endpoint to read the attributes of either a default category or a custom category.
+      operationId: readCategory
+      parameters:
+      - description: The unique id for a `category`.
+        example: CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874
+        in: path
+        name: category_guid
+        required: true
+        schema:
+          type: string
+      - description: The unique id for a `user`.
+        example: USR-fa7537f3-48aa-a683-a02a-b18940482f54
+        in: path
+        name: user_guid
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/vnd.mx.api.v1+json:
+              schema:
+                $ref: '#/components/schemas/CategoryResponseBody'
+          description: OK
+      summary: Read a custom category
+      tags:
+      - Categories
+    put:
+      description: Use this endpoint to update the attributes of a custom category according to its unique GUID.
+      operationId: updateCategory
+      parameters:
+      - description: The unique id for a `category`.
+        example: CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874
+        in: path
+        name: category_guid
+        required: true
+        schema:
+          type: string
+      - description: The unique id for a `user`.
+        example: USR-fa7537f3-48aa-a683-a02a-b18940482f54
+        in: path
+        name: user_guid
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CategoryUpdateRequestBody'
+        description: Category object to be updated (While no single parameter is required, the `category` object cannot be empty)
+        required: true
+      responses:
+        '200':
+          content:
+            application/vnd.mx.api.v1+json:
+              schema:
+                $ref: '#/components/schemas/CategoryResponseBody'
+          description: OK
+      summary: Update category
+      tags:
+      - Categories
+  /users/{user_guid}/insights/{insight_guid}/categories:
+    get:
+      description: Use this endpoint to list all the categories associated with the insight.
+      operationId: listCategoriesInsight
+      parameters:
+      - description: The unique identifier for the user. Defined by MX.
+        example: USR-1234-abcd
+        in: path
+        name: user_guid
+        required: true
+        schema:
+          type: string
+      - description: The unique identifier for the insight. Defined by MX.
+        example: BET-1234-abcd
+        in: path
+        name: insight_guid
+        required: true
+        schema:
+          type: string
+      - description: Specify current page.
+        example: 1
+        in: query
+        name: page
+        schema:
+          type: integer
+      - description: Specify records per page.
+        example: 10
+        in: query
+        name: records_per_page
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/vnd.mx.api.v1+json:
+              schema:
+                $ref: '#/components/schemas/CategoriesResponseBody'
+          description: OK
+      summary: List all categories associated with an insight.
+      tags:
+      - Categories
+components:
+  schemas:
+    CategoryUpdateRequest:
+      properties:
+        metadata:
+          example: some metadata
+          type: string
+        name:
+          example: Web shopping
+          type: string
+      type: object
+    CategoryResponse:
+      properties:
+        created_at:
+          example: '2015-04-13T18:01:23.000Z'
+          nullable: true
+          type: string
+        guid:
+          example: CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874
+          nullable: true
+          type: string
+        is_default:
+          example: true
+          nullable: true
+          type: boolean
+        is_income:
+          example: false
+          nullable: true
+          type: boolean
+        metadata:
+          example: some metadata
+          nullable: true
+          type: string
+        name:
+          example: Auto Insurance
+          nullable: true
+          type: string
+        parent_guid:
+          example: CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874
+          nullable: true
+          type: string
+        updated_at:
+          example: '2015-05-13T18:01:23.000Z'
+          nullable: true
+          type: string
+      type: object
+    CategoryUpdateRequestBody:
+      properties:
+        category:
+          $ref: '#/components/schemas/CategoryUpdateRequest'
+      type: object
+    PaginationResponse:
+      properties:
+        current_page:
+          example: 1
+          type: integer
+        per_page:
+          example: 25
+          type: integer
+        total_entries:
+          example: 1
+          type: integer
+        total_pages:
+          example: 1
+          type: integer
+      type: object
+    CategoryCreateRequest:
+      properties:
+        metadata:
+          example: some metadata
+          type: string
+        name:
+          example: Online Shopping
+          type: string
+        parent_guid:
+          example: CAT-aad51b46-d6f7-3da5-fd6e-492328b3023f
+          type: string
+      required:
+      - name
+      type: object
+    CategoriesResponseBody:
+      properties:
+        categories:
+          items:
+            $ref: '#/components/schemas/CategoryResponse'
+          type: array
+        pagination:
+          $ref: '#/components/schemas/PaginationResponse'
+      type: object
+    CategoryCreateRequestBody:
+      properties:
+        category:
+          $ref: '#/components/schemas/CategoryCreateRequest'
+      type: object
+    CategoryResponseBody:
+      properties:
+        category:
+          $ref: '#/components/schemas/CategoryResponse'
+      type: object
+  securitySchemes:
+    basicAuth:
+      scheme: basic
+      type: http

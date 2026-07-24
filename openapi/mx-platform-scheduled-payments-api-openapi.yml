@@ -1,0 +1,137 @@
+openapi: 3.0.0
+info:
+  contact:
+    name: MX Platform API
+    url: https://www.mx.com/products/platform-api
+  description: '
+
+    The MX Platform API is a powerful, fully-featured API designed to make
+
+    aggregating and enhancing financial data easy and reliable. It can
+
+    seamlessly connect your app or website to tens of thousands of financial
+
+    institutions.'
+  title: MX Platform Scheduled_payments API
+  version: 0.1.0
+servers:
+- url: https://api.mx.com
+- url: https://int-api.mx.com
+security:
+- basicAuth: []
+tags:
+- name: Scheduled_payments
+paths:
+  /users/{user_guid}/insights/{insight_guid}/scheduled_payments:
+    get:
+      description: Use this endpoint to list all the scheduled payments associated with the insight.
+      operationId: listScheduledPaymentsInsight
+      parameters:
+      - description: The unique identifier for the user. Defined by MX.
+        example: USR-1234-abcd
+        in: path
+        name: user_guid
+        required: true
+        schema:
+          type: string
+      - description: The unique identifier for the insight. Defined by MX.
+        example: BET-1234-abcd
+        in: path
+        name: insight_guid
+        required: true
+        schema:
+          type: string
+      - description: Specify current page.
+        example: 1
+        in: query
+        name: page
+        schema:
+          type: integer
+      - description: Specify records per page.
+        example: 10
+        in: query
+        name: records_per_page
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/vnd.mx.api.v1+json:
+              schema:
+                $ref: '#/components/schemas/ScheduledPaymentsResponseBody'
+          description: OK
+      summary: List all scheduled payments associated with an insight
+      tags:
+      - Scheduled_payments
+components:
+  schemas:
+    ScheduledPaymentsResponseBody:
+      properties:
+        pagination:
+          $ref: '#/components/schemas/PaginationResponse'
+        scheduled_payments:
+          items:
+            $ref: '#/components/schemas/ScheduledPaymentResponse'
+          type: array
+      type: object
+    ScheduledPaymentResponse:
+      properties:
+        amount:
+          example: 13.54
+          type: number
+        created_at:
+          example: '2023-04-27T23:14:16.000Z'
+          type: string
+        description:
+          example: Netflix
+          type: string
+        guid:
+          example: SPA-c76e4a85-b2c4-4335-82b7-8f8b8f28c35a
+          type: string
+        is_completed:
+          example: false
+          type: boolean
+        is_recurring:
+          example: true
+          type: boolean
+        merchant_guid:
+          example: MCH-b8a2624c-2176-59ec-c150-37854bc38aa8
+          type: string
+        occurs_on:
+          example: '2022-01-15T00:00:00.000Z'
+          type: string
+        recurrence_day:
+          example: 15
+          type: integer
+        recurrence_type:
+          example: EVERY_MONTH
+          type: string
+        transaction_type:
+          example: DEBIT
+          type: string
+        updated_at:
+          example: '2023-04-27T23:14:16.000Z'
+          type: string
+        user_guid:
+          example: USR-72086f59-6684-4adf-8f29-c4d32db43cd7
+          type: string
+      type: object
+    PaginationResponse:
+      properties:
+        current_page:
+          example: 1
+          type: integer
+        per_page:
+          example: 25
+          type: integer
+        total_entries:
+          example: 1
+          type: integer
+        total_pages:
+          example: 1
+          type: integer
+      type: object
+  securitySchemes:
+    basicAuth:
+      scheme: basic
+      type: http
