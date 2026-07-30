@@ -5,7 +5,19 @@ description: >-
   aggregating and enhancing financial data easy and reliable. It can seamlessly
   connect your app or website to tens of thousands of financial institutions.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mx-platform.png
 url: https://docs.mx.com/
 created: '2024-11-07'
 modified: '2026-04-28'
@@ -16,36 +28,1110 @@ tags:
   - Financial
   - Financial Data
 apis:
-  - aid: mx-platform:mx-platform
-    name: MX Platform API
-    description: >-
-      The MX Platform API is a powerful, fully-featured API designed to make
-      aggregating and enhancing financial data easy and reliable. It can
-      seamlessly connect your app or website to tens of thousands of financial
-      institutions.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://docs.mx.com/
-    baseURL: https://api.mx.com
-    tags:
-      - Aggregation
-      - Banking
-      - Financial Data
-    properties:
-      - type: Documentation
-        url: https://docs.mx.com/
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/mx-platform/main/openapi/mx-platform-openapi.yml
-      - type: Signup
-        url: https://dashboard.mx.com/sign_up
-      - type: Login
-        url: https://dashboard.mx.com/sign_in
-      - type: OAuth
-        url: https://docs.mx.com/resources/oauth-guide
-      - type: Webhooks
-        url: https://docs.mx.com/resources/webhooks
-    contact:
-      - FN: MX Support
-        url: https://docs.mx.com/support
+- aid: mx-platform:mx-platform-account-numbers-api
+  name: MX Platform Account_numbers API
+  description: The Account_numbers API from MX Platform — 2 operation(s) for account_numbers.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Account_numbers
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-account-numbers-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-account-owners-api
+  name: MX Platform Account_owners API
+  description: The Account_owners API from MX Platform — 1 operation(s) for account_owners.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Account_owners
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-account-owners-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-accounts-api
+  name: MX Platform Accounts API
+  description: The Accounts API from MX Platform — 13 operation(s) for accounts.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-aggregate-api
+  name: MX Platform Aggregate API
+  description: The Aggregate API from MX Platform — 1 operation(s) for aggregate.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Aggregate
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-aggregate-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-budgets-api
+  name: MX Platform Budgets API
+  description: The Budgets API from MX Platform — 3 operation(s) for budgets.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Budgets
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-budgets-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-categories-api
+  name: MX Platform Categories API
+  description: The Categories API from MX Platform — 6 operation(s) for categories.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Categories
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-categories-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-challenges-api
+  name: MX Platform Challenges API
+  description: The Challenges API from MX Platform — 1 operation(s) for challenges.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Challenges
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-challenges-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-check-balance-api
+  name: MX Platform Check_balance API
+  description: The Check_balance API from MX Platform — 1 operation(s) for check_balance.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Check_balance
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-check-balance-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-connect-widget-url-api
+  name: MX Platform Connect_widget_url API
+  description: The Connect_widget_url API from MX Platform — 1 operation(s) for connect_widget_url.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Connect_widget_url
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-connect-widget-url-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-credentials-api
+  name: MX Platform Credentials API
+  description: The Credentials API from MX Platform — 2 operation(s) for credentials.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Credentials
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-credentials-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-credit-card-product-guid-api
+  name: MX Platform Credit_card_product_guid API
+  description: >-
+    The Credit_card_product_guid API from MX Platform — 1 operation(s) for credit_card_product_guid.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Credit_card_product_guid
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-credit-card-product-guid-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-current-api
+  name: MX Platform Current API
+  description: The Current API from MX Platform — 2 operation(s) for current.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Current
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-current-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-default-api
+  name: MX Platform Default API
+  description: The Default API from MX Platform — 2 operation(s) for default.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Default
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-default-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-enhance-api
+  name: MX Platform Enhance API
+  description: The Enhance API from MX Platform — 1 operation(s) for enhance.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Enhance
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-enhance-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-extend-history-api
+  name: MX Platform Extend_history API
+  description: The Extend_history API from MX Platform — 1 operation(s) for extend_history.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Extend_history
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-extend-history-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-favorites-api
+  name: MX Platform Favorites API
+  description: The Favorites API from MX Platform — 1 operation(s) for favorites.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Favorites
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-favorites-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-fetch-rewards-api
+  name: MX Platform Fetch_rewards API
+  description: The Fetch_rewards API from MX Platform — 1 operation(s) for fetch_rewards.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Fetch_rewards
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-fetch-rewards-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-fetch-statements-api
+  name: MX Platform Fetch_statements API
+  description: The Fetch_statements API from MX Platform — 1 operation(s) for fetch_statements.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Fetch_statements
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-fetch-statements-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-fetch-tax-documents-api
+  name: MX Platform Fetch_tax_documents API
+  description: The Fetch_tax_documents API from MX Platform — 1 operation(s) for fetch_tax_documents.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Fetch_tax_documents
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-fetch-tax-documents-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-generate-api
+  name: MX Platform Generate API
+  description: The Generate API from MX Platform — 1 operation(s) for generate.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Generate
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-generate-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-goals-api
+  name: MX Platform Goals API
+  description: The Goals API from MX Platform — 3 operation(s) for goals.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Goals
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-goals-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-holdings-api
+  name: MX Platform Holdings API
+  description: The Holdings API from MX Platform — 4 operation(s) for holdings.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Holdings
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-holdings-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-identify-api
+  name: MX Platform Identify API
+  description: The Identify API from MX Platform — 1 operation(s) for identify.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Identify
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-identify-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-insights-api
+  name: MX Platform Insights API
+  description: The Insights API from MX Platform — 8 operation(s) for insights.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Insights
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-insights-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-institution-code-api
+  name: MX Platform Institution_code API
+  description: The Institution_code API from MX Platform — 2 operation(s) for institution_code.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Institution_code
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-institution-code-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-iteration-item-guid-api
+  name: MX Platform Iteration_item_guid API
+  description: The Iteration_item_guid API from MX Platform — 1 operation(s) for iteration_item_guid.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Iteration_item_guid
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-iteration-item-guid-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-iterations-api
+  name: MX Platform Iterations API
+  description: The Iterations API from MX Platform — 4 operation(s) for iterations.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Iterations
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-iterations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-managed-members-api
+  name: MX Platform Managed_members API
+  description: The Managed_members API from MX Platform — 6 operation(s) for managed_members.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Managed_members
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-managed-members-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-members-api
+  name: MX Platform Members API
+  description: The Members API from MX Platform — 29 operation(s) for members.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Members
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-members-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-merchant-location-guid-api
+  name: MX Platform Merchant_location_guid API
+  description: >-
+    The Merchant_location_guid API from MX Platform — 1 operation(s) for merchant_location_guid.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Merchant_location_guid
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-merchant-location-guid-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-merchants-api
+  name: MX Platform Merchants API
+  description: The Merchants API from MX Platform — 3 operation(s) for merchants.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Merchants
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-merchants-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-micro-deposits-api
+  name: MX Platform Micro_deposits API
+  description: The Micro_deposits API from MX Platform — 2 operation(s) for micro_deposits.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Micro_deposits
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-micro-deposits-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-microdeposit-guid-api
+  name: MX Platform Microdeposit_guid API
+  description: The Microdeposit_guid API from MX Platform — 1 operation(s) for microdeposit_guid.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Microdeposit_guid
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-microdeposit-guid-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-microdeposits-api
+  name: MX Platform Microdeposits API
+  description: The Microdeposits API from MX Platform — 1 operation(s) for microdeposits.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Microdeposits
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-microdeposits-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-monthly-cash-flow-profile-api
+  name: MX Platform Monthly_cash_flow_profile API
+  description: >-
+    The Monthly_cash_flow_profile API from MX Platform — 1 operation(s) for monthly_cash_flow_profile.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Monthly_cash_flow_profile
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-monthly-cash-flow-profile-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-mx-platform-api
+  name: MX Platform Mx_platform API
+  description: The Mx_platform API from MX Platform — 22 operation(s) for mx_platform.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Mx_platform
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-mx-platform-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-oauth-window-uri-api
+  name: MX Platform Oauth_window_uri API
+  description: The Oauth_window_uri API from MX Platform — 1 operation(s) for oauth_window_uri.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Oauth_window_uri
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-oauth-window-uri-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-pdf-api
+  name: MX Platform .Pdf API
+  description: The .Pdf API from MX Platform — 2 operation(s) for .pdf.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - .Pdf
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-pdf-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-resume-api
+  name: MX Platform Resume API
+  description: The Resume API from MX Platform — 1 operation(s) for resume.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Resume
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-resume-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-rewards-api
+  name: MX Platform Rewards API
+  description: The Rewards API from MX Platform — 2 operation(s) for rewards.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Rewards
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-rewards-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-scheduled-payments-api
+  name: MX Platform Scheduled_payments API
+  description: The Scheduled_payments API from MX Platform — 1 operation(s) for scheduled_payments.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Scheduled_payments
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-scheduled-payments-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-spending-plan-accounts-api
+  name: MX Platform Spending_plan_accounts API
+  description: >-
+    The Spending_plan_accounts API from MX Platform — 2 operation(s) for spending_plan_accounts.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Spending_plan_accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-spending-plan-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-spending-plan-api
+  name: MX Platform Spending Plan API
+  description: The Spending Plan API from MX Platform — 4 operation(s) for spending plan.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Spending Plan
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-spending-plan-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-spending-plans-api
+  name: MX Platform Spending_plans API
+  description: The Spending_plans API from MX Platform — 8 operation(s) for spending_plans.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Spending_plans
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-spending-plans-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-split-api
+  name: MX Platform Split API
+  description: The Split API from MX Platform — 1 operation(s) for split.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Split
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-split-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-statements-api
+  name: MX Platform Statements API
+  description: The Statements API from MX Platform — 3 operation(s) for statements.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Statements
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-statements-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-status-api
+  name: MX Platform Status API
+  description: The Status API from MX Platform — 1 operation(s) for status.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Status
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-status-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-taggings-api
+  name: MX Platform Taggings API
+  description: The Taggings API from MX Platform — 2 operation(s) for taggings.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Taggings
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-taggings-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-tags-api
+  name: MX Platform Tags API
+  description: The Tags API from MX Platform — 3 operation(s) for tags.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-tax-documents-api
+  name: MX Platform Tax_documents API
+  description: The Tax_documents API from MX Platform — 3 operation(s) for tax_documents.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Tax_documents
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-tax-documents-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-transaction-rules-api
+  name: MX Platform Transaction_rules API
+  description: The Transaction_rules API from MX Platform — 2 operation(s) for transaction_rules.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Transaction_rules
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-transaction-rules-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-transactions-api
+  name: MX Platform Transactions API
+  description: The Transactions API from MX Platform — 10 operation(s) for transactions.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-transactions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-users-api
+  name: MX Platform Users API
+  description: The Users API from MX Platform — 84 operation(s) for users.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-users-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-verify-api
+  name: MX Platform Verify API
+  description: The Verify API from MX Platform — 2 operation(s) for verify.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Verify
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-verify-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
+- aid: mx-platform:mx-platform-widget-urls-api
+  name: MX Platform Widget_urls API
+  description: The Widget_urls API from MX Platform — 1 operation(s) for widget_urls.
+  humanURL: https://docs.mx.com/
+  baseURL: https://api.mx.com
+  tags:
+  - Widget_urls
+  properties:
+  - type: OpenAPI
+    url: openapi/mx-platform-widget-urls-api-openapi.yml
+  - type: Documentation
+    url: https://docs.mx.com/
+  - type: Signup
+    url: https://dashboard.mx.com/sign_up
+  - type: Login
+    url: https://dashboard.mx.com/sign_in
+  - type: OAuth
+    url: https://docs.mx.com/resources/oauth-guide
+  - type: Webhooks
+    url: https://docs.mx.com/resources/webhooks
 common:
   - type: VulnerabilityDisclosure
     url: security/mx-platform-vulnerability-disclosure.yml
