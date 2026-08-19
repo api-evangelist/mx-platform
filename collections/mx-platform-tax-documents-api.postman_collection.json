@@ -1,0 +1,443 @@
+{
+  "item": [
+    {
+      "id": "081c74e6-8947-444f-b4b1-e9526a704d7d",
+      "name": "Tax_documents",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3b98ea48-c167-4bad-8b8b-e4568cc950de",
+          "name": "List Tax Documents",
+          "request": {
+            "name": "List Tax Documents",
+            "description": {
+              "content": "Use this endpoint to get a paginated list of tax documents.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "tax_documents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "529bf038-1605-404e-bad6-3a58c83681df",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "tax_documents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  },\n  \"tax_documents\": [\n    {\n      \"content_hash\": \"a16c580c4fcdfa8088edaa7b4d35b290\",\n      \"created_at\": \"2022-10-18T19:23:16Z\",\n      \"document_type\": \"TAX1099_C\",\n      \"guid\": \"TAX-ee8776ea-468b-4b02-b95d-743adf6ba50e\",\n      \"issued_on\": \"2022-03-31\",\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"tax_year\": \"2023\",\n      \"updated_at\": \"2022-10-18T19:23:16Z\",\n      \"uri\": \"/users/USR-11141024-90b3-1bce-cac9-c06ced52ab4c/members/MBR-7c6f361b-e582-15b6-60c0-358f12466b4b/tax_documents/TAX-ee8776ea-468b-4b02-b95d-743adf6ba50e.pdf\",\n      \"user_guid\": \"USR-11141024-90b3-1bce-cac9-c06ced52ab4c\"\n    },\n    {\n      \"content_hash\": \"a16c580c4fcdfa8088edaa7b4d35b290\",\n      \"created_at\": \"2022-10-18T19:23:16Z\",\n      \"document_type\": \"TAX1099_C\",\n      \"guid\": \"TAX-ee8776ea-468b-4b02-b95d-743adf6ba50e\",\n      \"issued_on\": \"2022-03-31\",\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"tax_year\": \"2023\",\n      \"updated_at\": \"2022-10-18T19:23:16Z\",\n      \"uri\": \"/users/USR-11141024-90b3-1bce-cac9-c06ced52ab4c/members/MBR-7c6f361b-e582-15b6-60c0-358f12466b4b/tax_documents/TAX-ee8776ea-468b-4b02-b95d-743adf6ba50e.pdf\",\n      \"user_guid\": \"USR-11141024-90b3-1bce-cac9-c06ced52ab4c\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "880956a7-be31-40fd-8c10-7a03d28abcaf",
+          "name": "Read a Tax Document",
+          "request": {
+            "name": "Read a Tax Document",
+            "description": {
+              "content": "Use this endpoint to read the attributes of the specified tax document.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "tax_documents",
+                ":tax_document_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tax_document_guid",
+                  "description": "(Required) The unique id for a `tax_document`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "761e20cc-209a-44b5-a10e-ab4ccf5b537f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "tax_documents",
+                    ":tax_document_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tax_document_guid",
+                      "description": "(Required) The unique id for a `tax_document`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"tax_document\": {\n    \"content_hash\": \"a16c580c4fcdfa8088edaa7b4d35b290\",\n    \"created_at\": \"2022-10-18T19:23:16Z\",\n    \"document_type\": \"TAX1099_C\",\n    \"guid\": \"TAX-ee8776ea-468b-4b02-b95d-743adf6ba50e\",\n    \"issued_on\": \"2022-03-31\",\n    \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"tax_year\": \"2023\",\n    \"updated_at\": \"2022-10-18T19:23:16Z\",\n    \"uri\": \"/users/USR-11141024-90b3-1bce-cac9-c06ced52ab4c/members/MBR-7c6f361b-e582-15b6-60c0-358f12466b4b/tax_documents/TAX-ee8776ea-468b-4b02-b95d-743adf6ba50e.pdf\",\n    \"user_guid\": \"USR-11141024-90b3-1bce-cac9-c06ced52ab4c\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9f69722d-e730-464c-b776-23b4c70f3997",
+          "name": "Download a Tax Document PDF",
+          "request": {
+            "name": "Download a Tax Document PDF",
+            "description": {
+              "content": "Use this endpoint to download a PDF version of the specified tax document. The endpoint URL is the base URL appended with the uri of the tax_document.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "tax_documents",
+                "{{tax_document_guid}}.pdf"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+pdf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7f5eac9a-acd0-47da-8c9b-d93a420e76a6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "tax_documents",
+                    "{{tax_document_guid}}.pdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+pdf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+pdf"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) The unique id for a `tax_document`.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "tax_document_guid"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "12122054-d256-468c-9a61-0f3021cc7e7d",
+    "name": "MX Platform Tax_documents API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

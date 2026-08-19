@@ -1,0 +1,124 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MX Platform Statements API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Statements",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List statements by member",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/members/:member_guid/statements",
+            "params": [
+              {
+                "name": "member_guid",
+                "value": "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                "type": "path",
+                "description": "The unique id for a `member`."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to get an array of available statements."
+        },
+        {
+          "info": {
+            "name": "Read statement by member",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/members/:member_guid/statements/:statement_guid",
+            "params": [
+              {
+                "name": "member_guid",
+                "value": "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                "type": "path",
+                "description": "The unique id for a `member`."
+              },
+              {
+                "name": "statement_guid",
+                "value": "STA-737a344b-caae-0f6e-1384-01f52e75dcb1",
+                "type": "path",
+                "description": "The unique id for a `statement`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to read a JSON representation of the statement."
+        },
+        {
+          "info": {
+            "name": "Download statement pdf",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/members/:member_guid/statements/:statement_guid.pdf",
+            "params": [
+              {
+                "name": "member_guid",
+                "value": "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                "type": "path",
+                "description": "The unique id for a `member`."
+              },
+              {
+                "name": "statement_guid",
+                "value": "STA-737a344b-caae-0f6e-1384-01f52e75dcb1",
+                "type": "path",
+                "description": "The unique id for a `statement`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to download a specified statement PDF."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

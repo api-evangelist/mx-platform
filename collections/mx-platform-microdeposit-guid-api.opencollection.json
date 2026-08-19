@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MX Platform Microdeposit_guid API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Microdeposit_guid",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Verify a Microdeposit",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.mx.com/micro_deposits/:microdeposit_guid/verify",
+            "params": [
+              {
+                "name": "microdeposit_guid",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier for the microdeposit. Defined by MX."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use this endpoint to verify the amounts deposited into the account during a microdeposit verification. The verification has not successfully completed until the `status` is `VERIFIED`. Poll the `/users/{user_guid}/micro_deposits/{micro_deposit_guid}` (read microdeposit) endpoint until you see this status or an error state."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

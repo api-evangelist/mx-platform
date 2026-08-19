@@ -1,0 +1,288 @@
+{
+  "item": [
+    {
+      "id": "e4aa95f3-ab63-47fc-ae43-610ee0285bed",
+      "name": "Split",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9f227c81-1143-4f68-895d-6defcebf8c95",
+          "name": "Delete split transactions",
+          "request": {
+            "name": "Delete split transactions",
+            "description": {
+              "content": "This endpoint deletes all split transactions linked to a parent transaction, but it leaves the parent transaction active. This request will also update the parent transaction's has_been_split field to false. This endpoint accepts the optional MX-Skip-Webhook header.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "transactions",
+                ":transaction_guid",
+                "split"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transaction_guid",
+                  "description": "(Required) The unique id for a `transaction`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c9ed8257-cefc-4da0-9eb5-d31c375189ae",
+              "name": "No content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "transactions",
+                    ":transaction_guid",
+                    "split"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transaction_guid",
+                      "description": "(Required) The unique id for a `transaction`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ea87a5a4-fc80-4c01-8e7e-e087053ca5af",
+          "name": "Create split transactions",
+          "request": {
+            "name": "Create split transactions",
+            "description": {
+              "content": "This endpoint creates two or more child transactions that are branched from a previous transaction. This endpoint allows you to link multiple categories, descriptions, and amounts to a parent transaction.  When a split transaction is created, the parent transaction's `has_been_split` field will automatically be updated to true and the child transactions' `parent_guid` will have the transaction guid of the parent. The total amount of the child transactions must equal the amount of the parent transaction. Once a transaction has been split it can't be split again.    In order to re-split a transaction, it must first be un-split. This can be done by calling the Delete Split Transactions endpoint. Calling this endpoint will delete the existing child transactions and update the parent transaction's `has_been_split` field to false. You can then re-split the parent transaction by calling Create Split Transaction again.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "transactions",
+                ":transaction_guid",
+                "split"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique identifier for the user. Defined by MX."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transaction_guid",
+                  "description": "(Required) The unique identifier for the transaction. Defined by MX."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"transactions\": {\n    \"amount\": \"<number>\",\n    \"description\": \"<string>\",\n    \"category_guid\": \"<string>\",\n    \"memo\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d0042cf3-28ee-485b-941d-5ebfb5a7ebc8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "transactions",
+                    ":transaction_guid",
+                    "split"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique identifier for the user. Defined by MX."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transaction_guid",
+                      "description": "(Required) The unique identifier for the transaction. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transactions\": {\n    \"amount\": 54.19,\n    \"description\": \"Chevron Gas\",\n    \"category_guid\": \"CAT-b6d61a19-30a7-e852-2703-bdfb4072289e\",\n    \"memo\": \"Chips and Soda\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"transactions\": [\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"account_id\": \"account123\",\n      \"amount\": 61.11,\n      \"category\": \"Groceries\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"check_number_string\": \"6812\",\n      \"created_at\": \"2016-10-06T09:43:42.000Z\",\n      \"currency_code\": \"USD\",\n      \"date\": \"2013-09-23T00:00:00.000Z\",\n      \"description\": \"Whole foods\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": true,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_recurring\": false,\n      \"is_subscription\": false,\n      \"latitude\": -43.2075,\n      \"localized_description\": \"This is a localized_description\",\n      \"localized_memo\": \"This is a localized_memo\",\n      \"longitude\": 139.691706,\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"member_is_managed_by_user\": false,\n      \"memo\": \"This is a memo\",\n      \"merchant_category_code\": 5411,\n      \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"metadata\": \"some metadata\",\n      \"original_description\": \"WHOLEFDS TSQ 102\",\n      \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n      \"status\": \"POSTED\",\n      \"top_level_category\": \"Food & Dining\",\n      \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n      \"type\": \"DEBIT\",\n      \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    },\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"account_id\": \"account123\",\n      \"amount\": 61.11,\n      \"category\": \"Groceries\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"check_number_string\": \"6812\",\n      \"created_at\": \"2016-10-06T09:43:42.000Z\",\n      \"currency_code\": \"USD\",\n      \"date\": \"2013-09-23T00:00:00.000Z\",\n      \"description\": \"Whole foods\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": true,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_recurring\": false,\n      \"is_subscription\": false,\n      \"latitude\": -43.2075,\n      \"localized_description\": \"This is a localized_description\",\n      \"localized_memo\": \"This is a localized_memo\",\n      \"longitude\": 139.691706,\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"member_is_managed_by_user\": false,\n      \"memo\": \"This is a memo\",\n      \"merchant_category_code\": 5411,\n      \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"metadata\": \"some metadata\",\n      \"original_description\": \"WHOLEFDS TSQ 102\",\n      \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n      \"status\": \"POSTED\",\n      \"top_level_category\": \"Food & Dining\",\n      \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n      \"type\": \"DEBIT\",\n      \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0eca6a92-0986-4d6f-8323-bea417c2a3f3",
+    "name": "MX Platform Split API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

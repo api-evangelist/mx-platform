@@ -1,0 +1,75 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MX Platform Institution_code API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Institution_code",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read institution",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/institutions/:institution_code",
+            "params": [
+              {
+                "name": "institution_code",
+                "value": "chase",
+                "type": "path",
+                "description": "The institution_code of the institution."
+              }
+            ]
+          },
+          "docs": "This endpoint returns information about the institution specified by `institution_code`."
+        },
+        {
+          "info": {
+            "name": "List institution credentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/institutions/:institution_code/credentials",
+            "params": [
+              {
+                "name": "institution_code",
+                "value": "chase",
+                "type": "path",
+                "description": "The institution_code of the institution."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to see which credentials will be needed to create a member for a specific institution."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

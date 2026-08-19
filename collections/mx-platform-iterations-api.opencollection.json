@@ -1,0 +1,280 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MX Platform Iterations API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Iterations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List spending plan iteration items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/spending_plans/:spending_plan_guid/iterations/current/iteration_items",
+            "params": [
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              },
+              {
+                "name": "spending_plan_guid",
+                "value": "SPL-e5f9a5bd-c5b3-4901-bdc0-62119b9db262",
+                "type": "path",
+                "description": "The unique ID for the `spending_plan`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to list all the spending plan `iteration_items` associated with the `iteration`."
+        },
+        {
+          "info": {
+            "name": "Create spending plan iteration item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mx.com/users/:user_guid/spending_plans/:spending_plan_guid/iterations/current/iteration_items",
+            "params": [
+              {
+                "name": "spending_plan_guid",
+                "value": "SPL-e5f9a5bd-c5b3-4901-bdc0-62119b9db262",
+                "type": "path",
+                "description": "The unique ID for the `spending_plan`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint creates a new `spending_plan_iteration_item`."
+        },
+        {
+          "info": {
+            "name": "Read a spending plan iteration item",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/spending_plans/:spending_plan_guid/iterations/current/iteration_items/:iteration_item_guid",
+            "params": [
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              },
+              {
+                "name": "spending_plan_guid",
+                "value": "SPL-e5f9a5bd-c5b3-4901-bdc0-62119b9db262",
+                "type": "path",
+                "description": "The unique ID for the `spending_plan`."
+              },
+              {
+                "name": "iteration_item_guid",
+                "value": "SII-a4dc1549-da28-1245-9c9c-53eee4cdfbe3",
+                "type": "path",
+                "description": "The unique ID for the `iteration_item`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to read the attributes of a specific spending plan `iteration_item` according to its unique GUID."
+        },
+        {
+          "info": {
+            "name": "Update a spending plan iteration item",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.mx.com/users/:user_guid/spending_plans/:spending_plan_guid/iterations/current/iteration_items/:iteration_item_guid",
+            "params": [
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              },
+              {
+                "name": "spending_plan_guid",
+                "value": "SPL-e5f9a5bd-c5b3-4901-bdc0-62119b9db262",
+                "type": "path",
+                "description": "The unique ID for the `spending_plan`."
+              },
+              {
+                "name": "iteration_item_guid",
+                "value": "SII-a4dc1549-da28-1245-9c9c-53eee4cdfbe3",
+                "type": "path",
+                "description": "The unique ID for the `iteration_item`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use this endpoint to update an existing `spending_plan_iteration_item`."
+        },
+        {
+          "info": {
+            "name": "Delete spending plan iteration item",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.mx.com/users/:user_guid/spending_plans/:spending_plan_guid/iterations/current/iteration_items/:iteration_item_guid",
+            "params": [
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique ID for a `user`."
+              },
+              {
+                "name": "spending_plan_guid",
+                "value": "SPL-e5f9a5bd-c5b3-4901-bdc0-62119b9db262",
+                "type": "path",
+                "description": "The unique ID for the `spending_plan`."
+              },
+              {
+                "name": "iteration_item_guid",
+                "value": "SII-a4dc1549-da28-1245-9c9c-53eee4cdfbe3",
+                "type": "path",
+                "description": "The unique ID for the `iteration_item`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to delete a spending plan `iteration_item`."
+        },
+        {
+          "info": {
+            "name": "List spending plan iterations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/spending_plans/:spending_plan_guid/iterations",
+            "params": [
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              },
+              {
+                "name": "spending_plan_guid",
+                "value": "SPL-e5f9a5bd-c5b3-4901-bdc0-62119b9db262",
+                "type": "path",
+                "description": "The unique ID for the `spending_plan`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to list all the spending plan `iterations` associated with the `spending_plan`."
+        },
+        {
+          "info": {
+            "name": "Read a spending plan iteration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/spending_plans/:spending_plan_guid/iterations/:iteration_number",
+            "params": [
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              },
+              {
+                "name": "spending_plan_guid",
+                "value": "SPL-e5f9a5bd-c5b3-4901-bdc0-62119b9db262",
+                "type": "path",
+                "description": "The unique ID for the `spending_plan`."
+              },
+              {
+                "name": "iteration_number",
+                "value": "1",
+                "type": "path",
+                "description": "The current iteration number for the spending plan `iteration``."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to read the attributes of a specific spending plan `iteration` according to its `iteration_number`."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

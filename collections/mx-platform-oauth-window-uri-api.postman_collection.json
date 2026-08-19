@@ -1,0 +1,213 @@
+{
+  "item": [
+    {
+      "id": "eab3b5a9-e7f7-4147-9b17-1ec5f411cf51",
+      "name": "Oauth_window_uri",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7dc631bf-d539-4b25-af29-7487a4127170",
+          "name": "Request oauth window uri",
+          "request": {
+            "name": "Request oauth window uri",
+            "description": {
+              "content": "This endpoint will generate an `oauth_window_uri` for the specified `member`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "oauth_window_uri"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "client_redirect_url",
+                  "value": "<string>",
+                  "description": "A URL that MX will redirect to at the end of OAuth with additional query parameters. Only available with `referral_source=APP`."
+                },
+                {
+                  "disabled": false,
+                  "key": "enable_app2app",
+                  "value": "<string>",
+                  "description": "This indicates whether OAuth app2app behavior is enabled for institutions that support it. Defaults to `true`. This setting is not persistent."
+                },
+                {
+                  "disabled": false,
+                  "key": "referral_source",
+                  "value": "<string>",
+                  "description": "Must be either `BROWSER` or `APP` depending on the implementation. Defaults to `BROWSER`."
+                },
+                {
+                  "disabled": false,
+                  "key": "skip_aggregation",
+                  "value": "<boolean>",
+                  "description": "Setting this parameter to `true` will prevent the member from automatically aggregating after being redirected from the authorization page."
+                },
+                {
+                  "disabled": false,
+                  "key": "ui_message_webview_url_scheme",
+                  "value": "<string>",
+                  "description": "A scheme for routing the user back to the application state they were previously in. Only available with `referral_source=APP`."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cfef419a-20ed-4867-9a38-e007149c2d4d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "oauth_window_uri"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "client_redirect_url",
+                      "value": "https://mx.com"
+                    },
+                    {
+                      "key": "enable_app2app",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "referral_source",
+                      "value": "APP"
+                    },
+                    {
+                      "key": "skip_aggregation",
+                      "value": "false"
+                    },
+                    {
+                      "key": "ui_message_webview_url_scheme",
+                      "value": "mx"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"member\": {\n    \"guid\": \"MBR-df96fd60-7122-4464-b3c2-ff11d8c74f6f\",\n    \"oauth_window_uri\": \"https://mxbank.mx.com/oauth/authorize?client_id=b8OikQ4Ep3NuSUrQ13DdvFuwpNx-qqoAsJDVAQCyLkQ&redirect_uri=https%3A%2F%2Fint-app.moneydesktop.com%2Foauth%2Fredirect_from&response_type=code&scope=openid&state=d745bd4ee6f0f9c184757f574bcc2df2\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a7fc71b1-42c8-4108-ad73-bd09391e1bb2",
+    "name": "MX Platform Oauth_window_uri API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

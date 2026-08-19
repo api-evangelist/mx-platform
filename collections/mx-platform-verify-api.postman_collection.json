@@ -1,0 +1,280 @@
+{
+  "item": [
+    {
+      "id": "dd270741-a938-4fb9-a489-1e6446047448",
+      "name": "Verify",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "88e3af70-6d55-49d6-8325-3c2221f4fa7a",
+          "name": "Verify member",
+          "request": {
+            "name": "Verify member",
+            "description": {
+              "content": "The verify endpoint begins a verification process for a member.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "verify"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "172873f9-45bc-44d9-84ed-8722ebcb94a2",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "verify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"member\": {\n    \"aggregated_at\": \"2016-10-13T18:07:57.000Z\",\n    \"background_aggregation_is_disabled\": false,\n    \"connection_status\": \"CONNECTED\",\n    \"guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"id\": \"unique_id\",\n    \"institution_code\": \"chase\",\n    \"is_being_aggregated\": false,\n    \"is_managed_by_user\": false,\n    \"is_manual\": false,\n    \"is_oauth\": false,\n    \"metadata\": \"\\\\\\\"credentials_last_refreshed_at\\\\\\\": \\\\\\\"2015-10-15\\\\\\\"\",\n    \"most_recent_job_detail_code\": \"(deprecated)\",\n    \"most_recent_job_detail_text\": \"(deprecated)\",\n    \"name\": \"Chase Bank\",\n    \"oauth_window_uri\": \"https://mxbank.mx.com/oauth/authorize?client_id=b8OikQ4Ep3NuSUrQ13DdvFuwpNx-qqoAsJDVAQCyLkQ&redirect_uri=https%3A%2F%2Fint-app.moneydesktop.com%2Foauth%2Fredirect_from&response_type=code&scope=openid&state=d745bd4ee6f0f9c184757f574bcc2df2\",\n    \"successfully_aggregated_at\": \"2016-10-13T17:57:38.000Z\",\n    \"use_cases\": [\n      \"PFM\",\n      \"IAV\"\n    ],\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9a951234-6dc3-4aa7-96d2-860c08e98f8a",
+          "name": "Verify a Microdeposit",
+          "request": {
+            "name": "Verify a Microdeposit",
+            "description": {
+              "content": "Use this endpoint to verify the amounts deposited into the account during a microdeposit verification. The verification has not successfully completed until the `status` is `VERIFIED`. Poll the `/users/{user_guid}/micro_deposits/{micro_deposit_guid}` (read microdeposit) endpoint until you see this status or an error state.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "micro_deposits",
+                ":microdeposit_guid",
+                "verify"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "microdeposit_guid",
+                  "description": "(Required) The unique identifier for the microdeposit. Defined by MX."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"micro_deposit\": {\n    \"deposit_amount_1\": \"<integer>\",\n    \"deposit_amount_2\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8971baf4-113c-4a98-82d2-25841b78b4cc",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "micro_deposits",
+                    ":microdeposit_guid",
+                    "verify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "microdeposit_guid",
+                      "description": "(Required) The unique identifier for the microdeposit. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"micro_deposit\": {\n    \"deposit_amount_1\": \"<integer>\",\n    \"deposit_amount_2\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"micro_deposit\": {\n    \"account_name\": \"My test account\",\n    \"account_number\": \"string\",\n    \"account_type\": \"CHECKING\",\n    \"email\": \"joshyboy2@example.com\",\n    \"first_name\": \"Joshy\",\n    \"last_name\": \"Grobanne\",\n    \"routing_number\": \"string\",\n    \"error_message\": \"string\",\n    \"guid\": \"MIC-09ba578e-8448-4f7f-89e1-b62ff2517edb\",\n    \"institution_code\": \"mxbank\",\n    \"institution_name\": \"MX Bank\",\n    \"status\": \"INITIATED\",\n    \"updated_at\": \"2023-06-01T19:18:06.000Z\",\n    \"verified_at\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "edf1b829-c67d-4cac-9fef-e983bdc04ee1",
+    "name": "MX Platform Verify API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

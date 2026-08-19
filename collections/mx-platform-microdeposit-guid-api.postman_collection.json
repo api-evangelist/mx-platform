@@ -1,0 +1,164 @@
+{
+  "item": [
+    {
+      "id": "ac3a022a-a39e-4e71-9148-d3621e62dc54",
+      "name": "Microdeposit_guid",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7618b5f4-4230-449e-89c3-ac3972087240",
+          "name": "Verify a Microdeposit",
+          "request": {
+            "name": "Verify a Microdeposit",
+            "description": {
+              "content": "Use this endpoint to verify the amounts deposited into the account during a microdeposit verification. The verification has not successfully completed until the `status` is `VERIFIED`. Poll the `/users/{user_guid}/micro_deposits/{micro_deposit_guid}` (read microdeposit) endpoint until you see this status or an error state.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "micro_deposits",
+                ":microdeposit_guid",
+                "verify"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "microdeposit_guid",
+                  "description": "(Required) The unique identifier for the microdeposit. Defined by MX."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"micro_deposit\": {\n    \"deposit_amount_1\": \"<integer>\",\n    \"deposit_amount_2\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a7c975e1-926b-4040-8c5d-4692440399fe",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "micro_deposits",
+                    ":microdeposit_guid",
+                    "verify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "microdeposit_guid",
+                      "description": "(Required) The unique identifier for the microdeposit. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"micro_deposit\": {\n    \"deposit_amount_1\": \"<integer>\",\n    \"deposit_amount_2\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"micro_deposit\": {\n    \"account_name\": \"My test account\",\n    \"account_number\": \"string\",\n    \"account_type\": \"CHECKING\",\n    \"email\": \"joshyboy2@example.com\",\n    \"first_name\": \"Joshy\",\n    \"last_name\": \"Grobanne\",\n    \"routing_number\": \"string\",\n    \"error_message\": \"string\",\n    \"guid\": \"MIC-09ba578e-8448-4f7f-89e1-b62ff2517edb\",\n    \"institution_code\": \"mxbank\",\n    \"institution_name\": \"MX Bank\",\n    \"status\": \"INITIATED\",\n    \"updated_at\": \"2023-06-01T19:18:06.000Z\",\n    \"verified_at\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "443e74f9-e2fb-4ce4-a318-006a0fdf3107",
+    "name": "MX Platform Microdeposit_guid API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

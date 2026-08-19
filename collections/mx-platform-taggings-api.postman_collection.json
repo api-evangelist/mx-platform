@@ -1,0 +1,637 @@
+{
+  "item": [
+    {
+      "id": "44b77b0c-fea6-4458-bc9b-3a82bc44ddf6",
+      "name": "Taggings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f3d8e9ef-911c-4503-aacb-49ec855f381b",
+          "name": "List taggings",
+          "request": {
+            "name": "List taggings",
+            "description": {
+              "content": "Use this endpoint to retrieve a list of all the taggings associated with a specific user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "taggings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8cc244a4-b731-4f14-bcad-e1d93348f8ee",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "taggings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  },\n  \"taggings\": [\n    {\n      \"guid\": \"TGN-007f5486-17e1-45fc-8b87-8f03984430fe\",\n      \"member_is_managed_by_user\": false,\n      \"tag_guid\": \"TAG-40faf068-abb4-405c-8f6a-e883ed541fff\",\n      \"transaction_guid\": \"TRN-810828b0-5210-4878-9bd3-f4ce514f90c4\",\n      \"user_guid\": \"USR-11141024-90b3-1bce-cac9-c06ced52ab4c\"\n    },\n    {\n      \"guid\": \"TGN-007f5486-17e1-45fc-8b87-8f03984430fe\",\n      \"member_is_managed_by_user\": false,\n      \"tag_guid\": \"TAG-40faf068-abb4-405c-8f6a-e883ed541fff\",\n      \"transaction_guid\": \"TRN-810828b0-5210-4878-9bd3-f4ce514f90c4\",\n      \"user_guid\": \"USR-11141024-90b3-1bce-cac9-c06ced52ab4c\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7c555e8f-2bbc-450b-8100-18f722259dab",
+          "name": "Create tagging",
+          "request": {
+            "name": "Create tagging",
+            "description": {
+              "content": "Use this endpoint to create a new association between a tag and a particular transaction, according to their unique GUIDs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "taggings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tagging\": {\n    \"tag_guid\": \"<string>\",\n    \"transaction_guid\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "20d3ded1-6276-48bf-a01c-be0d6283d2bd",
+              "name": "Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "taggings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tagging\": {\n    \"tag_guid\": \"TAG-40faf068-abb4-405c-8f6a-e883ed541fff\",\n    \"transaction_guid\": \"TRN-810828b0-5210-4878-9bd3-f4ce514f90c4\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"tagging\": {\n    \"guid\": \"TGN-007f5486-17e1-45fc-8b87-8f03984430fe\",\n    \"member_is_managed_by_user\": false,\n    \"tag_guid\": \"TAG-40faf068-abb4-405c-8f6a-e883ed541fff\",\n    \"transaction_guid\": \"TRN-810828b0-5210-4878-9bd3-f4ce514f90c4\",\n    \"user_guid\": \"USR-11141024-90b3-1bce-cac9-c06ced52ab4c\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "811f045f-7e4a-49e9-81c2-f083ed0ff72d",
+          "name": "Delete tagging",
+          "request": {
+            "name": "Delete tagging",
+            "description": {
+              "content": "Use this endpoint to delete a tagging according to its unique GUID. If successful, the API will respond with an empty body and a status of 204 NO Content.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "taggings",
+                ":tagging_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tagging_guid",
+                  "description": "(Required) The unique id for a `tagging`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e0db7218-3c69-4011-9c8e-3cca4a24eae7",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "taggings",
+                    ":tagging_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tagging_guid",
+                      "description": "(Required) The unique id for a `tagging`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "54c77157-9aa7-495e-8eb9-eafa033c9f35",
+          "name": "Read tagging",
+          "request": {
+            "name": "Read tagging",
+            "description": {
+              "content": "Use this endpoint to read the attributes of a `tagging` according to its unique GUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "taggings",
+                ":tagging_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tagging_guid",
+                  "description": "(Required) The unique id for a `tagging`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "406fd5f4-f5ec-4cfe-a74a-e61cc7c3254f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "taggings",
+                    ":tagging_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tagging_guid",
+                      "description": "(Required) The unique id for a `tagging`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"tagging\": {\n    \"guid\": \"TGN-007f5486-17e1-45fc-8b87-8f03984430fe\",\n    \"member_is_managed_by_user\": false,\n    \"tag_guid\": \"TAG-40faf068-abb4-405c-8f6a-e883ed541fff\",\n    \"transaction_guid\": \"TRN-810828b0-5210-4878-9bd3-f4ce514f90c4\",\n    \"user_guid\": \"USR-11141024-90b3-1bce-cac9-c06ced52ab4c\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1035d776-7f18-4791-94fa-be54ad77adc1",
+          "name": "Update tagging",
+          "request": {
+            "name": "Update tagging",
+            "description": {
+              "content": "Use this endpoint to update a tagging.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "taggings",
+                ":tagging_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tagging_guid",
+                  "description": "(Required) The unique id for a `tagging`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tagging\": {\n    \"tag_guid\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5bff7cf6-6957-40a2-a980-67b436382e01",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "taggings",
+                    ":tagging_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tagging_guid",
+                      "description": "(Required) The unique id for a `tagging`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tagging\": {\n    \"tag_guid\": \"TAG-40faf068-abb4-405c-8f6a-e883ed541fff\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"tagging\": {\n    \"guid\": \"TGN-007f5486-17e1-45fc-8b87-8f03984430fe\",\n    \"member_is_managed_by_user\": false,\n    \"tag_guid\": \"TAG-40faf068-abb4-405c-8f6a-e883ed541fff\",\n    \"transaction_guid\": \"TRN-810828b0-5210-4878-9bd3-f4ce514f90c4\",\n    \"user_guid\": \"USR-11141024-90b3-1bce-cac9-c06ced52ab4c\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e3f10e59-dd14-4a32-9d81-b6d1118f578a",
+    "name": "MX Platform Taggings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

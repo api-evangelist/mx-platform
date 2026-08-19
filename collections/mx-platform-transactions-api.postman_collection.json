@@ -1,0 +1,2299 @@
+{
+  "item": [
+    {
+      "id": "e948f5cd-f83c-4006-85cb-4848f53cb378",
+      "name": "Transactions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5efc076c-3683-427a-b503-66f76a67e2e1",
+          "name": "Enhance transactions",
+          "request": {
+            "name": "Enhance transactions",
+            "description": {
+              "content": "Use this endpoint to categorize, cleanse, and classify transactions. These transactions are not persisted or stored on the MX platform.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "transactions",
+                "enhance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"transactions\": [\n    {\n      \"description\": \"<string>\",\n      \"id\": \"<string>\",\n      \"amount\": \"<number>\",\n      \"extended_transaction_type\": \"<string>\",\n      \"memo\": \"<string>\",\n      \"merchant_category_code\": \"<integer>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"description\": \"<string>\",\n      \"id\": \"<string>\",\n      \"amount\": \"<number>\",\n      \"extended_transaction_type\": \"<string>\",\n      \"memo\": \"<string>\",\n      \"merchant_category_code\": \"<integer>\",\n      \"type\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b0df4138-39ff-4078-af4e-8c33915e8b54",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    "enhance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transactions\": [\n    {\n      \"description\": \"ubr* pending.uber.com\",\n      \"id\": \"ID-123\",\n      \"amount\": 21.33,\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"memo\": \"Additional-information*on_transaction\",\n      \"merchant_category_code\": 4121,\n      \"type\": \"DEBIT\"\n    },\n    {\n      \"description\": \"ubr* pending.uber.com\",\n      \"id\": \"ID-123\",\n      \"amount\": 21.33,\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"memo\": \"Additional-information*on_transaction\",\n      \"merchant_category_code\": 4121,\n      \"type\": \"DEBIT\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"transactions\": [\n    {\n      \"amount\": 21.33,\n      \"categorized_by\": 13,\n      \"category\": \"Rental Car & Taxi\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"described_by\": 6,\n      \"description\": \"Uber\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"id\": \"ID-123\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": false,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_subscription\": false,\n      \"memo\": \"Additional-information*on_transaction\",\n      \"merchant_category_code\": 4121,\n      \"merchant_guid\": \"MCH-14f25b63-ef47-a38e-b2b6-d02b280b6e4e\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"original_description\": \"ubr* pending.uber.com\",\n      \"type\": \"DEBIT\"\n    },\n    {\n      \"amount\": 21.33,\n      \"categorized_by\": 13,\n      \"category\": \"Rental Car & Taxi\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"described_by\": 6,\n      \"description\": \"Uber\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"id\": \"ID-123\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": false,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_subscription\": false,\n      \"memo\": \"Additional-information*on_transaction\",\n      \"merchant_category_code\": 4121,\n      \"merchant_guid\": \"MCH-14f25b63-ef47-a38e-b2b6-d02b280b6e4e\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"original_description\": \"ubr* pending.uber.com\",\n      \"type\": \"DEBIT\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a86481d6-381c-4540-a381-482df882249f",
+          "name": "Create manual transaction",
+          "request": {
+            "name": "Create manual transaction",
+            "description": {
+              "content": "This endpoint can only be used to create manual transactions that are under a manual account. This endpoint accepts the optional MX-Skip-Webhook header and skip_webhook parameter.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "accounts",
+                ":account_guid",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique identifier for the user."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account_guid",
+                  "description": "(Required) The unique identifier for the account."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"transaction\": {\n    \"amount\": \"<number>\",\n    \"date\": \"<string>\",\n    \"description\": \"<string>\",\n    \"type\": \"<string>\",\n    \"category_guid\": \"<string>\",\n    \"currency_code\": \"<string>\",\n    \"has_been_viewed\": \"<boolean>\",\n    \"is_hidden\": \"<boolean>\",\n    \"is_international\": \"<boolean>\",\n    \"memo\": \"<string>\",\n    \"metadata\": \"<string>\",\n    \"skip_webhook\": \"<boolean>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1e8c82ca-d16e-4d1e-8340-d051cef0752e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "accounts",
+                    ":account_guid",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique identifier for the user."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_guid",
+                      "description": "(Required) The unique identifier for the account."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transaction\": {\n    \"amount\": 61.11,\n    \"date\": \"2016-10-06\",\n    \"description\": \"Whole foods\",\n    \"type\": \"DEBIT\",\n    \"category_guid\": \"CAT-b6d61a19-30a7-e852-2703-bdfb4072289e\",\n    \"currency_code\": \"USD\",\n    \"has_been_viewed\": false,\n    \"is_hidden\": false,\n    \"is_international\": false,\n    \"memo\": \"This is a memo\",\n    \"metadata\": \"some metadata\",\n    \"skip_webhook\": true\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n  \"account_id\": \"account123\",\n  \"amount\": 61.11,\n  \"category\": \"Groceries\",\n  \"category_guid\": \"CAT-b6d61a19-30a7-e852-2703-bdfb4072289e\",\n  \"check_number_string\": null,\n  \"created_at\": \"2016-10-08T09:43:42.000Z\",\n  \"currency_code\": \"USD\",\n  \"date\": \"2016-10-06T00:00:00.000Z\",\n  \"description\": \"Whole foods\",\n  \"extended_transaction_type\": null,\n  \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n  \"id\": null,\n  \"is_bill_pay\": false,\n  \"is_direct_deposit\": false,\n  \"is_expense\": true,\n  \"is_fee\": false,\n  \"is_income\": false,\n  \"is_international\": false,\n  \"is_manual\": true,\n  \"is_overdraft_fee\": false,\n  \"is_payroll_advance\": false,\n  \"is_recurring\": null,\n  \"is_subscription\": false,\n  \"latitude\": null,\n  \"localized_description\": null,\n  \"localized_memo\": null,\n  \"longitude\": null,\n  \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n  \"member_is_managed_by_user\": true,\n  \"memo\": \"This is a memo\",\n  \"merchant_category_code\": null,\n  \"merchant_guid\": null,\n  \"merchant_location_guid\": null,\n  \"metadata\": \"some metadata\",\n  \"original_description\": null,\n  \"posted_at\": null,\n  \"status\": null,\n  \"top_level_category\": \"Food & Dining\",\n  \"transacted_at\": null,\n  \"type\": \"DEBIT\",\n  \"updated_at\": \"2016-10-08T05:49:12.000Z\",\n  \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n  \"user_id\": \"user123\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d27a3af0-7b3d-4959-b075-c22b2f45d3eb",
+          "name": "List transactions by account",
+          "request": {
+            "name": "List transactions by account",
+            "description": {
+              "content": "This endpoint returns a list of the last 90 days of transactions associated with the specified account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "accounts",
+                ":account_guid",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "from_date",
+                  "value": "<string>",
+                  "description": "Filter transactions from this date."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "to_date",
+                  "value": "<string>",
+                  "description": "Filter transactions to this date."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account_guid",
+                  "description": "(Required) The unique id for an `account`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aa6923d8-4914-44df-bd3a-5abc5a58e439",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "accounts",
+                    ":account_guid",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "from_date",
+                      "value": "2015-09-20"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "2019-10-20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_guid",
+                      "description": "(Required) The unique id for an `account`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  },\n  \"transactions\": [\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"account_id\": \"account123\",\n      \"amount\": 61.11,\n      \"category\": \"Groceries\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"check_number_string\": \"6812\",\n      \"created_at\": \"2016-10-06T09:43:42.000Z\",\n      \"currency_code\": \"USD\",\n      \"date\": \"2013-09-23T00:00:00.000Z\",\n      \"description\": \"Whole foods\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": true,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_recurring\": false,\n      \"is_subscription\": false,\n      \"latitude\": -43.2075,\n      \"localized_description\": \"This is a localized_description\",\n      \"localized_memo\": \"This is a localized_memo\",\n      \"longitude\": 139.691706,\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"member_is_managed_by_user\": false,\n      \"memo\": \"This is a memo\",\n      \"merchant_category_code\": 5411,\n      \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"metadata\": \"some metadata\",\n      \"original_description\": \"WHOLEFDS TSQ 102\",\n      \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n      \"status\": \"POSTED\",\n      \"top_level_category\": \"Food & Dining\",\n      \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n      \"type\": \"DEBIT\",\n      \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    },\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"account_id\": \"account123\",\n      \"amount\": 61.11,\n      \"category\": \"Groceries\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"check_number_string\": \"6812\",\n      \"created_at\": \"2016-10-06T09:43:42.000Z\",\n      \"currency_code\": \"USD\",\n      \"date\": \"2013-09-23T00:00:00.000Z\",\n      \"description\": \"Whole foods\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": true,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_recurring\": false,\n      \"is_subscription\": false,\n      \"latitude\": -43.2075,\n      \"localized_description\": \"This is a localized_description\",\n      \"localized_memo\": \"This is a localized_memo\",\n      \"longitude\": 139.691706,\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"member_is_managed_by_user\": false,\n      \"memo\": \"This is a memo\",\n      \"merchant_category_code\": 5411,\n      \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"metadata\": \"some metadata\",\n      \"original_description\": \"WHOLEFDS TSQ 102\",\n      \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n      \"status\": \"POSTED\",\n      \"top_level_category\": \"Food & Dining\",\n      \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n      \"type\": \"DEBIT\",\n      \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "36f175eb-c4b2-4304-9004-d312f9ffd018",
+          "name": "List all transactions associated with an insight.",
+          "request": {
+            "name": "List all transactions associated with an insight.",
+            "description": {
+              "content": "Use this endpoint to list all the transactions associated with the insight.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "insights",
+                ":insight_guid",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique identifier for the user. Defined by MX."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "insight_guid",
+                  "description": "(Required) The unique identifier for the insight. Defined by MX."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ebae2190-e029-4b1a-8343-ba33513388fd",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "insights",
+                    ":insight_guid",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique identifier for the user. Defined by MX."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "insight_guid",
+                      "description": "(Required) The unique identifier for the insight. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  },\n  \"transactions\": [\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"account_id\": \"account123\",\n      \"amount\": 61.11,\n      \"category\": \"Groceries\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"check_number_string\": \"6812\",\n      \"created_at\": \"2016-10-06T09:43:42.000Z\",\n      \"currency_code\": \"USD\",\n      \"date\": \"2013-09-23T00:00:00.000Z\",\n      \"description\": \"Whole foods\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": true,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_recurring\": false,\n      \"is_subscription\": false,\n      \"latitude\": -43.2075,\n      \"localized_description\": \"This is a localized_description\",\n      \"localized_memo\": \"This is a localized_memo\",\n      \"longitude\": 139.691706,\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"member_is_managed_by_user\": false,\n      \"memo\": \"This is a memo\",\n      \"merchant_category_code\": 5411,\n      \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"metadata\": \"some metadata\",\n      \"original_description\": \"WHOLEFDS TSQ 102\",\n      \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n      \"status\": \"POSTED\",\n      \"top_level_category\": \"Food & Dining\",\n      \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n      \"type\": \"DEBIT\",\n      \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    },\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"account_id\": \"account123\",\n      \"amount\": 61.11,\n      \"category\": \"Groceries\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"check_number_string\": \"6812\",\n      \"created_at\": \"2016-10-06T09:43:42.000Z\",\n      \"currency_code\": \"USD\",\n      \"date\": \"2013-09-23T00:00:00.000Z\",\n      \"description\": \"Whole foods\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": true,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_recurring\": false,\n      \"is_subscription\": false,\n      \"latitude\": -43.2075,\n      \"localized_description\": \"This is a localized_description\",\n      \"localized_memo\": \"This is a localized_memo\",\n      \"longitude\": 139.691706,\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"member_is_managed_by_user\": false,\n      \"memo\": \"This is a memo\",\n      \"merchant_category_code\": 5411,\n      \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"metadata\": \"some metadata\",\n      \"original_description\": \"WHOLEFDS TSQ 102\",\n      \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n      \"status\": \"POSTED\",\n      \"top_level_category\": \"Food & Dining\",\n      \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n      \"type\": \"DEBIT\",\n      \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "356bba76-4459-4484-9295-e9364f314b9b",
+          "name": "List managed transactions",
+          "request": {
+            "name": "List managed transactions",
+            "description": {
+              "content": "This endpoint returns a list of all the partner-managed transactions associated with the specified `account`, scoped through a `user` and a `member`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "managed_members",
+                ":member_guid",
+                "accounts",
+                ":account_guid",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account_guid",
+                  "description": "(Required) The unique id for an `account`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c03f10ed-7b45-476f-906b-0fc11903b3e7",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "managed_members",
+                    ":member_guid",
+                    "accounts",
+                    ":account_guid",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_guid",
+                      "description": "(Required) The unique id for an `account`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  },\n  \"transactions\": [\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"account_id\": \"account123\",\n      \"amount\": 61.11,\n      \"category\": \"Groceries\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"check_number_string\": \"6812\",\n      \"created_at\": \"2016-10-06T09:43:42.000Z\",\n      \"currency_code\": \"USD\",\n      \"date\": \"2013-09-23T00:00:00.000Z\",\n      \"description\": \"Whole foods\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": true,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_recurring\": false,\n      \"is_subscription\": false,\n      \"latitude\": -43.2075,\n      \"localized_description\": \"This is a localized_description\",\n      \"localized_memo\": \"This is a localized_memo\",\n      \"longitude\": 139.691706,\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"member_is_managed_by_user\": false,\n      \"memo\": \"This is a memo\",\n      \"merchant_category_code\": 5411,\n      \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"metadata\": \"some metadata\",\n      \"original_description\": \"WHOLEFDS TSQ 102\",\n      \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n      \"status\": \"POSTED\",\n      \"top_level_category\": \"Food & Dining\",\n      \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n      \"type\": \"DEBIT\",\n      \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    },\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"account_id\": \"account123\",\n      \"amount\": 61.11,\n      \"category\": \"Groceries\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"check_number_string\": \"6812\",\n      \"created_at\": \"2016-10-06T09:43:42.000Z\",\n      \"currency_code\": \"USD\",\n      \"date\": \"2013-09-23T00:00:00.000Z\",\n      \"description\": \"Whole foods\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": true,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_recurring\": false,\n      \"is_subscription\": false,\n      \"latitude\": -43.2075,\n      \"localized_description\": \"This is a localized_description\",\n      \"localized_memo\": \"This is a localized_memo\",\n      \"longitude\": 139.691706,\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"member_is_managed_by_user\": false,\n      \"memo\": \"This is a memo\",\n      \"merchant_category_code\": 5411,\n      \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"metadata\": \"some metadata\",\n      \"original_description\": \"WHOLEFDS TSQ 102\",\n      \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n      \"status\": \"POSTED\",\n      \"top_level_category\": \"Food & Dining\",\n      \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n      \"type\": \"DEBIT\",\n      \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c6023b49-84c9-4472-a0c0-8393fd2203b3",
+          "name": "Create managed transaction",
+          "request": {
+            "name": "Create managed transaction",
+            "description": {
+              "content": "Use this endpoint to create a new partner-managed `transaction`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "managed_members",
+                ":member_guid",
+                "accounts",
+                ":account_guid",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account_guid",
+                  "description": "(Required) The unique id for an `account`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"transaction\": {\n    \"amount\": \"<string>\",\n    \"description\": \"<string>\",\n    \"status\": \"<string>\",\n    \"transacted_at\": \"<string>\",\n    \"type\": \"<string>\",\n    \"category\": \"<string>\",\n    \"check_number_string\": \"<string>\",\n    \"currency_code\": \"<string>\",\n    \"id\": \"<string>\",\n    \"is_international\": \"<boolean>\",\n    \"latitude\": \"<number>\",\n    \"localized_description\": \"<string>\",\n    \"localized_memo\": \"<string>\",\n    \"longitude\": \"<number>\",\n    \"memo\": \"<string>\",\n    \"merchant_category_code\": \"<integer>\",\n    \"merchant_guid\": \"<string>\",\n    \"merchant_location_guid\": \"<string>\",\n    \"metadata\": \"<string>\",\n    \"posted_at\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d1487fd1-8334-4293-8fe0-80ca059c3b1e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "managed_members",
+                    ":member_guid",
+                    "accounts",
+                    ":account_guid",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_guid",
+                      "description": "(Required) The unique id for an `account`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transaction\": {\n    \"amount\": \"61.11\",\n    \"description\": \"Whole foods\",\n    \"status\": \"POSTED\",\n    \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n    \"type\": \"DEBIT\",\n    \"category\": \"Groceries\",\n    \"check_number_string\": \"6812\",\n    \"currency_code\": \"USD\",\n    \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n    \"is_international\": false,\n    \"latitude\": -43.2075,\n    \"localized_description\": \"This is a localized_description\",\n    \"localized_memo\": \"This is a localized_memo\",\n    \"longitude\": 139.691706,\n    \"memo\": \"This is a memo\",\n    \"merchant_category_code\": 5411,\n    \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n    \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n    \"metadata\": \"some metadata\",\n    \"posted_at\": \"2016-10-07T06:00:00.000Z\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"transaction\": {\n    \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n    \"account_id\": \"account123\",\n    \"amount\": 61.11,\n    \"category\": \"Groceries\",\n    \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n    \"check_number_string\": \"6812\",\n    \"created_at\": \"2016-10-06T09:43:42.000Z\",\n    \"currency_code\": \"USD\",\n    \"date\": \"2013-09-23T00:00:00.000Z\",\n    \"description\": \"Whole foods\",\n    \"extended_transaction_type\": \"partner_transaction_type\",\n    \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n    \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n    \"is_bill_pay\": false,\n    \"is_direct_deposit\": false,\n    \"is_expense\": true,\n    \"is_fee\": false,\n    \"is_income\": false,\n    \"is_international\": false,\n    \"is_overdraft_fee\": false,\n    \"is_payroll_advance\": false,\n    \"is_recurring\": false,\n    \"is_subscription\": false,\n    \"latitude\": -43.2075,\n    \"localized_description\": \"This is a localized_description\",\n    \"localized_memo\": \"This is a localized_memo\",\n    \"longitude\": 139.691706,\n    \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"member_is_managed_by_user\": false,\n    \"memo\": \"This is a memo\",\n    \"merchant_category_code\": 5411,\n    \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n    \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n    \"metadata\": \"some metadata\",\n    \"original_description\": \"WHOLEFDS TSQ 102\",\n    \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n    \"status\": \"POSTED\",\n    \"top_level_category\": \"Food & Dining\",\n    \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n    \"type\": \"DEBIT\",\n    \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e65c0c37-c968-481e-991a-0e7001579f92",
+          "name": "Delete managed transaction",
+          "request": {
+            "name": "Delete managed transaction",
+            "description": {
+              "content": "Use this endpoint to delete the specified partner-managed `transaction`. The endpoint will respond with a status of `204 No Content` without a resource.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "managed_members",
+                ":member_guid",
+                "accounts",
+                ":account_guid",
+                "transactions",
+                ":transaction_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account_guid",
+                  "description": "(Required) The unique id for an `account`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transaction_guid",
+                  "description": "(Required) The unique id for a `transaction`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cb8c6ea2-4cb6-4cc3-8895-2565416482a5",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "managed_members",
+                    ":member_guid",
+                    "accounts",
+                    ":account_guid",
+                    "transactions",
+                    ":transaction_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_guid",
+                      "description": "(Required) The unique id for an `account`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transaction_guid",
+                      "description": "(Required) The unique id for a `transaction`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "996770a0-6cb1-4d2c-9ac0-efd31689979d",
+          "name": "Read managed transaction",
+          "request": {
+            "name": "Read managed transaction",
+            "description": {
+              "content": "Requests to this endpoint will return the attributes of the specified partner-managed `transaction`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "managed_members",
+                ":member_guid",
+                "accounts",
+                ":account_guid",
+                "transactions",
+                ":transaction_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account_guid",
+                  "description": "(Required) The unique id for an `account`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transaction_guid",
+                  "description": "(Required) The unique id for a `transaction`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "91989e17-a9df-4623-902b-aa37780ea131",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "managed_members",
+                    ":member_guid",
+                    "accounts",
+                    ":account_guid",
+                    "transactions",
+                    ":transaction_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_guid",
+                      "description": "(Required) The unique id for an `account`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transaction_guid",
+                      "description": "(Required) The unique id for a `transaction`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"transaction\": {\n    \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n    \"account_id\": \"account123\",\n    \"amount\": 61.11,\n    \"category\": \"Groceries\",\n    \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n    \"check_number_string\": \"6812\",\n    \"created_at\": \"2016-10-06T09:43:42.000Z\",\n    \"currency_code\": \"USD\",\n    \"date\": \"2013-09-23T00:00:00.000Z\",\n    \"description\": \"Whole foods\",\n    \"extended_transaction_type\": \"partner_transaction_type\",\n    \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n    \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n    \"is_bill_pay\": false,\n    \"is_direct_deposit\": false,\n    \"is_expense\": true,\n    \"is_fee\": false,\n    \"is_income\": false,\n    \"is_international\": false,\n    \"is_overdraft_fee\": false,\n    \"is_payroll_advance\": false,\n    \"is_recurring\": false,\n    \"is_subscription\": false,\n    \"latitude\": -43.2075,\n    \"localized_description\": \"This is a localized_description\",\n    \"localized_memo\": \"This is a localized_memo\",\n    \"longitude\": 139.691706,\n    \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"member_is_managed_by_user\": false,\n    \"memo\": \"This is a memo\",\n    \"merchant_category_code\": 5411,\n    \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n    \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n    \"metadata\": \"some metadata\",\n    \"original_description\": \"WHOLEFDS TSQ 102\",\n    \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n    \"status\": \"POSTED\",\n    \"top_level_category\": \"Food & Dining\",\n    \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n    \"type\": \"DEBIT\",\n    \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "023e1470-eb42-4dcc-91f0-3f641b20cf2f",
+          "name": "Update managed transaction",
+          "request": {
+            "name": "Update managed transaction",
+            "description": {
+              "content": "Use this endpoint to update the attributes of the specified partner_managed `transaction`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "managed_members",
+                ":member_guid",
+                "accounts",
+                ":account_guid",
+                "transactions",
+                ":transaction_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account_guid",
+                  "description": "(Required) The unique id for an `account`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transaction_guid",
+                  "description": "(Required) The unique id for a `transaction`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"transaction\": {\n    \"amount\": \"<string>\",\n    \"category\": \"<string>\",\n    \"check_number_string\": \"<string>\",\n    \"currency_code\": \"<string>\",\n    \"description\": \"<string>\",\n    \"id\": \"<string>\",\n    \"is_international\": \"<boolean>\",\n    \"latitude\": \"<number>\",\n    \"localized_description\": \"<string>\",\n    \"localized_memo\": \"<string>\",\n    \"longitude\": \"<number>\",\n    \"memo\": \"<string>\",\n    \"merchant_category_code\": \"<integer>\",\n    \"merchant_guid\": \"<string>\",\n    \"merchant_location_guid\": \"<string>\",\n    \"metadata\": \"<string>\",\n    \"posted_at\": \"<string>\",\n    \"status\": \"<string>\",\n    \"transacted_at\": \"<string>\",\n    \"type\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "adc6b89a-7892-4dc8-b39a-6837cffbe6a0",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "managed_members",
+                    ":member_guid",
+                    "accounts",
+                    ":account_guid",
+                    "transactions",
+                    ":transaction_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_guid",
+                      "description": "(Required) The unique id for an `account`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transaction_guid",
+                      "description": "(Required) The unique id for a `transaction`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transaction\": {\n    \"amount\": \"61.11\",\n    \"category\": \"Groceries\",\n    \"check_number_string\": \"6812\",\n    \"currency_code\": \"USD\",\n    \"description\": \"Whole foods\",\n    \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n    \"is_international\": false,\n    \"latitude\": -43.2075,\n    \"localized_description\": \"This is a localized_description\",\n    \"localized_memo\": \"This is a localized_memo\",\n    \"longitude\": 139.691706,\n    \"memo\": \"This is a memo\",\n    \"merchant_category_code\": 5411,\n    \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n    \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n    \"metadata\": \"some metadata\",\n    \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n    \"status\": \"POSTED\",\n    \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n    \"type\": \"DEBIT\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"transaction\": {\n    \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n    \"account_id\": \"account123\",\n    \"amount\": 61.11,\n    \"category\": \"Groceries\",\n    \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n    \"check_number_string\": \"6812\",\n    \"created_at\": \"2016-10-06T09:43:42.000Z\",\n    \"currency_code\": \"USD\",\n    \"date\": \"2013-09-23T00:00:00.000Z\",\n    \"description\": \"Whole foods\",\n    \"extended_transaction_type\": \"partner_transaction_type\",\n    \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n    \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n    \"is_bill_pay\": false,\n    \"is_direct_deposit\": false,\n    \"is_expense\": true,\n    \"is_fee\": false,\n    \"is_income\": false,\n    \"is_international\": false,\n    \"is_overdraft_fee\": false,\n    \"is_payroll_advance\": false,\n    \"is_recurring\": false,\n    \"is_subscription\": false,\n    \"latitude\": -43.2075,\n    \"localized_description\": \"This is a localized_description\",\n    \"localized_memo\": \"This is a localized_memo\",\n    \"longitude\": 139.691706,\n    \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"member_is_managed_by_user\": false,\n    \"memo\": \"This is a memo\",\n    \"merchant_category_code\": 5411,\n    \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n    \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n    \"metadata\": \"some metadata\",\n    \"original_description\": \"WHOLEFDS TSQ 102\",\n    \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n    \"status\": \"POSTED\",\n    \"top_level_category\": \"Food & Dining\",\n    \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n    \"type\": \"DEBIT\",\n    \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "46b58cf1-70af-49eb-8bc7-2d3fc8b0aa39",
+          "name": "List transactions by member",
+          "request": {
+            "name": "List transactions by member",
+            "description": {
+              "content": "Requests to this endpoint return a list of transactions associated with the specified `member`, accross all accounts associated with that `member`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "from_date",
+                  "value": "<string>",
+                  "description": "Filter transactions from this date."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "to_date",
+                  "value": "<string>",
+                  "description": "Filter transactions to this date."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "954dfb9d-9350-4b78-bd4e-d7939f44ac66",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "from_date",
+                      "value": "2015-09-20"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "2019-10-20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  },\n  \"transactions\": [\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"account_id\": \"account123\",\n      \"amount\": 61.11,\n      \"category\": \"Groceries\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"check_number_string\": \"6812\",\n      \"created_at\": \"2016-10-06T09:43:42.000Z\",\n      \"currency_code\": \"USD\",\n      \"date\": \"2013-09-23T00:00:00.000Z\",\n      \"description\": \"Whole foods\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": true,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_recurring\": false,\n      \"is_subscription\": false,\n      \"latitude\": -43.2075,\n      \"localized_description\": \"This is a localized_description\",\n      \"localized_memo\": \"This is a localized_memo\",\n      \"longitude\": 139.691706,\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"member_is_managed_by_user\": false,\n      \"memo\": \"This is a memo\",\n      \"merchant_category_code\": 5411,\n      \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"metadata\": \"some metadata\",\n      \"original_description\": \"WHOLEFDS TSQ 102\",\n      \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n      \"status\": \"POSTED\",\n      \"top_level_category\": \"Food & Dining\",\n      \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n      \"type\": \"DEBIT\",\n      \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    },\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"account_id\": \"account123\",\n      \"amount\": 61.11,\n      \"category\": \"Groceries\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"check_number_string\": \"6812\",\n      \"created_at\": \"2016-10-06T09:43:42.000Z\",\n      \"currency_code\": \"USD\",\n      \"date\": \"2013-09-23T00:00:00.000Z\",\n      \"description\": \"Whole foods\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": true,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_recurring\": false,\n      \"is_subscription\": false,\n      \"latitude\": -43.2075,\n      \"localized_description\": \"This is a localized_description\",\n      \"localized_memo\": \"This is a localized_memo\",\n      \"longitude\": 139.691706,\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"member_is_managed_by_user\": false,\n      \"memo\": \"This is a memo\",\n      \"merchant_category_code\": 5411,\n      \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"metadata\": \"some metadata\",\n      \"original_description\": \"WHOLEFDS TSQ 102\",\n      \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n      \"status\": \"POSTED\",\n      \"top_level_category\": \"Food & Dining\",\n      \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n      \"type\": \"DEBIT\",\n      \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "94355c26-c152-4907-91c4-07d29bc7bacf",
+          "name": "List transactions by tag",
+          "request": {
+            "name": "List transactions by tag",
+            "description": {
+              "content": "Use this endpoint to get a list of all transactions associated with a particular tag according to the tags unique GUID. In other words, a list of all transactions that have been assigned to a particular tag using the create a tagging endpoint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "tags",
+                ":tag_guid",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "from_date",
+                  "value": "<string>",
+                  "description": "Filter transactions from this date."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "to_date",
+                  "value": "<string>",
+                  "description": "Filter transactions to this date."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tag_guid",
+                  "description": "(Required) The unique id for a `tag`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d2d13c7d-c34b-42ad-85fe-a26faeada642",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "tags",
+                    ":tag_guid",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "from_date",
+                      "value": "2015-09-20"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "2019-10-20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tag_guid",
+                      "description": "(Required) The unique id for a `tag`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  },\n  \"transactions\": [\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"account_id\": \"account123\",\n      \"amount\": 61.11,\n      \"category\": \"Groceries\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"check_number_string\": \"6812\",\n      \"created_at\": \"2016-10-06T09:43:42.000Z\",\n      \"currency_code\": \"USD\",\n      \"date\": \"2013-09-23T00:00:00.000Z\",\n      \"description\": \"Whole foods\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": true,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_recurring\": false,\n      \"is_subscription\": false,\n      \"latitude\": -43.2075,\n      \"localized_description\": \"This is a localized_description\",\n      \"localized_memo\": \"This is a localized_memo\",\n      \"longitude\": 139.691706,\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"member_is_managed_by_user\": false,\n      \"memo\": \"This is a memo\",\n      \"merchant_category_code\": 5411,\n      \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"metadata\": \"some metadata\",\n      \"original_description\": \"WHOLEFDS TSQ 102\",\n      \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n      \"status\": \"POSTED\",\n      \"top_level_category\": \"Food & Dining\",\n      \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n      \"type\": \"DEBIT\",\n      \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    },\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"account_id\": \"account123\",\n      \"amount\": 61.11,\n      \"category\": \"Groceries\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"check_number_string\": \"6812\",\n      \"created_at\": \"2016-10-06T09:43:42.000Z\",\n      \"currency_code\": \"USD\",\n      \"date\": \"2013-09-23T00:00:00.000Z\",\n      \"description\": \"Whole foods\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": true,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_recurring\": false,\n      \"is_subscription\": false,\n      \"latitude\": -43.2075,\n      \"localized_description\": \"This is a localized_description\",\n      \"localized_memo\": \"This is a localized_memo\",\n      \"longitude\": 139.691706,\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"member_is_managed_by_user\": false,\n      \"memo\": \"This is a memo\",\n      \"merchant_category_code\": 5411,\n      \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"metadata\": \"some metadata\",\n      \"original_description\": \"WHOLEFDS TSQ 102\",\n      \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n      \"status\": \"POSTED\",\n      \"top_level_category\": \"Food & Dining\",\n      \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n      \"type\": \"DEBIT\",\n      \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "72753bb7-42a1-4469-902b-2d697f0a09eb",
+          "name": "List transactions",
+          "request": {
+            "name": "List transactions",
+            "description": {
+              "content": "Requests to this endpoint return a list of transactions associated with the specified `user`, accross all members and accounts associated with that `user`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "from_date",
+                  "value": "<string>",
+                  "description": "Filter transactions from this date."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "to_date",
+                  "value": "<string>",
+                  "description": "Filter transactions to this date."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f5d2987c-413e-42fd-9de5-c6f202962377",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "from_date",
+                      "value": "2015-09-20"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "2019-10-20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  },\n  \"transactions\": [\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"account_id\": \"account123\",\n      \"amount\": 61.11,\n      \"category\": \"Groceries\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"check_number_string\": \"6812\",\n      \"created_at\": \"2016-10-06T09:43:42.000Z\",\n      \"currency_code\": \"USD\",\n      \"date\": \"2013-09-23T00:00:00.000Z\",\n      \"description\": \"Whole foods\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": true,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_recurring\": false,\n      \"is_subscription\": false,\n      \"latitude\": -43.2075,\n      \"localized_description\": \"This is a localized_description\",\n      \"localized_memo\": \"This is a localized_memo\",\n      \"longitude\": 139.691706,\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"member_is_managed_by_user\": false,\n      \"memo\": \"This is a memo\",\n      \"merchant_category_code\": 5411,\n      \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"metadata\": \"some metadata\",\n      \"original_description\": \"WHOLEFDS TSQ 102\",\n      \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n      \"status\": \"POSTED\",\n      \"top_level_category\": \"Food & Dining\",\n      \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n      \"type\": \"DEBIT\",\n      \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    },\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"account_id\": \"account123\",\n      \"amount\": 61.11,\n      \"category\": \"Groceries\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"check_number_string\": \"6812\",\n      \"created_at\": \"2016-10-06T09:43:42.000Z\",\n      \"currency_code\": \"USD\",\n      \"date\": \"2013-09-23T00:00:00.000Z\",\n      \"description\": \"Whole foods\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": true,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_recurring\": false,\n      \"is_subscription\": false,\n      \"latitude\": -43.2075,\n      \"localized_description\": \"This is a localized_description\",\n      \"localized_memo\": \"This is a localized_memo\",\n      \"longitude\": 139.691706,\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"member_is_managed_by_user\": false,\n      \"memo\": \"This is a memo\",\n      \"merchant_category_code\": 5411,\n      \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"metadata\": \"some metadata\",\n      \"original_description\": \"WHOLEFDS TSQ 102\",\n      \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n      \"status\": \"POSTED\",\n      \"top_level_category\": \"Food & Dining\",\n      \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n      \"type\": \"DEBIT\",\n      \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ecbe56c2-2cec-4a86-8d14-0418482bc071",
+          "name": "Read transaction",
+          "request": {
+            "name": "Read transaction",
+            "description": {
+              "content": "Requests to this endpoint will return the attributes of the specified `transaction`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "transactions",
+                ":transaction_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transaction_guid",
+                  "description": "(Required) The unique id for a `transaction`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c879cd0d-361c-4ab6-bb3b-87e90f814fc2",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "transactions",
+                    ":transaction_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transaction_guid",
+                      "description": "(Required) The unique id for a `transaction`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"transaction\": {\n    \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n    \"account_id\": \"account123\",\n    \"amount\": 61.11,\n    \"category\": \"Groceries\",\n    \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n    \"check_number_string\": \"6812\",\n    \"created_at\": \"2016-10-06T09:43:42.000Z\",\n    \"currency_code\": \"USD\",\n    \"date\": \"2013-09-23T00:00:00.000Z\",\n    \"description\": \"Whole foods\",\n    \"extended_transaction_type\": \"partner_transaction_type\",\n    \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n    \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n    \"is_bill_pay\": false,\n    \"is_direct_deposit\": false,\n    \"is_expense\": true,\n    \"is_fee\": false,\n    \"is_income\": false,\n    \"is_international\": false,\n    \"is_overdraft_fee\": false,\n    \"is_payroll_advance\": false,\n    \"is_recurring\": false,\n    \"is_subscription\": false,\n    \"latitude\": -43.2075,\n    \"localized_description\": \"This is a localized_description\",\n    \"localized_memo\": \"This is a localized_memo\",\n    \"longitude\": 139.691706,\n    \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"member_is_managed_by_user\": false,\n    \"memo\": \"This is a memo\",\n    \"merchant_category_code\": 5411,\n    \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n    \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n    \"metadata\": \"some metadata\",\n    \"original_description\": \"WHOLEFDS TSQ 102\",\n    \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n    \"status\": \"POSTED\",\n    \"top_level_category\": \"Food & Dining\",\n    \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n    \"type\": \"DEBIT\",\n    \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fd4715c5-8719-408b-8e96-97c6f277054b",
+          "name": "Update transaction",
+          "request": {
+            "name": "Update transaction",
+            "description": {
+              "content": "Use this endpoint to update the `description` of a specific transaction according to its unique GUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "transactions",
+                ":transaction_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transaction_guid",
+                  "description": "(Required) The unique id for a `transaction`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"transaction\": {\n    \"description\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "42b0e3f2-621d-4cad-bed7-7041d0d539ab",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "transactions",
+                    ":transaction_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transaction_guid",
+                      "description": "(Required) The unique id for a `transaction`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transaction\": {\n    \"description\": \"new description\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"transaction\": {\n    \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n    \"account_id\": \"account123\",\n    \"amount\": 61.11,\n    \"category\": \"Groceries\",\n    \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n    \"check_number_string\": \"6812\",\n    \"created_at\": \"2016-10-06T09:43:42.000Z\",\n    \"currency_code\": \"USD\",\n    \"date\": \"2013-09-23T00:00:00.000Z\",\n    \"description\": \"Whole foods\",\n    \"extended_transaction_type\": \"partner_transaction_type\",\n    \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n    \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n    \"is_bill_pay\": false,\n    \"is_direct_deposit\": false,\n    \"is_expense\": true,\n    \"is_fee\": false,\n    \"is_income\": false,\n    \"is_international\": false,\n    \"is_overdraft_fee\": false,\n    \"is_payroll_advance\": false,\n    \"is_recurring\": false,\n    \"is_subscription\": false,\n    \"latitude\": -43.2075,\n    \"localized_description\": \"This is a localized_description\",\n    \"localized_memo\": \"This is a localized_memo\",\n    \"longitude\": 139.691706,\n    \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"member_is_managed_by_user\": false,\n    \"memo\": \"This is a memo\",\n    \"merchant_category_code\": 5411,\n    \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n    \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n    \"metadata\": \"some metadata\",\n    \"original_description\": \"WHOLEFDS TSQ 102\",\n    \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n    \"status\": \"POSTED\",\n    \"top_level_category\": \"Food & Dining\",\n    \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n    \"type\": \"DEBIT\",\n    \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1b037a99-02b6-4730-8520-603196812132",
+          "name": "Delete split transactions",
+          "request": {
+            "name": "Delete split transactions",
+            "description": {
+              "content": "This endpoint deletes all split transactions linked to a parent transaction, but it leaves the parent transaction active. This request will also update the parent transaction's has_been_split field to false. This endpoint accepts the optional MX-Skip-Webhook header.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "transactions",
+                ":transaction_guid",
+                "split"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transaction_guid",
+                  "description": "(Required) The unique id for a `transaction`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "66b169a1-8db7-48c9-8f00-bae6bae176c4",
+              "name": "No content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "transactions",
+                    ":transaction_guid",
+                    "split"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transaction_guid",
+                      "description": "(Required) The unique id for a `transaction`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3e3facc7-02e2-4776-a91e-b714262ddc9a",
+          "name": "Create split transactions",
+          "request": {
+            "name": "Create split transactions",
+            "description": {
+              "content": "This endpoint creates two or more child transactions that are branched from a previous transaction. This endpoint allows you to link multiple categories, descriptions, and amounts to a parent transaction.  When a split transaction is created, the parent transaction's `has_been_split` field will automatically be updated to true and the child transactions' `parent_guid` will have the transaction guid of the parent. The total amount of the child transactions must equal the amount of the parent transaction. Once a transaction has been split it can't be split again.    In order to re-split a transaction, it must first be un-split. This can be done by calling the Delete Split Transactions endpoint. Calling this endpoint will delete the existing child transactions and update the parent transaction's `has_been_split` field to false. You can then re-split the parent transaction by calling Create Split Transaction again.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "transactions",
+                ":transaction_guid",
+                "split"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique identifier for the user. Defined by MX."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transaction_guid",
+                  "description": "(Required) The unique identifier for the transaction. Defined by MX."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"transactions\": {\n    \"amount\": \"<number>\",\n    \"description\": \"<string>\",\n    \"category_guid\": \"<string>\",\n    \"memo\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cfdf8402-abfa-459e-b257-b108ef61e9ad",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "transactions",
+                    ":transaction_guid",
+                    "split"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique identifier for the user. Defined by MX."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transaction_guid",
+                      "description": "(Required) The unique identifier for the transaction. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transactions\": {\n    \"amount\": 54.19,\n    \"description\": \"Chevron Gas\",\n    \"category_guid\": \"CAT-b6d61a19-30a7-e852-2703-bdfb4072289e\",\n    \"memo\": \"Chips and Soda\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"transactions\": [\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"account_id\": \"account123\",\n      \"amount\": 61.11,\n      \"category\": \"Groceries\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"check_number_string\": \"6812\",\n      \"created_at\": \"2016-10-06T09:43:42.000Z\",\n      \"currency_code\": \"USD\",\n      \"date\": \"2013-09-23T00:00:00.000Z\",\n      \"description\": \"Whole foods\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": true,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_recurring\": false,\n      \"is_subscription\": false,\n      \"latitude\": -43.2075,\n      \"localized_description\": \"This is a localized_description\",\n      \"localized_memo\": \"This is a localized_memo\",\n      \"longitude\": 139.691706,\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"member_is_managed_by_user\": false,\n      \"memo\": \"This is a memo\",\n      \"merchant_category_code\": 5411,\n      \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"metadata\": \"some metadata\",\n      \"original_description\": \"WHOLEFDS TSQ 102\",\n      \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n      \"status\": \"POSTED\",\n      \"top_level_category\": \"Food & Dining\",\n      \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n      \"type\": \"DEBIT\",\n      \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    },\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"account_id\": \"account123\",\n      \"amount\": 61.11,\n      \"category\": \"Groceries\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"check_number_string\": \"6812\",\n      \"created_at\": \"2016-10-06T09:43:42.000Z\",\n      \"currency_code\": \"USD\",\n      \"date\": \"2013-09-23T00:00:00.000Z\",\n      \"description\": \"Whole foods\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": true,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_recurring\": false,\n      \"is_subscription\": false,\n      \"latitude\": -43.2075,\n      \"localized_description\": \"This is a localized_description\",\n      \"localized_memo\": \"This is a localized_memo\",\n      \"longitude\": 139.691706,\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"member_is_managed_by_user\": false,\n      \"memo\": \"This is a memo\",\n      \"merchant_category_code\": 5411,\n      \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"metadata\": \"some metadata\",\n      \"original_description\": \"WHOLEFDS TSQ 102\",\n      \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n      \"status\": \"POSTED\",\n      \"top_level_category\": \"Food & Dining\",\n      \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n      \"type\": \"DEBIT\",\n      \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b1de306f-7b98-4c5f-a70b-31fea17fe212",
+    "name": "MX Platform Transactions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

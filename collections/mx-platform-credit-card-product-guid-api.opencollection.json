@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MX Platform Credit_card_product_guid API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Credit_card_product_guid",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read a Credit Card Product",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/credit_card_products/:credit_card_product_guid",
+            "params": [
+              {
+                "name": "credit_card_product_guid",
+                "value": "credit_card_product_guid",
+                "type": "path",
+                "description": "The required `credit_card_product_guid` can be found on the `account` object."
+              }
+            ]
+          },
+          "docs": "This endpoint returns the specified `credit_card_product` according to the unique GUID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,161 @@
+{
+  "item": [
+    {
+      "id": "850195d8-e661-48ad-bbb8-c70f3da460ab",
+      "name": "Status",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0f346082-59c3-45a8-abb6-17175ffcce47",
+          "name": "Read member status",
+          "request": {
+            "name": "Read member status",
+            "description": {
+              "content": "This endpoint provides the status of the members most recent aggregation event. This is an important step in the aggregation process, and the results returned by this endpoint should determine what you do next in order to successfully aggregate a member. MX has introduced new, more detailed information on the current status of a members connection to a financial institution and the state of its aggregation - the connection_status field. These are intended to replace and expand upon the information provided in the status field, which will soon be deprecated; support for the status field remains for the time being.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "85116d7d-f534-4aaf-afa2-eece7d37991e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"member\": {\n    \"aggregated_at\": \"2016-10-13T18:07:57.000Z\",\n    \"challenges\": [\n      {\n        \"field_name\": \"Who is this guy?\",\n        \"guid\": \"CRD-ce76d2e3-86bd-ec4a-ec52-eb53b5194bf5\",\n        \"image_data\": \"Who is this guy?\",\n        \"image_options\": [\n          {\n            \"data_uri\": \"data:image/png;base64,iVBORw0KGgoAAAANSUh ... more image data ...\",\n            \"label\": \"IMAGE_1\",\n            \"value\": \"image_data\"\n          },\n          {\n            \"data_uri\": \"data:image/png;base64,iVBORw0KGgoAAAANSUh ... more image data ...\",\n            \"label\": \"IMAGE_1\",\n            \"value\": \"image_data\"\n          }\n        ],\n        \"label\": \"Who is this guy?\",\n        \"options\": [\n          {\n            \"label\": \"IMAGE_1\",\n            \"value\": \"image_data\"\n          },\n          {\n            \"label\": \"IMAGE_1\",\n            \"value\": \"image_data\"\n          }\n        ],\n        \"type\": \"IMAGE_DATA\"\n      },\n      {\n        \"field_name\": \"Who is this guy?\",\n        \"guid\": \"CRD-ce76d2e3-86bd-ec4a-ec52-eb53b5194bf5\",\n        \"image_data\": \"Who is this guy?\",\n        \"image_options\": [\n          {\n            \"data_uri\": \"data:image/png;base64,iVBORw0KGgoAAAANSUh ... more image data ...\",\n            \"label\": \"IMAGE_1\",\n            \"value\": \"image_data\"\n          },\n          {\n            \"data_uri\": \"data:image/png;base64,iVBORw0KGgoAAAANSUh ... more image data ...\",\n            \"label\": \"IMAGE_1\",\n            \"value\": \"image_data\"\n          }\n        ],\n        \"label\": \"Who is this guy?\",\n        \"options\": [\n          {\n            \"label\": \"IMAGE_1\",\n            \"value\": \"image_data\"\n          },\n          {\n            \"label\": \"IMAGE_1\",\n            \"value\": \"image_data\"\n          }\n        ],\n        \"type\": \"IMAGE_DATA\"\n      }\n    ],\n    \"connection_status\": \"CONNECTED\",\n    \"guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"has_processed_accounts\": true,\n    \"has_processed_account_numbers\": true,\n    \"has_processed_transactions\": false,\n    \"is_authenticated\": false,\n    \"is_being_aggregated\": false,\n    \"successfully_aggregated_at\": \"2016-10-13T17:57:38.000Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "44b6f71d-dfee-4f13-a52d-2c5506db57dc",
+    "name": "MX Platform Status API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

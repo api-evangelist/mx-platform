@@ -1,0 +1,73 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MX Platform Verify API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Verify",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Verify member",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mx.com/users/:user_guid/members/:member_guid/verify",
+            "params": [
+              {
+                "name": "member_guid",
+                "value": "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                "type": "path",
+                "description": "The unique id for a `member`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "The verify endpoint begins a verification process for a member."
+        },
+        {
+          "info": {
+            "name": "Verify a Microdeposit",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.mx.com/micro_deposits/:microdeposit_guid/verify",
+            "params": [
+              {
+                "name": "microdeposit_guid",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier for the microdeposit. Defined by MX."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use this endpoint to verify the amounts deposited into the account during a microdeposit verification. The verification has not successfully completed until the `status` is `VERIFIED`. Poll the `/users/{user_guid}/micro_deposits/{micro_deposit_guid}` (read microdeposit) endpoint until you see this status or an error state."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

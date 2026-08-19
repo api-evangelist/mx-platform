@@ -1,0 +1,379 @@
+{
+  "item": [
+    {
+      "id": "5a9f40a1-cd3b-4a9a-add3-30e437861c6e",
+      "name": "Merchants",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5331c939-d576-427d-aa4f-a196959daab8",
+          "name": "List merchants",
+          "request": {
+            "name": "List merchants",
+            "description": {
+              "content": "This endpoint returns a paginated list of all the merchants in the MX system.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "merchants"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a7a91755-27c5-4610-8102-1c6704c42e60",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "merchants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"merchants\": [\n    {\n      \"created_at\": \"2017-04-20T19:30:12.000Z\",\n      \"guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"logo_url\": \"https://s3.amazonaws.com/MD_Assets/merchant_logos/comcast.png\",\n      \"name\": \"Comcast\",\n      \"updated_at\": \"2018-09-28T21:13:53.000Z\",\n      \"website_url\": \"https://www.xfinity.com\"\n    },\n    {\n      \"created_at\": \"2017-04-20T19:30:12.000Z\",\n      \"guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"logo_url\": \"https://s3.amazonaws.com/MD_Assets/merchant_logos/comcast.png\",\n      \"name\": \"Comcast\",\n      \"updated_at\": \"2018-09-28T21:13:53.000Z\",\n      \"website_url\": \"https://www.xfinity.com\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "58af4f39-f55a-4fd3-be70-35dd1084e76a",
+          "name": "Read merchant",
+          "request": {
+            "name": "Read merchant",
+            "description": {
+              "content": "Returns information about a particular merchant, such as a logo, name, and website.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "merchants",
+                ":merchant_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "merchant_guid",
+                  "description": "(Required) The unique id for a `merchant`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "af0080d8-fb72-47e2-89d6-4cee335db222",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "merchants",
+                    ":merchant_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "merchant_guid",
+                      "description": "(Required) The unique id for a `merchant`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"merchant\": {\n    \"created_at\": \"2017-04-20T19:30:12.000Z\",\n    \"guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n    \"logo_url\": \"https://s3.amazonaws.com/MD_Assets/merchant_logos/comcast.png\",\n    \"name\": \"Comcast\",\n    \"updated_at\": \"2018-09-28T21:13:53.000Z\",\n    \"website_url\": \"https://www.xfinity.com\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "edccd03c-711c-4e22-ab22-44282619ebd8",
+          "name": "List all merchants associated with an insight.",
+          "request": {
+            "name": "List all merchants associated with an insight.",
+            "description": {
+              "content": "Use this endpoint to list all the merchants associated with the insight.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "insights",
+                ":insight_guid",
+                "merchants"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique identifier for the user. Defined by MX."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "insight_guid",
+                  "description": "(Required) The unique identifier for the insight. Defined by MX."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8abf9ba4-e73f-4603-bc63-d645effa9346",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "insights",
+                    ":insight_guid",
+                    "merchants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique identifier for the user. Defined by MX."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "insight_guid",
+                      "description": "(Required) The unique identifier for the insight. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"merchants\": [\n    {\n      \"created_at\": \"2017-04-20T19:30:12.000Z\",\n      \"guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"logo_url\": \"https://s3.amazonaws.com/MD_Assets/merchant_logos/comcast.png\",\n      \"name\": \"Comcast\",\n      \"updated_at\": \"2018-09-28T21:13:53.000Z\",\n      \"website_url\": \"https://www.xfinity.com\"\n    },\n    {\n      \"created_at\": \"2017-04-20T19:30:12.000Z\",\n      \"guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"logo_url\": \"https://s3.amazonaws.com/MD_Assets/merchant_logos/comcast.png\",\n      \"name\": \"Comcast\",\n      \"updated_at\": \"2018-09-28T21:13:53.000Z\",\n      \"website_url\": \"https://www.xfinity.com\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "fa687877-b019-4ba2-a838-5c413d001ebd",
+    "name": "MX Platform Merchants API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MX Platform Resume API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Resume",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Resume aggregation",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.mx.com/users/:user_guid/members/:member_guid/resume",
+            "params": [
+              {
+                "name": "member_guid",
+                "value": "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                "type": "path",
+                "description": "The unique id for a `member`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint answers the challenges needed when a member has been challenged by multi-factor authentication."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

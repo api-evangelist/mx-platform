@@ -1,0 +1,79 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MX Platform Split API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Split",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create split transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mx.com/users/:user_guid/transactions/:transaction_guid/split",
+            "params": [
+              {
+                "name": "user_guid",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier for the user. Defined by MX."
+              },
+              {
+                "name": "transaction_guid",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier for the transaction. Defined by MX."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint creates two or more child transactions that are branched from a previous transaction. This endpoint allows you to link multiple categories, descriptions, and amounts to a parent transaction.  When a split transaction is created, the parent transaction's `has_been_split` field will automatically be updated to true and the child transactions' `parent_guid` will have the transaction guid of the parent. The total amount of the child transactions must equal the amount of the parent tran"
+        },
+        {
+          "info": {
+            "name": "Delete split transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.mx.com/users/:user_guid/transactions/:transaction_guid/split",
+            "params": [
+              {
+                "name": "transaction_guid",
+                "value": "TRN-810828b0-5210-4878-9bd3-f4ce514f90c4",
+                "type": "path",
+                "description": "The unique id for a `transaction`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-85628b0-5210-4878-9bd3-f4ce154f90c4",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "This endpoint deletes all split transactions linked to a parent transaction, but it leaves the parent transaction active. This request will also update the parent transaction's has_been_split field to false. This endpoint accepts the optional MX-Skip-Webhook header."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1095 @@
+{
+  "item": [
+    {
+      "id": "33bc8f55-3ba1-4001-bec2-7fea8e4717c9",
+      "name": "Categories",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4d122855-8344-4b36-9107-b5446e9d1b7a",
+          "name": "List default categories",
+          "request": {
+            "name": "List default categories",
+            "description": {
+              "content": "Use this endpoint to retrieve a list of all the default categories and subcategories offered within the MX Platform API. In other words, each item in the returned list will have its `is_default` field set to `true`. There are currently 119 default categories and subcategories. Both the _list default categories_ and _list default categories by user_ endpoints return the same results. The different routes are provided for convenience.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "categories",
+                "default"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3f615b1c-d43b-4229-b331-4aca1051149f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "categories",
+                    "default"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"categories\": [\n    {\n      \"created_at\": \"2015-04-13T18:01:23.000Z\",\n      \"guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n      \"is_default\": true,\n      \"is_income\": false,\n      \"metadata\": \"some metadata\",\n      \"name\": \"Auto Insurance\",\n      \"parent_guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n      \"updated_at\": \"2015-05-13T18:01:23.000Z\"\n    },\n    {\n      \"created_at\": \"2015-04-13T18:01:23.000Z\",\n      \"guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n      \"is_default\": true,\n      \"is_income\": false,\n      \"metadata\": \"some metadata\",\n      \"name\": \"Auto Insurance\",\n      \"parent_guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n      \"updated_at\": \"2015-05-13T18:01:23.000Z\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "15821995-d5e1-48b0-af70-1b3babc29e91",
+          "name": "Read a default category",
+          "request": {
+            "name": "Read a default category",
+            "description": {
+              "content": "Use this endpoint to read the attributes of a default category.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "categories",
+                ":category_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "category_guid",
+                  "description": "(Required) The unique id for a `category`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0e1fa1f1-aabd-4b6d-a267-c689dd253f7b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "categories",
+                    ":category_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "category_guid",
+                      "description": "(Required) The unique id for a `category`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"category\": {\n    \"created_at\": \"2015-04-13T18:01:23.000Z\",\n    \"guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n    \"is_default\": true,\n    \"is_income\": false,\n    \"metadata\": \"some metadata\",\n    \"name\": \"Auto Insurance\",\n    \"parent_guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n    \"updated_at\": \"2015-05-13T18:01:23.000Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0eeed4c4-bc1a-4a5d-a117-649ca00a33d9",
+          "name": "List categories",
+          "request": {
+            "name": "List categories",
+            "description": {
+              "content": "Use this endpoint to list all categories associated with a `user`, including both default and custom categories.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "categories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a2f4d290-c3e5-4a47-a70b-31da66c93d98",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"categories\": [\n    {\n      \"created_at\": \"2015-04-13T18:01:23.000Z\",\n      \"guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n      \"is_default\": true,\n      \"is_income\": false,\n      \"metadata\": \"some metadata\",\n      \"name\": \"Auto Insurance\",\n      \"parent_guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n      \"updated_at\": \"2015-05-13T18:01:23.000Z\"\n    },\n    {\n      \"created_at\": \"2015-04-13T18:01:23.000Z\",\n      \"guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n      \"is_default\": true,\n      \"is_income\": false,\n      \"metadata\": \"some metadata\",\n      \"name\": \"Auto Insurance\",\n      \"parent_guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n      \"updated_at\": \"2015-05-13T18:01:23.000Z\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4bf66a1a-2639-4dab-bf3a-bcb29a36e16f",
+          "name": "Create category",
+          "request": {
+            "name": "Create category",
+            "description": {
+              "content": "Use this endpoint to create a new custom category for a specific `user`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "categories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"category\": {\n    \"name\": \"<string>\",\n    \"metadata\": \"<string>\",\n    \"parent_guid\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c98c2fdc-5b0f-4ef1-a89a-b598ec553006",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"category\": {\n    \"name\": \"Online Shopping\",\n    \"metadata\": \"some metadata\",\n    \"parent_guid\": \"CAT-aad51b46-d6f7-3da5-fd6e-492328b3023f\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"category\": {\n    \"created_at\": \"2015-04-13T18:01:23.000Z\",\n    \"guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n    \"is_default\": true,\n    \"is_income\": false,\n    \"metadata\": \"some metadata\",\n    \"name\": \"Auto Insurance\",\n    \"parent_guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n    \"updated_at\": \"2015-05-13T18:01:23.000Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7e3ba4ae-deab-4e20-a129-0c874dbd5f4e",
+          "name": "List default categories by user",
+          "request": {
+            "name": "List default categories by user",
+            "description": {
+              "content": "Use this endpoint to retrieve a list of all the default categories and subcategories, scoped by user, offered within the MX Platform API. In other words, each item in the returned list will have its `is_default` field set to `true`. There are currently 119 default categories and subcategories. Both the _list default categories_ and _list default categories by user_ endpoints return the same results. The different routes are provided for convenience.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "categories",
+                "default"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a7bde827-d940-48f3-951b-ae871a49f0ee",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "categories",
+                    "default"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"categories\": [\n    {\n      \"created_at\": \"2015-04-13T18:01:23.000Z\",\n      \"guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n      \"is_default\": true,\n      \"is_income\": false,\n      \"metadata\": \"some metadata\",\n      \"name\": \"Auto Insurance\",\n      \"parent_guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n      \"updated_at\": \"2015-05-13T18:01:23.000Z\"\n    },\n    {\n      \"created_at\": \"2015-04-13T18:01:23.000Z\",\n      \"guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n      \"is_default\": true,\n      \"is_income\": false,\n      \"metadata\": \"some metadata\",\n      \"name\": \"Auto Insurance\",\n      \"parent_guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n      \"updated_at\": \"2015-05-13T18:01:23.000Z\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b1056dae-8df0-4b58-8370-16e29bb03534",
+          "name": "Delete category",
+          "request": {
+            "name": "Delete category",
+            "description": {
+              "content": "Use this endpoint to delete a specific custom category according to its unique GUID. The API will respond with an empty object and a status of `204 No Content`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "categories",
+                ":category_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "category_guid",
+                  "description": "(Required) The unique id for a `category`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "542a4e7b-f0c7-4b07-b7da-013619d30b1a",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "categories",
+                    ":category_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "category_guid",
+                      "description": "(Required) The unique id for a `category`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "43b4e300-99c8-4393-bb9f-3005f40b9bee",
+          "name": "Read a custom category",
+          "request": {
+            "name": "Read a custom category",
+            "description": {
+              "content": "Use this endpoint to read the attributes of either a default category or a custom category.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "categories",
+                ":category_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "category_guid",
+                  "description": "(Required) The unique id for a `category`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "64a31153-b117-43c0-af53-5d58d7dcc3d3",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "categories",
+                    ":category_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "category_guid",
+                      "description": "(Required) The unique id for a `category`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"category\": {\n    \"created_at\": \"2015-04-13T18:01:23.000Z\",\n    \"guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n    \"is_default\": true,\n    \"is_income\": false,\n    \"metadata\": \"some metadata\",\n    \"name\": \"Auto Insurance\",\n    \"parent_guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n    \"updated_at\": \"2015-05-13T18:01:23.000Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "95ebe365-cb1e-4b5b-a31e-3fb392dc0c37",
+          "name": "Update category",
+          "request": {
+            "name": "Update category",
+            "description": {
+              "content": "Use this endpoint to update the attributes of a custom category according to its unique GUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "categories",
+                ":category_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "category_guid",
+                  "description": "(Required) The unique id for a `category`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"category\": {\n    \"metadata\": \"<string>\",\n    \"name\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c0b21833-7fbb-4773-82c4-6e5768c1f4c5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "categories",
+                    ":category_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "category_guid",
+                      "description": "(Required) The unique id for a `category`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"category\": {\n    \"metadata\": \"some metadata\",\n    \"name\": \"Web shopping\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"category\": {\n    \"created_at\": \"2015-04-13T18:01:23.000Z\",\n    \"guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n    \"is_default\": true,\n    \"is_income\": false,\n    \"metadata\": \"some metadata\",\n    \"name\": \"Auto Insurance\",\n    \"parent_guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n    \"updated_at\": \"2015-05-13T18:01:23.000Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "484456b4-f5f0-4301-9989-735f08e5e159",
+          "name": "List all categories associated with an insight.",
+          "request": {
+            "name": "List all categories associated with an insight.",
+            "description": {
+              "content": "Use this endpoint to list all the categories associated with the insight.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "insights",
+                ":insight_guid",
+                "categories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique identifier for the user. Defined by MX."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "insight_guid",
+                  "description": "(Required) The unique identifier for the insight. Defined by MX."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "377db38a-82bf-4b63-b68d-a8d48cc02143",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "insights",
+                    ":insight_guid",
+                    "categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique identifier for the user. Defined by MX."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "insight_guid",
+                      "description": "(Required) The unique identifier for the insight. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"categories\": [\n    {\n      \"created_at\": \"2015-04-13T18:01:23.000Z\",\n      \"guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n      \"is_default\": true,\n      \"is_income\": false,\n      \"metadata\": \"some metadata\",\n      \"name\": \"Auto Insurance\",\n      \"parent_guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n      \"updated_at\": \"2015-05-13T18:01:23.000Z\"\n    },\n    {\n      \"created_at\": \"2015-04-13T18:01:23.000Z\",\n      \"guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n      \"is_default\": true,\n      \"is_income\": false,\n      \"metadata\": \"some metadata\",\n      \"name\": \"Auto Insurance\",\n      \"parent_guid\": \"CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874\",\n      \"updated_at\": \"2015-05-13T18:01:23.000Z\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5f6a68d0-7610-4914-a225-a2cff2783b5d",
+    "name": "MX Platform Categories API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

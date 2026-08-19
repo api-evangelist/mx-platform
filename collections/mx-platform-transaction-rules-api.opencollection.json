@@ -1,0 +1,158 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MX Platform Transaction_rules API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Transaction_rules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List transaction rules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/transaction_rules",
+            "params": [
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to read the attributes of all existing transaction rules belonging to the user."
+        },
+        {
+          "info": {
+            "name": "Create transaction rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mx.com/users/:user_guid/transaction_rules",
+            "params": [
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use this endpoint to create a new transaction rule. The newly-created `transaction_rule` object will be returned if successful."
+        },
+        {
+          "info": {
+            "name": "Read transaction rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/transaction_rules/:transaction_rule_guid",
+            "params": [
+              {
+                "name": "transaction_rule_guid",
+                "value": "TXR-a080e0f9-a2d4-4d6f-9e03-672cc357a4d3",
+                "type": "path",
+                "description": "The unique id for a `transaction_rule`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to read the attributes of an existing transaction rule based on the rules unique GUID."
+        },
+        {
+          "info": {
+            "name": "Update transaction_rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.mx.com/users/:user_guid/transaction_rules/:transaction_rule_guid",
+            "params": [
+              {
+                "name": "transaction_rule_guid",
+                "value": "TXR-a080e0f9-a2d4-4d6f-9e03-672cc357a4d3",
+                "type": "path",
+                "description": "The unique id for a `transaction_rule`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use this endpoint to update the attributes of a specific transaction rule based on its unique GUID. The API will respond with the updated transaction_rule object. Any attributes not provided will be left unchanged."
+        },
+        {
+          "info": {
+            "name": "Delete transaction rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.mx.com/users/:user_guid/transaction_rules/:transaction_rule_guid",
+            "params": [
+              {
+                "name": "transaction_rule_guid",
+                "value": "TXR-a080e0f9-a2d4-4d6f-9e03-672cc357a4d3",
+                "type": "path",
+                "description": "The unique id for a `transaction_rule`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to permanently delete a transaction rule based on its unique GUID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

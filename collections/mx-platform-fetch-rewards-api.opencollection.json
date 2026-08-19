@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MX Platform Fetch_rewards API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Fetch_rewards",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetch Rewards",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mx.com/users/:user_guid/members/:member_guid/fetch_rewards",
+            "params": [
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              },
+              {
+                "name": "member_guid",
+                "value": "MBR-fa7537f3-48aa-a683-a02a-b18345562f54",
+                "type": "path",
+                "description": "The unique identifier for the member. Defined by MX."
+              }
+            ]
+          },
+          "docs": "Calling this endpoint initiates an aggregation-type event which will gather the member's rewards information, as well as account and transaction information. Rewards data is also gathered with daily background aggregations."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

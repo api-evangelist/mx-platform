@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MX Platform Fetch_statements API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Fetch_statements",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetch statements",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mx.com/users/:user_guid/members/:member_guid/fetch_statements",
+            "params": [
+              {
+                "name": "member_guid",
+                "value": "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                "type": "path",
+                "description": "The unique id for a `member`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to fetch the statements associated with a particular member."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

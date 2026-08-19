@@ -1,0 +1,161 @@
+{
+  "item": [
+    {
+      "id": "8c7f14d2-314e-4cf2-bdc8-8cbe3040ca98",
+      "name": "Check_balance",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9e6ba837-5665-4340-9d0e-39751620d403",
+          "name": "Check balances",
+          "request": {
+            "name": "Check balances",
+            "description": {
+              "content": "This endpoint operates much like the aggregate member endpoint except that it gathers only account balance information; it does not gather any transaction data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "check_balance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "64fee96e-d873-40e2-b675-692707dd1c00",
+              "name": "Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "check_balance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"member\": {\n    \"aggregated_at\": \"2016-10-13T18:07:57.000Z\",\n    \"background_aggregation_is_disabled\": false,\n    \"connection_status\": \"CONNECTED\",\n    \"guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"id\": \"unique_id\",\n    \"institution_code\": \"chase\",\n    \"is_being_aggregated\": false,\n    \"is_managed_by_user\": false,\n    \"is_manual\": false,\n    \"is_oauth\": false,\n    \"metadata\": \"\\\\\\\"credentials_last_refreshed_at\\\\\\\": \\\\\\\"2015-10-15\\\\\\\"\",\n    \"most_recent_job_detail_code\": \"(deprecated)\",\n    \"most_recent_job_detail_text\": \"(deprecated)\",\n    \"name\": \"Chase Bank\",\n    \"oauth_window_uri\": \"https://mxbank.mx.com/oauth/authorize?client_id=b8OikQ4Ep3NuSUrQ13DdvFuwpNx-qqoAsJDVAQCyLkQ&redirect_uri=https%3A%2F%2Fint-app.moneydesktop.com%2Foauth%2Fredirect_from&response_type=code&scope=openid&state=d745bd4ee6f0f9c184757f574bcc2df2\",\n    \"successfully_aggregated_at\": \"2016-10-13T17:57:38.000Z\",\n    \"use_cases\": [\n      \"PFM\",\n      \"IAV\"\n    ],\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "103a7ead-7c20-418f-962f-2f73fde9dd17",
+    "name": "MX Platform Check_balance API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,480 @@
+{
+  "item": [
+    {
+      "id": "6ee8bb9f-d135-44b5-a954-e603a62f9211",
+      "name": "Micro_deposits",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8599e295-161e-4209-b7a7-8f9ba8a1d426",
+          "name": "List all microdeposits for a user",
+          "request": {
+            "name": "List all microdeposits for a user",
+            "description": {
+              "content": "Use this endpoint to read the attributes of a specific microdeposit according to its unique GUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "micro_deposits"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique identifier for the user. Defined by MX."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "399bc312-f428-47ef-b489-c242d675b512",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "micro_deposits"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique identifier for the user. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"micro_deposits\": [\n    {\n      \"account_name\": \"My test account\",\n      \"account_number\": \"string\",\n      \"account_type\": \"CHECKING\",\n      \"email\": \"joshyboy2@example.com\",\n      \"first_name\": \"Joshy\",\n      \"last_name\": \"Grobanne\",\n      \"routing_number\": \"string\",\n      \"error_message\": \"string\",\n      \"guid\": \"MIC-09ba578e-8448-4f7f-89e1-b62ff2517edb\",\n      \"institution_code\": \"mxbank\",\n      \"institution_name\": \"MX Bank\",\n      \"status\": \"INITIATED\",\n      \"updated_at\": \"2023-06-01T19:18:06.000Z\",\n      \"verified_at\": \"string\"\n    },\n    {\n      \"account_name\": \"My test account\",\n      \"account_number\": \"string\",\n      \"account_type\": \"CHECKING\",\n      \"email\": \"joshyboy2@example.com\",\n      \"first_name\": \"Joshy\",\n      \"last_name\": \"Grobanne\",\n      \"routing_number\": \"string\",\n      \"error_message\": \"string\",\n      \"guid\": \"MIC-09ba578e-8448-4f7f-89e1-b62ff2517edb\",\n      \"institution_code\": \"mxbank\",\n      \"institution_name\": \"MX Bank\",\n      \"status\": \"INITIATED\",\n      \"updated_at\": \"2023-06-01T19:18:06.000Z\",\n      \"verified_at\": \"string\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d249dee0-505e-44b4-9238-74b931088078",
+          "name": "Create a microdeposit",
+          "request": {
+            "name": "Create a microdeposit",
+            "description": {
+              "content": "Use this endpoint to create a microdeposit. The response will include the new microdeposit record with a status of INITIATED.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "micro_deposits"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique identifier for the user. Defined by MX."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"micro_deposit\": {\n    \"account_number\": \"<string>\",\n    \"account_type\": \"<string>\",\n    \"routing_number\": \"<string>\",\n    \"account_name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c1daf3c1-65b8-4132-9c1f-cc3df138ed2f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "micro_deposits"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique identifier for the user. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"micro_deposit\": {\n    \"account_number\": \"3331261\",\n    \"account_type\": \"CHECKING\",\n    \"routing_number\": \"<string>\",\n    \"account_name\": \"My test account\",\n    \"email\": \"joshyboy2@example.com\",\n    \"first_name\": \"Joshy\",\n    \"last_name\": \"Grobanne\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"micro_deposit\": {\n    \"account_name\": \"My test account\",\n    \"account_number\": \"string\",\n    \"account_type\": \"CHECKING\",\n    \"email\": \"joshyboy2@example.com\",\n    \"first_name\": \"Joshy\",\n    \"last_name\": \"Grobanne\",\n    \"routing_number\": \"string\",\n    \"error_message\": \"string\",\n    \"guid\": \"MIC-09ba578e-8448-4f7f-89e1-b62ff2517edb\",\n    \"institution_code\": \"mxbank\",\n    \"institution_name\": \"MX Bank\",\n    \"status\": \"INITIATED\",\n    \"updated_at\": \"2023-06-01T19:18:06.000Z\",\n    \"verified_at\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a7e2d3ad-0c8d-4c6b-bc64-0bd257aaba56",
+          "name": "Delete a microdeposit",
+          "request": {
+            "name": "Delete a microdeposit",
+            "description": {
+              "content": "Use this endpoint to delete the specified microdeposit.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "micro_deposits",
+                ":micro_deposit_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "micro_deposit_guid",
+                  "description": "(Required) The unique identifier for the microdeposit. Defined by MX."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "61316644-466d-453c-a1b0-ef2fda7c6747",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "micro_deposits",
+                    ":micro_deposit_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "micro_deposit_guid",
+                      "description": "(Required) The unique identifier for the microdeposit. Defined by MX."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6101a8d6-1ef4-4dc9-a956-50eed9c997a6",
+          "name": "Read a microdeposit for a user",
+          "request": {
+            "name": "Read a microdeposit for a user",
+            "description": {
+              "content": "Use this endpoint to read the attributes of a specific microdeposit according to its unique GUID. <br></br> Webhooks for microdeposit status changes are triggered when a status changes. The actual status of the microdeposit guid updates every minute. You may force a status update by calling the read microdeposit endpoint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "micro_deposits",
+                ":micro_deposit_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique identifier for the user. Defined by MX."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "micro_deposit_guid",
+                  "description": "(Required) The unique identifier for the microdeposit. Defined by MX."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "75b42614-b6a2-4f10-812d-55d20430c222",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "micro_deposits",
+                    ":micro_deposit_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique identifier for the user. Defined by MX."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "micro_deposit_guid",
+                      "description": "(Required) The unique identifier for the microdeposit. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"micro_deposit\": {\n    \"account_name\": \"My test account\",\n    \"account_number\": \"string\",\n    \"account_type\": \"CHECKING\",\n    \"email\": \"joshyboy2@example.com\",\n    \"first_name\": \"Joshy\",\n    \"last_name\": \"Grobanne\",\n    \"routing_number\": \"string\",\n    \"error_message\": \"string\",\n    \"guid\": \"MIC-09ba578e-8448-4f7f-89e1-b62ff2517edb\",\n    \"institution_code\": \"mxbank\",\n    \"institution_name\": \"MX Bank\",\n    \"status\": \"INITIATED\",\n    \"updated_at\": \"2023-06-01T19:18:06.000Z\",\n    \"verified_at\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8028b197-5fb2-476a-84f4-722c0a3df3b3",
+    "name": "MX Platform Micro_deposits API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

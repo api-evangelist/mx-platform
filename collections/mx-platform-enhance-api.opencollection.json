@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MX Platform Enhance API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Enhance",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Enhance transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mx.com/transactions/enhance",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use this endpoint to categorize, cleanse, and classify transactions. These transactions are not persisted or stored on the MX platform."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

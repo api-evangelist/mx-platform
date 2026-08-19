@@ -1,0 +1,844 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MX Platform Accounts API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/accounts",
+            "params": [
+              {
+                "name": "member_is_managed_by_user",
+                "value": "true",
+                "type": "query",
+                "description": "List only accounts whose member is managed by the user."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "is_manual",
+                "value": "true",
+                "type": "query",
+                "description": "List only accounts that were manually created."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "This endpoint returns a list of all the accounts associated with the specified `user`."
+        },
+        {
+          "info": {
+            "name": "Create manual account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mx.com/users/:user_guid/accounts",
+            "params": [
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint can only be used to create manual accounts. Creating a manual account will automatically create it under the Manual Institution member. Since a manual account has no credentials tied to the member, the account will never aggregate or include data from a data feed."
+        },
+        {
+          "info": {
+            "name": "Read account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/accounts/:account_guid",
+            "params": [
+              {
+                "name": "account_guid",
+                "value": "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1",
+                "type": "path",
+                "description": "The unique id for an `account`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "This endpoint returns the specified `account` resource."
+        },
+        {
+          "info": {
+            "name": "Delete manual account",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.mx.com/users/:user_guid/accounts/:account_guid",
+            "params": [
+              {
+                "name": "account_guid",
+                "value": "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1",
+                "type": "path",
+                "description": "The unique id for an `account`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "This endpoint deletes accounts that were manually created. The API will respond with an empty object and a status of `204 No Content`."
+        },
+        {
+          "info": {
+            "name": "List account numbers by account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/accounts/:account_guid/account_numbers",
+            "params": [
+              {
+                "name": "account_guid",
+                "value": "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1",
+                "type": "path",
+                "description": "The unique id for an `account`."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "This endpoint returns a list of account numbers associated with the specified `account`."
+        },
+        {
+          "info": {
+            "name": "List holdings by account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/accounts/:account_guid/holdings",
+            "params": [
+              {
+                "name": "account_guid",
+                "value": "ACT-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                "type": "path",
+                "description": "The unique id for the `account`."
+              },
+              {
+                "name": "from_date",
+                "value": "2015-09-20",
+                "type": "query",
+                "description": "Filter holdings from this date."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              },
+              {
+                "name": "to_date",
+                "value": "2019-10-20",
+                "type": "query",
+                "description": "Filter holdings to this date."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for the `user`."
+              }
+            ]
+          },
+          "docs": "This endpoint returns all holdings associated with the specified `account`."
+        },
+        {
+          "info": {
+            "name": "List insights by account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/accounts/:account_guid/insights",
+            "params": [
+              {
+                "name": "account_guid",
+                "value": "ACT-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                "type": "path",
+                "description": "The unique id for the `account`."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for the `user`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to list all insights associated with a specified account GUID."
+        },
+        {
+          "info": {
+            "name": "List transactions by account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/accounts/:account_guid/transactions",
+            "params": [
+              {
+                "name": "account_guid",
+                "value": "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1",
+                "type": "path",
+                "description": "The unique id for an `account`."
+              },
+              {
+                "name": "from_date",
+                "value": "2015-09-20",
+                "type": "query",
+                "description": "Filter transactions from this date."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              },
+              {
+                "name": "to_date",
+                "value": "2019-10-20",
+                "type": "query",
+                "description": "Filter transactions to this date."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "This endpoint returns a list of the last 90 days of transactions associated with the specified account."
+        },
+        {
+          "info": {
+            "name": "Create manual transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mx.com/users/:user_guid/accounts/:account_guid/transactions",
+            "params": [
+              {
+                "name": "user_guid",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier for the user."
+              },
+              {
+                "name": "account_guid",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier for the account."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint can only be used to create manual transactions that are under a manual account. This endpoint accepts the optional MX-Skip-Webhook header and skip_webhook parameter."
+        },
+        {
+          "info": {
+            "name": "List all accounts associated with an insight.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/insights/:insight_guid/accounts",
+            "params": [
+              {
+                "name": "user_guid",
+                "value": "USR-1234-abcd",
+                "type": "path",
+                "description": "The unique identifier for the user. Defined by MX."
+              },
+              {
+                "name": "insight_guid",
+                "value": "BET-1234-abcd",
+                "type": "path",
+                "description": "The unique identifier for the insight. Defined by MX."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to list all the accounts associated with the insight."
+        },
+        {
+          "info": {
+            "name": "List managed accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/managed_members/:member_guid/accounts",
+            "params": [
+              {
+                "name": "member_guid",
+                "value": "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                "type": "path",
+                "description": "The unique id for a `member`."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to retrieve a list of all the partner-managed accounts associated with the given partner-manage member."
+        },
+        {
+          "info": {
+            "name": "Create managed account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mx.com/users/:user_guid/managed_members/:member_guid/accounts",
+            "params": [
+              {
+                "name": "member_guid",
+                "value": "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                "type": "path",
+                "description": "The unique id for a `member`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use this endpoint to create a partner-managed account."
+        },
+        {
+          "info": {
+            "name": "Read managed account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/managed_members/:member_guid/accounts/:account_guid",
+            "params": [
+              {
+                "name": "account_guid",
+                "value": "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1",
+                "type": "path",
+                "description": "The unique id for an `account`."
+              },
+              {
+                "name": "member_guid",
+                "value": "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                "type": "path",
+                "description": "The unique id for a `member`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to read the attributes of a partner-managed account according to its unique guid."
+        },
+        {
+          "info": {
+            "name": "Update managed account",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.mx.com/users/:user_guid/managed_members/:member_guid/accounts/:account_guid",
+            "params": [
+              {
+                "name": "account_guid",
+                "value": "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1",
+                "type": "path",
+                "description": "The unique id for an `account`."
+              },
+              {
+                "name": "member_guid",
+                "value": "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                "type": "path",
+                "description": "The unique id for a `member`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use this endpoint to update the attributes of a partner-managed account according to its unique GUID."
+        },
+        {
+          "info": {
+            "name": "Delete managed account",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.mx.com/users/:user_guid/managed_members/:member_guid/accounts/:account_guid",
+            "params": [
+              {
+                "name": "account_guid",
+                "value": "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1",
+                "type": "path",
+                "description": "The unique id for an `account`."
+              },
+              {
+                "name": "member_guid",
+                "value": "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                "type": "path",
+                "description": "The unique id for a `member`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to delete a partner-managed account according to its unique GUID. If successful, the API will respond with a status of `204 No Content`."
+        },
+        {
+          "info": {
+            "name": "List managed transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/managed_members/:member_guid/accounts/:account_guid/transactions",
+            "params": [
+              {
+                "name": "account_guid",
+                "value": "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1",
+                "type": "path",
+                "description": "The unique id for an `account`."
+              },
+              {
+                "name": "member_guid",
+                "value": "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                "type": "path",
+                "description": "The unique id for a `member`."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "This endpoint returns a list of all the partner-managed transactions associated with the specified `account`, scoped through a `user` and a `member`."
+        },
+        {
+          "info": {
+            "name": "Create managed transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mx.com/users/:user_guid/managed_members/:member_guid/accounts/:account_guid/transactions",
+            "params": [
+              {
+                "name": "account_guid",
+                "value": "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1",
+                "type": "path",
+                "description": "The unique id for an `account`."
+              },
+              {
+                "name": "member_guid",
+                "value": "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                "type": "path",
+                "description": "The unique id for a `member`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use this endpoint to create a new partner-managed `transaction`."
+        },
+        {
+          "info": {
+            "name": "Read managed transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/managed_members/:member_guid/accounts/:account_guid/transactions/:transaction_guid",
+            "params": [
+              {
+                "name": "account_guid",
+                "value": "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1",
+                "type": "path",
+                "description": "The unique id for an `account`."
+              },
+              {
+                "name": "member_guid",
+                "value": "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                "type": "path",
+                "description": "The unique id for a `member`."
+              },
+              {
+                "name": "transaction_guid",
+                "value": "TRN-810828b0-5210-4878-9bd3-f4ce514f90c4",
+                "type": "path",
+                "description": "The unique id for a `transaction`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "Requests to this endpoint will return the attributes of the specified partner-managed `transaction`."
+        },
+        {
+          "info": {
+            "name": "Update managed transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.mx.com/users/:user_guid/managed_members/:member_guid/accounts/:account_guid/transactions/:transaction_guid",
+            "params": [
+              {
+                "name": "account_guid",
+                "value": "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1",
+                "type": "path",
+                "description": "The unique id for an `account`."
+              },
+              {
+                "name": "member_guid",
+                "value": "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                "type": "path",
+                "description": "The unique id for a `member`."
+              },
+              {
+                "name": "transaction_guid",
+                "value": "TRN-810828b0-5210-4878-9bd3-f4ce514f90c4",
+                "type": "path",
+                "description": "The unique id for a `transaction`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use this endpoint to update the attributes of the specified partner_managed `transaction`."
+        },
+        {
+          "info": {
+            "name": "Delete managed transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.mx.com/users/:user_guid/managed_members/:member_guid/accounts/:account_guid/transactions/:transaction_guid",
+            "params": [
+              {
+                "name": "account_guid",
+                "value": "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1",
+                "type": "path",
+                "description": "The unique id for an `account`."
+              },
+              {
+                "name": "member_guid",
+                "value": "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                "type": "path",
+                "description": "The unique id for a `member`."
+              },
+              {
+                "name": "transaction_guid",
+                "value": "TRN-810828b0-5210-4878-9bd3-f4ce514f90c4",
+                "type": "path",
+                "description": "The unique id for a `transaction`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to delete the specified partner-managed `transaction`. The endpoint will respond with a status of `204 No Content` without a resource."
+        },
+        {
+          "info": {
+            "name": "List accounts by member",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/members/:member_guid/accounts",
+            "params": [
+              {
+                "name": "member_is_managed_by_user",
+                "value": "true",
+                "type": "query",
+                "description": "List only accounts whose member is managed by the user."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              },
+              {
+                "name": "member_guid",
+                "value": "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                "type": "path",
+                "description": "The unique id for a `member`."
+              }
+            ]
+          },
+          "docs": "This endpoint returns a list of all the accounts associated with the specified `member`."
+        },
+        {
+          "info": {
+            "name": "Read account by member",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/members/:member_guid/accounts/:account_guid",
+            "params": [
+              {
+                "name": "account_guid",
+                "value": "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1",
+                "type": "path",
+                "description": "The unique id for an `account`."
+              },
+              {
+                "name": "member_guid",
+                "value": "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                "type": "path",
+                "description": "The unique id for a `member`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "This endpoint allows you to read the attributes of an `account` resource."
+        },
+        {
+          "info": {
+            "name": "Update account by member",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.mx.com/users/:user_guid/members/:member_guid/accounts/:account_guid",
+            "params": [
+              {
+                "name": "account_guid",
+                "value": "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1",
+                "type": "path",
+                "description": "The unique id for an `account`."
+              },
+              {
+                "name": "member_guid",
+                "value": "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                "type": "path",
+                "description": "The unique id for a `member`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows you to update certain attributes of an `account` resource, including manual accounts. For manual accounts, you can update every field listed. For aggregated accounts, you can only update `is_business`, `is_hidden` and `metadata`."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

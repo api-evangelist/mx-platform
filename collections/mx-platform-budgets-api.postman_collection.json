@@ -1,0 +1,715 @@
+{
+  "item": [
+    {
+      "id": "a08e78b4-b9c8-46c8-8fe8-a0d003caed98",
+      "name": "Budgets",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "639dc28c-a15f-413e-9b96-49d1df010541",
+          "name": "Auto-generate budgets",
+          "request": {
+            "name": "Auto-generate budgets",
+            "description": {
+              "content": "This endpoint will automatically create budgets for several categories based on existing transactions; these budgets are returned as an array. Specifically, budgets will only be generated if the `user` has at least one `transaction` in a given category during each of the two previous calendar months. For example, if the request is made on March 6, and there is at least one \"Bills & Utilities\" `transaction` in both January and February, a budget will be generated for \"Bills & Utilities.\" If there are two \"Bills & Utilities\" transactions in February but none in January, no budget will be generated for that category. If budgets already exist for particular categories, new budgets will be generated and returned based on the available transactions. If one or more budgets remain unchanged, they will nevertheless be returned in the response. If no transaction data for the `user` meet the above criteria, a `422 Unprocessable Entity` error will be returned with status code 4221 along with the message, `There aren't enough transactions to automatically create any budgets`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "budgets",
+                "generate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique identifier for the user. Defined by MX."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "59367511-9fc2-4cfc-b49e-f77c976bbd80",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "budgets",
+                    "generate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique identifier for the user. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"budget\": {\n    \"amount\": 153,\n    \"category_guid\": \"CAT-bd56d35a-a9a7-6e10-66c1-5b9cc1b6c81a\",\n    \"created_at\": \"2018-10-18T19:51:26.000Z\",\n    \"guid\": \"BGT-6ca0e3ef-c65e-4655-8b5a-275a3c19c21d\",\n    \"is_exceeded\": true,\n    \"is_off_track\": true,\n    \"metadata\": \"some metadata\",\n    \"name\": \"Food & Dining\",\n    \"off_track_percentage\": 3788.3047702994822,\n    \"parent_guid\": \"string\",\n    \"percent_spent\": 1276.34,\n    \"projected_spending\": 3562.4,\n    \"revision\": 561,\n    \"transaction_total\": {},\n    \"updated_at\": {},\n    \"user_guid\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aacca145-bdde-4cb6-b1c8-77858518f3be",
+          "name": "Create a budget",
+          "request": {
+            "name": "Create a budget",
+            "description": {
+              "content": "Create a budget. This endpoint accepts the optional `MX-Skip-Webhook` header and `skip_webhook` parameter. You cannot create a duplicate budget. For example, if you attempt to create a budget for \"Gas\", but that budget already exist, the request will fail. You can retrieve a list of all existing categories by using the List Categories endpoint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "budgets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique identifier for the user. Defined by MX."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"budget\": {\n    \"category_guid\": \"<string>\",\n    \"parent_guid\": \"<string>\",\n    \"amount\": \"<integer>\",\n    \"metadata\": \"<string>\",\n    \"skip_webhook\": \"<boolean>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5a04ae0a-9d23-406e-b04b-ecc55d2944d9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "budgets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique identifier for the user. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"budget\": {\n    \"category_guid\": \"CAT-bd56d35a-a9a7-6e10-66c1-5b9cc1b6c81a\",\n    \"parent_guid\": \"BGT-6be44a91-e105-f68a-4770-8c7c0a5c9778\",\n    \"amount\": 1000,\n    \"metadata\": \"Additional information\",\n    \"skip_webhook\": true\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"budget\": {\n    \"amount\": 153,\n    \"category_guid\": \"CAT-bd56d35a-a9a7-6e10-66c1-5b9cc1b6c81a\",\n    \"created_at\": \"2018-10-18T19:51:26.000Z\",\n    \"guid\": \"BGT-6ca0e3ef-c65e-4655-8b5a-275a3c19c21d\",\n    \"is_exceeded\": true,\n    \"is_off_track\": true,\n    \"metadata\": \"some metadata\",\n    \"name\": \"Food & Dining\",\n    \"off_track_percentage\": 3788.3047702994822,\n    \"parent_guid\": \"string\",\n    \"percent_spent\": 1276.34,\n    \"projected_spending\": 3562.4,\n    \"revision\": 561,\n    \"transaction_total\": {},\n    \"updated_at\": {},\n    \"user_guid\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "62a24800-2adb-439a-98d5-e82c28f03066",
+          "name": "List all budgets",
+          "request": {
+            "name": "List all budgets",
+            "description": {
+              "content": "List all budgets",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "budgets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique identifier for the user. Defined by MX."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "94181bd4-5acc-46c2-bbc6-65ccd3da85b6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "budgets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique identifier for the user. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"budget\": {\n    \"amount\": 153,\n    \"category_guid\": \"CAT-bd56d35a-a9a7-6e10-66c1-5b9cc1b6c81a\",\n    \"created_at\": \"2018-10-18T19:51:26.000Z\",\n    \"guid\": \"BGT-6ca0e3ef-c65e-4655-8b5a-275a3c19c21d\",\n    \"is_exceeded\": true,\n    \"is_off_track\": true,\n    \"metadata\": \"some metadata\",\n    \"name\": \"Food & Dining\",\n    \"off_track_percentage\": 3788.3047702994822,\n    \"parent_guid\": \"string\",\n    \"percent_spent\": 1276.34,\n    \"projected_spending\": 3562.4,\n    \"revision\": 561,\n    \"transaction_total\": {},\n    \"updated_at\": {},\n    \"user_guid\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "703a1495-8321-4e0e-a7c9-f8615b197ed0",
+          "name": "Read a specific budget",
+          "request": {
+            "name": "Read a specific budget",
+            "description": {
+              "content": "Read a specific budget.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "budgets",
+                ":budget_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "budget_guid",
+                  "description": "(Required) The unique identifier for the budget. Defined by MX."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique identifier for the budget. Defined by MX."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d5fb41a6-3402-4340-9a9e-30e705935abc",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "budgets",
+                    ":budget_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "budget_guid",
+                      "description": "(Required) The unique identifier for the budget. Defined by MX."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique identifier for the budget. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"budget\": {\n    \"amount\": 153,\n    \"category_guid\": \"CAT-bd56d35a-a9a7-6e10-66c1-5b9cc1b6c81a\",\n    \"created_at\": \"2018-10-18T19:51:26.000Z\",\n    \"guid\": \"BGT-6ca0e3ef-c65e-4655-8b5a-275a3c19c21d\",\n    \"is_exceeded\": true,\n    \"is_off_track\": true,\n    \"metadata\": \"some metadata\",\n    \"name\": \"Food & Dining\",\n    \"off_track_percentage\": 3788.3047702994822,\n    \"parent_guid\": \"string\",\n    \"percent_spent\": 1276.34,\n    \"projected_spending\": 3562.4,\n    \"revision\": 561,\n    \"transaction_total\": {},\n    \"updated_at\": {},\n    \"user_guid\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cadb7914-92d3-4331-95a7-8d6f2f8dab47",
+          "name": "Update a specific budget",
+          "request": {
+            "name": "Update a specific budget",
+            "description": {
+              "content": "Update a specific budget.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "budgets",
+                ":budget_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique identifier for the budget. Defined by MX."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "budget_guid",
+                  "description": "(Required) The unique identifier for the budget. Defined by MX."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"budget\": {\n    \"amount\": \"<integer>\",\n    \"metadata\": \"<string>\",\n    \"skip_webhook\": \"<boolean>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "166558ce-e7a0-42fc-a96a-eab85b8b8593",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "budgets",
+                    ":budget_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique identifier for the budget. Defined by MX."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "budget_guid",
+                      "description": "(Required) The unique identifier for the budget. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"budget\": {\n    \"amount\": 1000,\n    \"metadata\": \"Additional information\",\n    \"skip_webhook\": true\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"budget\": {\n    \"amount\": 153,\n    \"category_guid\": \"CAT-bd56d35a-a9a7-6e10-66c1-5b9cc1b6c81a\",\n    \"created_at\": \"2018-10-18T19:51:26.000Z\",\n    \"guid\": \"BGT-6ca0e3ef-c65e-4655-8b5a-275a3c19c21d\",\n    \"is_exceeded\": true,\n    \"is_off_track\": true,\n    \"metadata\": \"some metadata\",\n    \"name\": \"Food & Dining\",\n    \"off_track_percentage\": 3788.3047702994822,\n    \"parent_guid\": \"string\",\n    \"percent_spent\": 1276.34,\n    \"projected_spending\": 3562.4,\n    \"revision\": 561,\n    \"transaction_total\": {},\n    \"updated_at\": {},\n    \"user_guid\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d86291dc-6904-4736-b703-a0867bb5eb4f",
+          "name": "Delete a budget",
+          "request": {
+            "name": "Delete a budget",
+            "description": {
+              "content": "Delete a budget.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "budgets",
+                ":budget_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique identifier for the budget. Defined by MX."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "budget_guid",
+                  "description": "(Required) The unique identifier for the budget. Defined by MX."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f5e502c9-f0a1-47f5-9df2-e7ec68e606aa",
+              "name": "No content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "budgets",
+                    ":budget_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique identifier for the budget. Defined by MX."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "budget_guid",
+                      "description": "(Required) The unique identifier for the budget. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8c69426d-c227-4fd4-880d-ac4123994f93",
+    "name": "MX Platform Budgets API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

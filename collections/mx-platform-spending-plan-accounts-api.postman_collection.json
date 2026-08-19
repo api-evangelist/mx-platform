@@ -1,0 +1,459 @@
+{
+  "item": [
+    {
+      "id": "97647253-0e77-4a35-b8a8-83d47d2dc977",
+      "name": "Spending_plan_accounts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1783fc0c-af62-4331-a565-6b011c3dedb6",
+          "name": "Delete spending plan account",
+          "request": {
+            "name": "Delete spending plan account",
+            "description": {
+              "content": "Use this endpoint to delete a `spending_plan_account`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "spending_plans",
+                ":spending_plan_guid",
+                "spending_plan_accounts",
+                ":spending_plan_account_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique ID for a `user`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "spending_plan_guid",
+                  "description": "(Required) The unique ID for the `spending_plan`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "spending_plan_account_guid",
+                  "description": "(Required) The unique ID for the specified account."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ef9b5a34-cfca-4f66-b618-7d170237cd9a",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "spending_plans",
+                    ":spending_plan_guid",
+                    "spending_plan_accounts",
+                    ":spending_plan_account_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique ID for a `user`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "spending_plan_guid",
+                      "description": "(Required) The unique ID for the `spending_plan`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "spending_plan_account_guid",
+                      "description": "(Required) The unique ID for the specified account."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a47c4b1b-dff8-4f96-9b66-bf63a47be4d6",
+          "name": "Read spending plan account",
+          "request": {
+            "name": "Read spending plan account",
+            "description": {
+              "content": "Use this endpoint to read the attributes of a specific spending plan account according to its unique GUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "spending_plans",
+                ":spending_plan_guid",
+                "spending_plan_accounts",
+                ":spending_plan_account_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "spending_plan_guid",
+                  "description": "(Required) The unique ID for the `spending_plan`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "spending_plan_account_guid",
+                  "description": "(Required) The unique ID for the specified account."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "312e2b15-67e7-45eb-b25d-f6e64ad7fcf6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "spending_plans",
+                    ":spending_plan_guid",
+                    "spending_plan_accounts",
+                    ":spending_plan_account_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "spending_plan_guid",
+                      "description": "(Required) The unique ID for the `spending_plan`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "spending_plan_account_guid",
+                      "description": "(Required) The unique ID for the specified account."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"account_guid\": \"ACT-97d3948f-ebe7-434a-9bd0-20b29d67c9d4\",\n  \"client_guid\": \"CLT-024284fc-a6a7-42ee-b363-dab9343e3f72\",\n  \"created_at\": \"2023-04-27T23:14:16.000Z\",\n  \"guid\": \"SPA-c76e4a85-b2c4-4335-82b7-8f8b8f28c35a\",\n  \"spending_plan_guid\": \"SPL-dbfe201d-c341-4bff-93c0-62a918d0b600\",\n  \"updated_at\": \"2023-04-27T23:14:16.000Z\",\n  \"user_guid\": \"USR-72086f59-6684-4adf-8f29-c4d32db43cd7\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1d20d096-bb99-4a87-a20c-92760c594f19",
+          "name": "List spending plan accounts",
+          "request": {
+            "name": "List spending plan accounts",
+            "description": {
+              "content": "Use this endpoint to list all the spending plan accounts associated with the spending plan.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "spending_plans",
+                ":spending_plan_guid",
+                "spending_plan_accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "spending_plan_guid",
+                  "description": "(Required) The unique ID for the `spending_plan`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "28d73f6c-f645-4627-97cc-2b5c36e9bd42",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "spending_plans",
+                    ":spending_plan_guid",
+                    "spending_plan_accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "spending_plan_guid",
+                      "description": "(Required) The unique ID for the `spending_plan`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"spending_plan_accounts\": [\n    {\n      \"account_guid\": \"ACT-97d3948f-ebe7-434a-9bd0-20b29d67c9d4\",\n      \"client_guid\": \"CLT-024284fc-a6a7-42ee-b363-dab9343e3f72\",\n      \"created_at\": \"2023-04-27T23:14:16.000Z\",\n      \"guid\": \"SPA-c76e4a85-b2c4-4335-82b7-8f8b8f28c35a\",\n      \"spending_plan_guid\": \"SPL-dbfe201d-c341-4bff-93c0-62a918d0b600\",\n      \"updated_at\": \"2023-04-27T23:14:16.000Z\",\n      \"user_guid\": \"USR-72086f59-6684-4adf-8f29-c4d32db43cd7\"\n    },\n    {\n      \"account_guid\": \"ACT-97d3948f-ebe7-434a-9bd0-20b29d67c9d4\",\n      \"client_guid\": \"CLT-024284fc-a6a7-42ee-b363-dab9343e3f72\",\n      \"created_at\": \"2023-04-27T23:14:16.000Z\",\n      \"guid\": \"SPA-c76e4a85-b2c4-4335-82b7-8f8b8f28c35a\",\n      \"spending_plan_guid\": \"SPL-dbfe201d-c341-4bff-93c0-62a918d0b600\",\n      \"updated_at\": \"2023-04-27T23:14:16.000Z\",\n      \"user_guid\": \"USR-72086f59-6684-4adf-8f29-c4d32db43cd7\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "06abe6a1-7fcc-4ed6-97a8-a4734bfeb94b",
+    "name": "MX Platform Spending_plan_accounts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

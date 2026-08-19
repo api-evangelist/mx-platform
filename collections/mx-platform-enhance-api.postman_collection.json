@@ -1,0 +1,146 @@
+{
+  "item": [
+    {
+      "id": "f4eb53af-c243-42f7-88dc-71d744863f7c",
+      "name": "Enhance",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d53ee251-cee8-42cc-8876-097a5982bc76",
+          "name": "Enhance transactions",
+          "request": {
+            "name": "Enhance transactions",
+            "description": {
+              "content": "Use this endpoint to categorize, cleanse, and classify transactions. These transactions are not persisted or stored on the MX platform.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "transactions",
+                "enhance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"transactions\": [\n    {\n      \"description\": \"<string>\",\n      \"id\": \"<string>\",\n      \"amount\": \"<number>\",\n      \"extended_transaction_type\": \"<string>\",\n      \"memo\": \"<string>\",\n      \"merchant_category_code\": \"<integer>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"description\": \"<string>\",\n      \"id\": \"<string>\",\n      \"amount\": \"<number>\",\n      \"extended_transaction_type\": \"<string>\",\n      \"memo\": \"<string>\",\n      \"merchant_category_code\": \"<integer>\",\n      \"type\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5d34282f-5344-4479-ba23-e56e43d158ab",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    "enhance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transactions\": [\n    {\n      \"description\": \"ubr* pending.uber.com\",\n      \"id\": \"ID-123\",\n      \"amount\": 21.33,\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"memo\": \"Additional-information*on_transaction\",\n      \"merchant_category_code\": 4121,\n      \"type\": \"DEBIT\"\n    },\n    {\n      \"description\": \"ubr* pending.uber.com\",\n      \"id\": \"ID-123\",\n      \"amount\": 21.33,\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"memo\": \"Additional-information*on_transaction\",\n      \"merchant_category_code\": 4121,\n      \"type\": \"DEBIT\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"transactions\": [\n    {\n      \"amount\": 21.33,\n      \"categorized_by\": 13,\n      \"category\": \"Rental Car & Taxi\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"described_by\": 6,\n      \"description\": \"Uber\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"id\": \"ID-123\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": false,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_subscription\": false,\n      \"memo\": \"Additional-information*on_transaction\",\n      \"merchant_category_code\": 4121,\n      \"merchant_guid\": \"MCH-14f25b63-ef47-a38e-b2b6-d02b280b6e4e\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"original_description\": \"ubr* pending.uber.com\",\n      \"type\": \"DEBIT\"\n    },\n    {\n      \"amount\": 21.33,\n      \"categorized_by\": 13,\n      \"category\": \"Rental Car & Taxi\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"described_by\": 6,\n      \"description\": \"Uber\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"id\": \"ID-123\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": false,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_subscription\": false,\n      \"memo\": \"Additional-information*on_transaction\",\n      \"merchant_category_code\": 4121,\n      \"merchant_guid\": \"MCH-14f25b63-ef47-a38e-b2b6-d02b280b6e4e\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"original_description\": \"ubr* pending.uber.com\",\n      \"type\": \"DEBIT\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c0abecbf-6430-4849-af60-7c35fa94d637",
+    "name": "MX Platform Enhance API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

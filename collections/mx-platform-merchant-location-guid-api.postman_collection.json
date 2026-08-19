@@ -1,0 +1,141 @@
+{
+  "item": [
+    {
+      "id": "3fe66259-c054-4e05-92b3-382ffab540dd",
+      "name": "Merchant_location_guid",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "85be00f0-4e26-4042-a150-5dede67b25da",
+          "name": "Read merchant location",
+          "request": {
+            "name": "Read merchant location",
+            "description": {
+              "content": "This endpoint returns the specified merchant_location resource.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "merchant_locations",
+                ":merchant_location_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "merchant_location_guid",
+                  "description": "(Required) The unique id for a `merchant_location`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "800960a0-b3dd-4c1e-b88c-4be8f64136bc",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "merchant_locations",
+                    ":merchant_location_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "merchant_location_guid",
+                      "description": "(Required) The unique id for a `merchant_location`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"merchant_location\": {\n    \"city\": \"Greenwood Village\",\n    \"country\": \"US\",\n    \"created_at\": \"2020-04-13T21:05:09.000Z\",\n    \"guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n    \"latitude\": 39.5963005,\n    \"longitude\": -104.89158799999998,\n    \"merchant_guid\": \"MCH-09466f0a-fb58-9d1a-bae2-2af0afbea621\",\n    \"phone_number\": \"(303) 689-0728\",\n    \"postal_code\": \"801121436\",\n    \"state\": \"CO\",\n    \"street_address\": \"8547 E Arapahoe Rd, Ste 1\",\n    \"updated_at\": \"2020-04-13T21:05:09.000Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "31e44cf6-4522-4701-aa03-06f2c06a4ff6",
+    "name": "MX Platform Merchant_location_guid API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

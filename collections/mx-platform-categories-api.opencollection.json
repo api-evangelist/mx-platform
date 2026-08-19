@@ -1,0 +1,270 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MX Platform Categories API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Categories",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List default categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/categories/default",
+            "params": [
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to retrieve a list of all the default categories and subcategories offered within the MX Platform API. In other words, each item in the returned list will have its `is_default` field set to `true`. There are currently 119 default categories and subcategories. Both the _list default categories_ and _list default categories by user_ endpoints return the same results. The different routes are provided for convenience."
+        },
+        {
+          "info": {
+            "name": "Read a default category",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/categories/:category_guid",
+            "params": [
+              {
+                "name": "category_guid",
+                "value": "CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874",
+                "type": "path",
+                "description": "The unique id for a `category`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to read the attributes of a default category."
+        },
+        {
+          "info": {
+            "name": "List categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/categories",
+            "params": [
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to list all categories associated with a `user`, including both default and custom categories."
+        },
+        {
+          "info": {
+            "name": "Create category",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mx.com/users/:user_guid/categories",
+            "params": [
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use this endpoint to create a new custom category for a specific `user`."
+        },
+        {
+          "info": {
+            "name": "List default categories by user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/categories/default",
+            "params": [
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to retrieve a list of all the default categories and subcategories, scoped by user, offered within the MX Platform API. In other words, each item in the returned list will have its `is_default` field set to `true`. There are currently 119 default categories and subcategories. Both the _list default categories_ and _list default categories by user_ endpoints return the same results. The different routes are provided for convenience."
+        },
+        {
+          "info": {
+            "name": "Read a custom category",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/categories/:category_guid",
+            "params": [
+              {
+                "name": "category_guid",
+                "value": "CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874",
+                "type": "path",
+                "description": "The unique id for a `category`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to read the attributes of either a default category or a custom category."
+        },
+        {
+          "info": {
+            "name": "Update category",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.mx.com/users/:user_guid/categories/:category_guid",
+            "params": [
+              {
+                "name": "category_guid",
+                "value": "CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874",
+                "type": "path",
+                "description": "The unique id for a `category`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use this endpoint to update the attributes of a custom category according to its unique GUID."
+        },
+        {
+          "info": {
+            "name": "Delete category",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.mx.com/users/:user_guid/categories/:category_guid",
+            "params": [
+              {
+                "name": "category_guid",
+                "value": "CAT-7829f71c-2e8c-afa5-2f55-fa3634b89874",
+                "type": "path",
+                "description": "The unique id for a `category`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to delete a specific custom category according to its unique GUID. The API will respond with an empty object and a status of `204 No Content`."
+        },
+        {
+          "info": {
+            "name": "List all categories associated with an insight.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/insights/:insight_guid/categories",
+            "params": [
+              {
+                "name": "user_guid",
+                "value": "USR-1234-abcd",
+                "type": "path",
+                "description": "The unique identifier for the user. Defined by MX."
+              },
+              {
+                "name": "insight_guid",
+                "value": "BET-1234-abcd",
+                "type": "path",
+                "description": "The unique identifier for the insight. Defined by MX."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to list all the categories associated with the insight."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

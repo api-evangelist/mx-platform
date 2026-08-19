@@ -1,0 +1,183 @@
+{
+  "item": [
+    {
+      "id": "6f1e6288-5054-42b3-88a4-8eb1effdd85e",
+      "name": "Account_owners",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bfe4280b-92ef-44fe-a2d5-a85acde4f055",
+          "name": "List account owners by member",
+          "request": {
+            "name": "List account owners by member",
+            "description": {
+              "content": "This endpoint returns an array with information about every account associated with a particular member.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "account_owners"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6accaeba-52bd-469e-8d55-0182551bc24b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "account_owners"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"account_owners\": [\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"address\": \"123 This Way\",\n      \"city\": \"Middlesex\",\n      \"country\": \"US\",\n      \"email\": \"donnie@darko.co\",\n      \"first_name\": \"Donnie\",\n      \"guid\": \"ACO-63dc7714-6fc0-4aa2-a069-c06cdccd1af9\",\n      \"last_name\": \"Darko\",\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"owner_name\": \"Donnie Darko\",\n      \"phone\": \"555-555-5555\",\n      \"postal_code\": \"00000-0000\",\n      \"state\": \"VA\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\"\n    },\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"address\": \"123 This Way\",\n      \"city\": \"Middlesex\",\n      \"country\": \"US\",\n      \"email\": \"donnie@darko.co\",\n      \"first_name\": \"Donnie\",\n      \"guid\": \"ACO-63dc7714-6fc0-4aa2-a069-c06cdccd1af9\",\n      \"last_name\": \"Darko\",\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"owner_name\": \"Donnie Darko\",\n      \"phone\": \"555-555-5555\",\n      \"postal_code\": \"00000-0000\",\n      \"state\": \"VA\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "dbd98929-9bff-48fc-b907-d462cf4bf34c",
+    "name": "MX Platform Account_owners API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

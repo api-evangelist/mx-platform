@@ -1,0 +1,164 @@
+{
+  "item": [
+    {
+      "id": "2bc26dac-4dfa-4dbe-a650-c0a7b3f7b757",
+      "name": "Connect_widget_url",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "03492338-7dfd-4ee1-90df-db4e6488ec0e",
+          "name": "Request connect widget url",
+          "request": {
+            "name": "Request connect widget url",
+            "description": {
+              "content": "This endpoint will return a URL for an embeddable version of MX Connect.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "connect_widget_url"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"config\": {\n    \"client_redirect_url\": \"<string>\",\n    \"color_scheme\": \"<string>\",\n    \"current_institution_code\": \"<string>\",\n    \"current_member_guid\": \"<string>\",\n    \"disable_background_agg\": \"<boolean>\",\n    \"disable_institution_search\": \"<boolean>\",\n    \"include_identity\": \"<boolean>\",\n    \"include_transactions\": \"<boolean>\",\n    \"is_mobile_webview\": \"<boolean>\",\n    \"mode\": \"<string>\",\n    \"oauth_referral_source\": \"<string>\",\n    \"ui_message_version\": \"<integer>\",\n    \"ui_message_webview_url_scheme\": \"<string>\",\n    \"update_credentials\": \"<boolean>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ecd76b1d-a1c3-412e-ba86-2ca5aa6a03e3",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "connect_widget_url"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"config\": {\n    \"client_redirect_url\": \"https://mx.com\",\n    \"color_scheme\": \"light\",\n    \"current_institution_code\": \"chase\",\n    \"current_member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"disable_background_agg\": false,\n    \"disable_institution_search\": false,\n    \"include_identity\": false,\n    \"include_transactions\": true,\n    \"is_mobile_webview\": false,\n    \"mode\": \"aggregation\",\n    \"oauth_referral_source\": \"BROWSER\",\n    \"ui_message_version\": 4,\n    \"ui_message_webview_url_scheme\": \"mx\",\n    \"update_credentials\": false\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"user\": {\n    \"connect_widget_url\": \"https://int-widgets.moneydesktop.com/md/connect/jb1rA14m85tw2lyvpgfx4gc6d3Z8z8Ayb8\",\n    \"guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2898c525-a3cc-4583-a6b2-3b8196ced7ec",
+    "name": "MX Platform Connect_widget_url API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

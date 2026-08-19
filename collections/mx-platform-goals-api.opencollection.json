@@ -1,0 +1,181 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MX Platform Goals API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Goals",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List goals",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/goals",
+            "params": [
+              {
+                "name": "user_guid",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier for the user."
+              },
+              {
+                "name": "page",
+                "value": "null",
+                "type": "query",
+                "description": "Results are returned in paginated sets, this is the page of the results you would like to view. Defaults to page 1 if no page is specified."
+              },
+              {
+                "name": "records_per_age",
+                "value": "null",
+                "type": "query",
+                "description": "The supported range is from 10 to 1000. If the records_per_page parameter is not specified or is outside this range, a default of 25 records per page will be used."
+              }
+            ]
+          },
+          "docs": "List all goals a user can set."
+        },
+        {
+          "info": {
+            "name": "Create a goal",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mx.com/users/:user_guid/goals",
+            "params": [
+              {
+                "name": "user_guid",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier for the user."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a goal. This endpoint accepts the optional `MX-Skip-Webhook` header and `skip_webhook` parameter."
+        },
+        {
+          "info": {
+            "name": "Read a goal",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/goals/:goal_guid",
+            "params": [
+              {
+                "name": "goal_guid",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier for a goal. Defined by MX."
+              },
+              {
+                "name": "user_guid",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier for a user."
+              }
+            ]
+          },
+          "docs": "Read a specific goal."
+        },
+        {
+          "info": {
+            "name": "Update a goal",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.mx.com/users/:user_guid/goals/:goal_guid",
+            "params": [
+              {
+                "name": "goal_guid",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier for a goal. Defined by MX."
+              },
+              {
+                "name": "user_guid",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier for a user."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint updates a specific goal."
+        },
+        {
+          "info": {
+            "name": "Delete a goal",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.mx.com/users/:user_guid/goals/:goal_guid",
+            "params": [
+              {
+                "name": "goal_guid",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier for a goal. Defined by MX."
+              },
+              {
+                "name": "user_guid",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier for a user."
+              }
+            ]
+          },
+          "docs": "Delete a goal."
+        },
+        {
+          "info": {
+            "name": "Reposition goals",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.mx.com/users/:user_guid/goals/reposition",
+            "params": [
+              {
+                "name": "user_guid",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier for the user."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint repositions goal priority levels. If one goal is set to a lower priority, then any other goals need to be adjusted accordingly."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

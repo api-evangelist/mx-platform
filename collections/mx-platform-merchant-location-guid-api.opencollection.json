@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MX Platform Merchant_location_guid API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Merchant_location_guid",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read merchant location",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/merchant_locations/:merchant_location_guid",
+            "params": [
+              {
+                "name": "merchant_location_guid",
+                "value": "MCH-09466f0a-fb58-9d1a-bae2-2af0afbea621",
+                "type": "path",
+                "description": "The unique id for a `merchant_location`."
+              }
+            ]
+          },
+          "docs": "This endpoint returns the specified merchant_location resource."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

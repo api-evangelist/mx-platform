@@ -1,0 +1,615 @@
+{
+  "item": [
+    {
+      "id": "0dcef583-9e4c-4041-b1cf-6bff669dbf9a",
+      "name": "Holdings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1454e182-8882-4ce2-aa59-85c671713f67",
+          "name": "List holdings by account",
+          "request": {
+            "name": "List holdings by account",
+            "description": {
+              "content": "This endpoint returns all holdings associated with the specified `account`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "accounts",
+                ":account_guid",
+                "holdings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "from_date",
+                  "value": "<string>",
+                  "description": "Filter holdings from this date."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "to_date",
+                  "value": "<string>",
+                  "description": "Filter holdings to this date."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account_guid",
+                  "description": "(Required) The unique id for the `account`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for the `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ce802a32-2e5f-4db3-a9e3-b66803a940cd",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "accounts",
+                    ":account_guid",
+                    "holdings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "from_date",
+                      "value": "2015-09-20"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "2019-10-20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_guid",
+                      "description": "(Required) The unique id for the `account`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for the `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"holdings\": [\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"cost_basis\": 827,\n      \"created_at\": \"2015-04-13T18:01:23.000Z\",\n      \"currency_code\": \"USD\",\n      \"cusip\": \"18383M878\",\n      \"daily_change\": 2.5,\n      \"description\": \"Guggenheim Defensive Equity ETF\",\n      \"guid\": \"HOL-d65683e8-9eab-26bb-bcfd-ced159c9abe2\",\n      \"holding_type\": \"MONEY_MARKET\",\n      \"holding_type_id\": 1,\n      \"id\": \"ID-123\",\n      \"market_value\": 989.5,\n      \"member_guid\": \"MBR-d65683e8-9eab-26bb-bcfd-ced159c9abe\",\n      \"metadata\": \"metadata\",\n      \"purchase_price\": 26.3,\n      \"shares\": 6,\n      \"symbol\": \"DEF\",\n      \"updated_at\": \"2015-04-13T18:01:23.000Z\",\n      \"user_guid\": \"USR-743e5d7f-1116-28fa-5de1-d3ba02e41d8d\"\n    },\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"cost_basis\": 827,\n      \"created_at\": \"2015-04-13T18:01:23.000Z\",\n      \"currency_code\": \"USD\",\n      \"cusip\": \"18383M878\",\n      \"daily_change\": 2.5,\n      \"description\": \"Guggenheim Defensive Equity ETF\",\n      \"guid\": \"HOL-d65683e8-9eab-26bb-bcfd-ced159c9abe2\",\n      \"holding_type\": \"MONEY_MARKET\",\n      \"holding_type_id\": 1,\n      \"id\": \"ID-123\",\n      \"market_value\": 989.5,\n      \"member_guid\": \"MBR-d65683e8-9eab-26bb-bcfd-ced159c9abe\",\n      \"metadata\": \"metadata\",\n      \"purchase_price\": 26.3,\n      \"shares\": 6,\n      \"symbol\": \"DEF\",\n      \"updated_at\": \"2015-04-13T18:01:23.000Z\",\n      \"user_guid\": \"USR-743e5d7f-1116-28fa-5de1-d3ba02e41d8d\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dd9003b1-872f-4a24-9a1e-43d3b8d7be0d",
+          "name": "List holdings",
+          "request": {
+            "name": "List holdings",
+            "description": {
+              "content": "This endpoint returns all holdings associated with the specified `user` across all accounts and members.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "holdings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "from_date",
+                  "value": "<string>",
+                  "description": "Filter holdings from this date."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "to_date",
+                  "value": "<string>",
+                  "description": "Filter holdings to this date."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1e1221f7-9131-485d-98a4-e3b7cd960fef",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "holdings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "from_date",
+                      "value": "2015-09-20"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "2019-10-20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"holdings\": [\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"cost_basis\": 827,\n      \"created_at\": \"2015-04-13T18:01:23.000Z\",\n      \"currency_code\": \"USD\",\n      \"cusip\": \"18383M878\",\n      \"daily_change\": 2.5,\n      \"description\": \"Guggenheim Defensive Equity ETF\",\n      \"guid\": \"HOL-d65683e8-9eab-26bb-bcfd-ced159c9abe2\",\n      \"holding_type\": \"MONEY_MARKET\",\n      \"holding_type_id\": 1,\n      \"id\": \"ID-123\",\n      \"market_value\": 989.5,\n      \"member_guid\": \"MBR-d65683e8-9eab-26bb-bcfd-ced159c9abe\",\n      \"metadata\": \"metadata\",\n      \"purchase_price\": 26.3,\n      \"shares\": 6,\n      \"symbol\": \"DEF\",\n      \"updated_at\": \"2015-04-13T18:01:23.000Z\",\n      \"user_guid\": \"USR-743e5d7f-1116-28fa-5de1-d3ba02e41d8d\"\n    },\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"cost_basis\": 827,\n      \"created_at\": \"2015-04-13T18:01:23.000Z\",\n      \"currency_code\": \"USD\",\n      \"cusip\": \"18383M878\",\n      \"daily_change\": 2.5,\n      \"description\": \"Guggenheim Defensive Equity ETF\",\n      \"guid\": \"HOL-d65683e8-9eab-26bb-bcfd-ced159c9abe2\",\n      \"holding_type\": \"MONEY_MARKET\",\n      \"holding_type_id\": 1,\n      \"id\": \"ID-123\",\n      \"market_value\": 989.5,\n      \"member_guid\": \"MBR-d65683e8-9eab-26bb-bcfd-ced159c9abe\",\n      \"metadata\": \"metadata\",\n      \"purchase_price\": 26.3,\n      \"shares\": 6,\n      \"symbol\": \"DEF\",\n      \"updated_at\": \"2015-04-13T18:01:23.000Z\",\n      \"user_guid\": \"USR-743e5d7f-1116-28fa-5de1-d3ba02e41d8d\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a5917f82-4270-4939-ac02-322de3fc28da",
+          "name": "Read holding",
+          "request": {
+            "name": "Read holding",
+            "description": {
+              "content": "Use this endpoint to read the attributes of a specific `holding`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "holdings",
+                ":holding_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "holding_guid",
+                  "description": "(Required) The unique id for a `holding`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a44b2686-dbf4-4ba7-9a35-74adf8c25e50",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "holdings",
+                    ":holding_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "holding_guid",
+                      "description": "(Required) The unique id for a `holding`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"holding\": {\n    \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n    \"cost_basis\": 827,\n    \"created_at\": \"2015-04-13T18:01:23.000Z\",\n    \"currency_code\": \"USD\",\n    \"cusip\": \"18383M878\",\n    \"daily_change\": 2.5,\n    \"description\": \"Guggenheim Defensive Equity ETF\",\n    \"guid\": \"HOL-d65683e8-9eab-26bb-bcfd-ced159c9abe2\",\n    \"holding_type\": \"MONEY_MARKET\",\n    \"holding_type_id\": 1,\n    \"id\": \"ID-123\",\n    \"market_value\": 989.5,\n    \"member_guid\": \"MBR-d65683e8-9eab-26bb-bcfd-ced159c9abe\",\n    \"metadata\": \"metadata\",\n    \"purchase_price\": 26.3,\n    \"shares\": 6,\n    \"symbol\": \"DEF\",\n    \"updated_at\": \"2015-04-13T18:01:23.000Z\",\n    \"user_guid\": \"USR-743e5d7f-1116-28fa-5de1-d3ba02e41d8d\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aa69c2de-9436-4fdd-82ae-0d4ea5ae46a7",
+          "name": "List holdings by member",
+          "request": {
+            "name": "List holdings by member",
+            "description": {
+              "content": "This endpoint returns all holdings associated with the specified `member` across all accounts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "holdings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "from_date",
+                  "value": "<string>",
+                  "description": "Filter holdings from this date."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "to_date",
+                  "value": "<string>",
+                  "description": "Filter holdings to this date."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "084f76d4-6964-4dcb-9fbb-cbda8debb396",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "holdings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "from_date",
+                      "value": "2015-09-20"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "2019-10-20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"holdings\": [\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"cost_basis\": 827,\n      \"created_at\": \"2015-04-13T18:01:23.000Z\",\n      \"currency_code\": \"USD\",\n      \"cusip\": \"18383M878\",\n      \"daily_change\": 2.5,\n      \"description\": \"Guggenheim Defensive Equity ETF\",\n      \"guid\": \"HOL-d65683e8-9eab-26bb-bcfd-ced159c9abe2\",\n      \"holding_type\": \"MONEY_MARKET\",\n      \"holding_type_id\": 1,\n      \"id\": \"ID-123\",\n      \"market_value\": 989.5,\n      \"member_guid\": \"MBR-d65683e8-9eab-26bb-bcfd-ced159c9abe\",\n      \"metadata\": \"metadata\",\n      \"purchase_price\": 26.3,\n      \"shares\": 6,\n      \"symbol\": \"DEF\",\n      \"updated_at\": \"2015-04-13T18:01:23.000Z\",\n      \"user_guid\": \"USR-743e5d7f-1116-28fa-5de1-d3ba02e41d8d\"\n    },\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"cost_basis\": 827,\n      \"created_at\": \"2015-04-13T18:01:23.000Z\",\n      \"currency_code\": \"USD\",\n      \"cusip\": \"18383M878\",\n      \"daily_change\": 2.5,\n      \"description\": \"Guggenheim Defensive Equity ETF\",\n      \"guid\": \"HOL-d65683e8-9eab-26bb-bcfd-ced159c9abe2\",\n      \"holding_type\": \"MONEY_MARKET\",\n      \"holding_type_id\": 1,\n      \"id\": \"ID-123\",\n      \"market_value\": 989.5,\n      \"member_guid\": \"MBR-d65683e8-9eab-26bb-bcfd-ced159c9abe\",\n      \"metadata\": \"metadata\",\n      \"purchase_price\": 26.3,\n      \"shares\": 6,\n      \"symbol\": \"DEF\",\n      \"updated_at\": \"2015-04-13T18:01:23.000Z\",\n      \"user_guid\": \"USR-743e5d7f-1116-28fa-5de1-d3ba02e41d8d\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6a95549e-d865-48f9-8fc0-0cdde212e7cf",
+    "name": "MX Platform Holdings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MX Platform Monthly_cash_flow_profile API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Monthly_cash_flow_profile",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read monthly cash flow profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/monthly_cash_flow_profile",
+            "params": [
+              {
+                "name": "user_guid",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier for the user."
+              }
+            ]
+          },
+          "docs": "Read monthly cash flow profile"
+        },
+        {
+          "info": {
+            "name": "Update monthly cash flow profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.mx.com/users/:user_guid/monthly_cash_flow_profile",
+            "params": [
+              {
+                "name": "user_guid",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier for the user."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use this endpoint to update the attributes of a `monthly_cash_flow_profile`."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

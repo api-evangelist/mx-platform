@@ -1,0 +1,4392 @@
+{
+  "item": [
+    {
+      "id": "a171db21-40e5-42be-b69b-35c501eb0ab3",
+      "name": "Members",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8d01d2e9-7984-4262-b871-5216aae8fc91",
+          "name": "List members",
+          "request": {
+            "name": "List members",
+            "description": {
+              "content": "This endpoint returns an array which contains information on every member associated with a specific user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "38a1b720-414a-4bb2-8709-ed78d04cab2d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"members\": [\n    {\n      \"aggregated_at\": \"2016-10-13T18:07:57.000Z\",\n      \"background_aggregation_is_disabled\": false,\n      \"connection_status\": \"CONNECTED\",\n      \"guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"id\": \"unique_id\",\n      \"institution_code\": \"chase\",\n      \"is_being_aggregated\": false,\n      \"is_managed_by_user\": false,\n      \"is_manual\": false,\n      \"is_oauth\": false,\n      \"metadata\": \"\\\\\\\"credentials_last_refreshed_at\\\\\\\": \\\\\\\"2015-10-15\\\\\\\"\",\n      \"most_recent_job_detail_code\": \"(deprecated)\",\n      \"most_recent_job_detail_text\": \"(deprecated)\",\n      \"name\": \"Chase Bank\",\n      \"oauth_window_uri\": \"https://mxbank.mx.com/oauth/authorize?client_id=b8OikQ4Ep3NuSUrQ13DdvFuwpNx-qqoAsJDVAQCyLkQ&redirect_uri=https%3A%2F%2Fint-app.moneydesktop.com%2Foauth%2Fredirect_from&response_type=code&scope=openid&state=d745bd4ee6f0f9c184757f574bcc2df2\",\n      \"successfully_aggregated_at\": \"2016-10-13T17:57:38.000Z\",\n      \"use_cases\": [\n        \"PFM\",\n        \"IAV\"\n      ],\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    },\n    {\n      \"aggregated_at\": \"2016-10-13T18:07:57.000Z\",\n      \"background_aggregation_is_disabled\": false,\n      \"connection_status\": \"CONNECTED\",\n      \"guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"id\": \"unique_id\",\n      \"institution_code\": \"chase\",\n      \"is_being_aggregated\": false,\n      \"is_managed_by_user\": false,\n      \"is_manual\": false,\n      \"is_oauth\": false,\n      \"metadata\": \"\\\\\\\"credentials_last_refreshed_at\\\\\\\": \\\\\\\"2015-10-15\\\\\\\"\",\n      \"most_recent_job_detail_code\": \"(deprecated)\",\n      \"most_recent_job_detail_text\": \"(deprecated)\",\n      \"name\": \"Chase Bank\",\n      \"oauth_window_uri\": \"https://mxbank.mx.com/oauth/authorize?client_id=b8OikQ4Ep3NuSUrQ13DdvFuwpNx-qqoAsJDVAQCyLkQ&redirect_uri=https%3A%2F%2Fint-app.moneydesktop.com%2Foauth%2Fredirect_from&response_type=code&scope=openid&state=d745bd4ee6f0f9c184757f574bcc2df2\",\n      \"successfully_aggregated_at\": \"2016-10-13T17:57:38.000Z\",\n      \"use_cases\": [\n        \"PFM\",\n        \"IAV\"\n      ],\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0211e844-ca73-46be-9f82-0e931ca2a19e",
+          "name": "Create member",
+          "request": {
+            "name": "Create member",
+            "description": {
+              "content": "This endpoint allows you to create a new member. Members are created with the required parameters credentials and institution_code, and the optional parameters id and metadata. When creating a member, youll need to include the correct type of credential required by the financial institution and provided by the user. You can find out which credential type is required with the `/institutions/{institution_code}/credentials` endpoint. If successful, the MX Platform API will respond with the newly-created member object. Once you successfully create a member, MX will immediately validate the provided credentials and attempt to aggregate data for accounts and transactions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"client_redirect_url\": \"<string>\",\n  \"enable_app2app\": \"<boolean>\",\n  \"member\": {\n    \"credentials\": [\n      {\n        \"guid\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"guid\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"institution_code\": \"<string>\",\n    \"background_aggregation_is_disabled\": \"<boolean>\",\n    \"id\": \"<string>\",\n    \"is_oauth\": \"<boolean>\",\n    \"metadata\": \"<string>\",\n    \"skip_aggregation\": \"<boolean>\"\n  },\n  \"referral_source\": \"<string>\",\n  \"ui_message_webview_url_scheme\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d0fb6d02-832a-4267-bcdf-a29ea05f43bc",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"client_redirect_url\": \"https://mx.com\",\n  \"enable_app2app\": false,\n  \"member\": {\n    \"credentials\": [\n      {\n        \"guid\": \"CRD-27d0edb8-1d50-5b90-bcbc-be270ca42b9f\",\n        \"value\": \"password\"\n      },\n      {\n        \"guid\": \"CRD-27d0edb8-1d50-5b90-bcbc-be270ca42b9f\",\n        \"value\": \"password\"\n      }\n    ],\n    \"institution_code\": \"chase\",\n    \"background_aggregation_is_disabled\": false,\n    \"id\": \"unique_id\",\n    \"is_oauth\": false,\n    \"metadata\": \"\\\\\\\"credentials_last_refreshed_at\\\\\\\": \\\\\\\"2015-10-15\\\\\\\"\",\n    \"skip_aggregation\": false\n  },\n  \"referral_source\": \"APP\",\n  \"ui_message_webview_url_scheme\": \"mx\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"member\": {\n    \"aggregated_at\": \"2016-10-13T18:07:57.000Z\",\n    \"background_aggregation_is_disabled\": false,\n    \"connection_status\": \"CONNECTED\",\n    \"guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"id\": \"unique_id\",\n    \"institution_code\": \"chase\",\n    \"is_being_aggregated\": false,\n    \"is_managed_by_user\": false,\n    \"is_manual\": false,\n    \"is_oauth\": false,\n    \"metadata\": \"\\\\\\\"credentials_last_refreshed_at\\\\\\\": \\\\\\\"2015-10-15\\\\\\\"\",\n    \"most_recent_job_detail_code\": \"(deprecated)\",\n    \"most_recent_job_detail_text\": \"(deprecated)\",\n    \"name\": \"Chase Bank\",\n    \"oauth_window_uri\": \"https://mxbank.mx.com/oauth/authorize?client_id=b8OikQ4Ep3NuSUrQ13DdvFuwpNx-qqoAsJDVAQCyLkQ&redirect_uri=https%3A%2F%2Fint-app.moneydesktop.com%2Foauth%2Fredirect_from&response_type=code&scope=openid&state=d745bd4ee6f0f9c184757f574bcc2df2\",\n    \"successfully_aggregated_at\": \"2016-10-13T17:57:38.000Z\",\n    \"use_cases\": [\n      \"PFM\",\n      \"IAV\"\n    ],\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "90d99aa9-72f6-4ca5-99b9-6fee4e1d04f0",
+              "name": "Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"client_redirect_url\": \"https://mx.com\",\n  \"enable_app2app\": false,\n  \"member\": {\n    \"credentials\": [\n      {\n        \"guid\": \"CRD-27d0edb8-1d50-5b90-bcbc-be270ca42b9f\",\n        \"value\": \"password\"\n      },\n      {\n        \"guid\": \"CRD-27d0edb8-1d50-5b90-bcbc-be270ca42b9f\",\n        \"value\": \"password\"\n      }\n    ],\n    \"institution_code\": \"chase\",\n    \"background_aggregation_is_disabled\": false,\n    \"id\": \"unique_id\",\n    \"is_oauth\": false,\n    \"metadata\": \"\\\\\\\"credentials_last_refreshed_at\\\\\\\": \\\\\\\"2015-10-15\\\\\\\"\",\n    \"skip_aggregation\": false\n  },\n  \"referral_source\": \"APP\",\n  \"ui_message_webview_url_scheme\": \"mx\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"member\": {\n    \"aggregated_at\": \"2016-10-13T18:07:57.000Z\",\n    \"background_aggregation_is_disabled\": false,\n    \"connection_status\": \"CONNECTED\",\n    \"guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"id\": \"unique_id\",\n    \"institution_code\": \"chase\",\n    \"is_being_aggregated\": false,\n    \"is_managed_by_user\": false,\n    \"is_manual\": false,\n    \"is_oauth\": false,\n    \"metadata\": \"\\\\\\\"credentials_last_refreshed_at\\\\\\\": \\\\\\\"2015-10-15\\\\\\\"\",\n    \"most_recent_job_detail_code\": \"(deprecated)\",\n    \"most_recent_job_detail_text\": \"(deprecated)\",\n    \"name\": \"Chase Bank\",\n    \"oauth_window_uri\": \"https://mxbank.mx.com/oauth/authorize?client_id=b8OikQ4Ep3NuSUrQ13DdvFuwpNx-qqoAsJDVAQCyLkQ&redirect_uri=https%3A%2F%2Fint-app.moneydesktop.com%2Foauth%2Fredirect_from&response_type=code&scope=openid&state=d745bd4ee6f0f9c184757f574bcc2df2\",\n    \"successfully_aggregated_at\": \"2016-10-13T17:57:38.000Z\",\n    \"use_cases\": [\n      \"PFM\",\n      \"IAV\"\n    ],\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7465a790-4a48-4d48-b9ad-5ac1afb34680",
+          "name": "Delete member",
+          "request": {
+            "name": "Delete member",
+            "description": {
+              "content": "Accessing this endpoint will permanently delete a member.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4571abe0-1ec7-48e0-a838-f795922f59f5",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "83a39927-f038-49cd-a973-d08e1544c6f2",
+          "name": "Read member",
+          "request": {
+            "name": "Read member",
+            "description": {
+              "content": "Use this endpoint to read the attributes of a specific member.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8ebcde69-72da-4da6-91af-0bdf3d36f4e4",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"member\": {\n    \"aggregated_at\": \"2016-10-13T18:07:57.000Z\",\n    \"background_aggregation_is_disabled\": false,\n    \"connection_status\": \"CONNECTED\",\n    \"guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"id\": \"unique_id\",\n    \"institution_code\": \"chase\",\n    \"is_being_aggregated\": false,\n    \"is_managed_by_user\": false,\n    \"is_manual\": false,\n    \"is_oauth\": false,\n    \"metadata\": \"\\\\\\\"credentials_last_refreshed_at\\\\\\\": \\\\\\\"2015-10-15\\\\\\\"\",\n    \"most_recent_job_detail_code\": \"(deprecated)\",\n    \"most_recent_job_detail_text\": \"(deprecated)\",\n    \"name\": \"Chase Bank\",\n    \"oauth_window_uri\": \"https://mxbank.mx.com/oauth/authorize?client_id=b8OikQ4Ep3NuSUrQ13DdvFuwpNx-qqoAsJDVAQCyLkQ&redirect_uri=https%3A%2F%2Fint-app.moneydesktop.com%2Foauth%2Fredirect_from&response_type=code&scope=openid&state=d745bd4ee6f0f9c184757f574bcc2df2\",\n    \"successfully_aggregated_at\": \"2016-10-13T17:57:38.000Z\",\n    \"use_cases\": [\n      \"PFM\",\n      \"IAV\"\n    ],\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "07e6f403-9ceb-4503-83f8-cd0b72a51160",
+          "name": "Update member",
+          "request": {
+            "name": "Update member",
+            "description": {
+              "content": "Use this endpoint to update a members attributes. Only the credentials, id, and metadata parameters can be updated. To get a list of the required credentials for the member, use the list member credentials endpoint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"member\": {\n    \"background_aggregation_is_disabled\": \"<boolean>\",\n    \"credentials\": [\n      {\n        \"guid\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"guid\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"id\": \"<string>\",\n    \"metadata\": \"<string>\",\n    \"skip_aggregation\": \"<boolean>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "89d0ffbe-6128-4b7d-a17e-907d25568351",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"member\": {\n    \"background_aggregation_is_disabled\": false,\n    \"credentials\": [\n      {\n        \"guid\": \"CRD-27d0edb8-1d50-5b90-bcbc-be270ca42b9f\",\n        \"value\": \"password\"\n      },\n      {\n        \"guid\": \"CRD-27d0edb8-1d50-5b90-bcbc-be270ca42b9f\",\n        \"value\": \"password\"\n      }\n    ],\n    \"id\": \"unique_id\",\n    \"metadata\": \"\\\\\\\"credentials_last_refreshed_at\\\\\\\": \\\\\\\"2015-10-15\\\\\\\"\",\n    \"skip_aggregation\": false\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"member\": {\n    \"aggregated_at\": \"2016-10-13T18:07:57.000Z\",\n    \"background_aggregation_is_disabled\": false,\n    \"connection_status\": \"CONNECTED\",\n    \"guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"id\": \"unique_id\",\n    \"institution_code\": \"chase\",\n    \"is_being_aggregated\": false,\n    \"is_managed_by_user\": false,\n    \"is_manual\": false,\n    \"is_oauth\": false,\n    \"metadata\": \"\\\\\\\"credentials_last_refreshed_at\\\\\\\": \\\\\\\"2015-10-15\\\\\\\"\",\n    \"most_recent_job_detail_code\": \"(deprecated)\",\n    \"most_recent_job_detail_text\": \"(deprecated)\",\n    \"name\": \"Chase Bank\",\n    \"oauth_window_uri\": \"https://mxbank.mx.com/oauth/authorize?client_id=b8OikQ4Ep3NuSUrQ13DdvFuwpNx-qqoAsJDVAQCyLkQ&redirect_uri=https%3A%2F%2Fint-app.moneydesktop.com%2Foauth%2Fredirect_from&response_type=code&scope=openid&state=d745bd4ee6f0f9c184757f574bcc2df2\",\n    \"successfully_aggregated_at\": \"2016-10-13T17:57:38.000Z\",\n    \"use_cases\": [\n      \"PFM\",\n      \"IAV\"\n    ],\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "865ad8ab-cdfa-4700-9cce-a94306cff917",
+          "name": "List account numbers by member",
+          "request": {
+            "name": "List account numbers by member",
+            "description": {
+              "content": "This endpoint returns a list of account numbers associated with the specified `member`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "account_numbers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dcc2cce2-917a-49af-b1ae-093e70d2d9d9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "account_numbers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"account_numbers\": [\n    {\n      \"account_guid\": \"ACT-06d7f45b-caae-0f6e-1384-01f52e75dcb1\",\n      \"account_number\": \"string\",\n      \"guid\": \"ACN-8899832e-e5b4-42cd-aa25-bbf1dc889a8f\",\n      \"loan_guarantor\": \"U.S. DEPARTMENT OF EDUCATION\",\n      \"loan_reference_number\": \"string\",\n      \"institution_number\": \"string\",\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"passed_validation\": true,\n      \"routing_number\": \"string\",\n      \"sequence_number\": \"1-01\",\n      \"transit_number\": \"string\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\"\n    },\n    {\n      \"account_guid\": \"ACT-06d7f45b-caae-0f6e-1384-01f52e75dcb1\",\n      \"account_number\": \"string\",\n      \"guid\": \"ACN-8899832e-e5b4-42cd-aa25-bbf1dc889a8f\",\n      \"loan_guarantor\": \"U.S. DEPARTMENT OF EDUCATION\",\n      \"loan_reference_number\": \"string\",\n      \"institution_number\": \"string\",\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"passed_validation\": true,\n      \"routing_number\": \"string\",\n      \"sequence_number\": \"1-01\",\n      \"transit_number\": \"string\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fab799bd-87e7-4341-b6d7-c9576c85a0d2",
+          "name": "List account owners by member",
+          "request": {
+            "name": "List account owners by member",
+            "description": {
+              "content": "This endpoint returns an array with information about every account associated with a particular member.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "account_owners"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "010ed7b2-c258-483c-8324-58aa725a9c7e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "account_owners"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"account_owners\": [\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"address\": \"123 This Way\",\n      \"city\": \"Middlesex\",\n      \"country\": \"US\",\n      \"email\": \"donnie@darko.co\",\n      \"first_name\": \"Donnie\",\n      \"guid\": \"ACO-63dc7714-6fc0-4aa2-a069-c06cdccd1af9\",\n      \"last_name\": \"Darko\",\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"owner_name\": \"Donnie Darko\",\n      \"phone\": \"555-555-5555\",\n      \"postal_code\": \"00000-0000\",\n      \"state\": \"VA\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\"\n    },\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"address\": \"123 This Way\",\n      \"city\": \"Middlesex\",\n      \"country\": \"US\",\n      \"email\": \"donnie@darko.co\",\n      \"first_name\": \"Donnie\",\n      \"guid\": \"ACO-63dc7714-6fc0-4aa2-a069-c06cdccd1af9\",\n      \"last_name\": \"Darko\",\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"owner_name\": \"Donnie Darko\",\n      \"phone\": \"555-555-5555\",\n      \"postal_code\": \"00000-0000\",\n      \"state\": \"VA\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1c5b5625-5aa2-48ed-92b9-57f7e44b808e",
+          "name": "List accounts by member",
+          "request": {
+            "name": "List accounts by member",
+            "description": {
+              "content": "This endpoint returns a list of all the accounts associated with the specified `member`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "member_is_managed_by_user",
+                  "value": "<boolean>",
+                  "description": "List only accounts whose member is managed by the user."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5ad5efe1-2b28-4762-b1a2-0f0eb5d4e9b6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "member_is_managed_by_user",
+                      "value": "true"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"accounts\": [\n    {\n      \"account_number\": \"5366\",\n      \"account_ownership\": \"INDIVIDUAL\",\n      \"annuity_policy_to_date\": \"2016-10-13T17:57:37.000Z\",\n      \"annuity_provider\": \"Metlife\",\n      \"annuity_term_year\": 2048,\n      \"apr\": 1,\n      \"apy\": 1,\n      \"available_balance\": 1000,\n      \"available_credit\": 1000,\n      \"balance\": 10000,\n      \"cash_balance\": 1000,\n      \"cash_surrender_value\": 1000,\n      \"created_at\": \"2023-07-25T17:14:46Z\",\n      \"credit_limit\": 100,\n      \"currency_code\": \"USD\",\n      \"day_payment_is_due\": 20,\n      \"death_benefit\": 1000,\n      \"federal_insurance_status\": \"INSURED\",\n      \"guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"holdings_value\": 1000,\n      \"id\": \"1040434698\",\n      \"imported_at\": \"2015-10-13T17:57:37.000Z\",\n      \"institution_code\": \"3af3685e-05d9-7060-359f-008d0755e993\",\n      \"insured_name\": \"Tommy Shelby\",\n      \"interest_rate\": 1,\n      \"is_closed\": false,\n      \"is_hidden\": false,\n      \"is_manual\": false,\n      \"last_payment\": 100,\n      \"last_payment_at\": \"2023-07-25T17:14:46Z\",\n      \"loan_amount\": 1000,\n      \"margin_balance\": 1000,\n      \"matures_on\": \"2015-10-13T17:57:37.000Z\",\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"member_id\": \"member123\",\n      \"member_is_managed_by_user\": false,\n      \"metadata\": \"some metadata\",\n      \"minimum_balance\": 100,\n      \"minimum_payment\": 10,\n      \"name\": \"Test account 2\",\n      \"nickname\": \"My Checking\",\n      \"original_balance\": 10,\n      \"pay_out_amount\": 10,\n      \"payment_due_at\": \"2015-10-13T17:57:37.000Z\",\n      \"payoff_balance\": 10,\n      \"premium_amount\": 1,\n      \"property_type\": \"VEHICLE\",\n      \"routing_number\": \"68899990000000\",\n      \"started_on\": \"2015-10-13T17:57:37.000Z\",\n      \"statement_balance\": 100.1,\n      \"subtype\": \"NONE\",\n      \"today_ugl_amount\": 1000.5,\n      \"today_ugl_percentage\": 6.9,\n      \"total_account_value\": 1,\n      \"total_account_value_ugl\": 1.1,\n      \"type\": \"SAVINGS\",\n      \"updated_at\": \"2016-10-13T18:08:00.000Z\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    },\n    {\n      \"account_number\": \"5366\",\n      \"account_ownership\": \"INDIVIDUAL\",\n      \"annuity_policy_to_date\": \"2016-10-13T17:57:37.000Z\",\n      \"annuity_provider\": \"Metlife\",\n      \"annuity_term_year\": 2048,\n      \"apr\": 1,\n      \"apy\": 1,\n      \"available_balance\": 1000,\n      \"available_credit\": 1000,\n      \"balance\": 10000,\n      \"cash_balance\": 1000,\n      \"cash_surrender_value\": 1000,\n      \"created_at\": \"2023-07-25T17:14:46Z\",\n      \"credit_limit\": 100,\n      \"currency_code\": \"USD\",\n      \"day_payment_is_due\": 20,\n      \"death_benefit\": 1000,\n      \"federal_insurance_status\": \"INSURED\",\n      \"guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"holdings_value\": 1000,\n      \"id\": \"1040434698\",\n      \"imported_at\": \"2015-10-13T17:57:37.000Z\",\n      \"institution_code\": \"3af3685e-05d9-7060-359f-008d0755e993\",\n      \"insured_name\": \"Tommy Shelby\",\n      \"interest_rate\": 1,\n      \"is_closed\": false,\n      \"is_hidden\": false,\n      \"is_manual\": false,\n      \"last_payment\": 100,\n      \"last_payment_at\": \"2023-07-25T17:14:46Z\",\n      \"loan_amount\": 1000,\n      \"margin_balance\": 1000,\n      \"matures_on\": \"2015-10-13T17:57:37.000Z\",\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"member_id\": \"member123\",\n      \"member_is_managed_by_user\": false,\n      \"metadata\": \"some metadata\",\n      \"minimum_balance\": 100,\n      \"minimum_payment\": 10,\n      \"name\": \"Test account 2\",\n      \"nickname\": \"My Checking\",\n      \"original_balance\": 10,\n      \"pay_out_amount\": 10,\n      \"payment_due_at\": \"2015-10-13T17:57:37.000Z\",\n      \"payoff_balance\": 10,\n      \"premium_amount\": 1,\n      \"property_type\": \"VEHICLE\",\n      \"routing_number\": \"68899990000000\",\n      \"started_on\": \"2015-10-13T17:57:37.000Z\",\n      \"statement_balance\": 100.1,\n      \"subtype\": \"NONE\",\n      \"today_ugl_amount\": 1000.5,\n      \"today_ugl_percentage\": 6.9,\n      \"total_account_value\": 1,\n      \"total_account_value_ugl\": 1.1,\n      \"type\": \"SAVINGS\",\n      \"updated_at\": \"2016-10-13T18:08:00.000Z\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b7f77196-2f72-4ca4-b5ed-d9701843c220",
+          "name": "Read account by member",
+          "request": {
+            "name": "Read account by member",
+            "description": {
+              "content": "This endpoint allows you to read the attributes of an `account` resource.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "accounts",
+                ":account_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account_guid",
+                  "description": "(Required) The unique id for an `account`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "641fc175-26f7-4069-8625-61047760b029",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "accounts",
+                    ":account_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_guid",
+                      "description": "(Required) The unique id for an `account`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"account\": {\n    \"account_number\": \"5366\",\n    \"account_ownership\": \"INDIVIDUAL\",\n    \"annuity_policy_to_date\": \"2016-10-13T17:57:37.000Z\",\n    \"annuity_provider\": \"Metlife\",\n    \"annuity_term_year\": 2048,\n    \"apr\": 1,\n    \"apy\": 1,\n    \"available_balance\": 1000,\n    \"available_credit\": 1000,\n    \"balance\": 10000,\n    \"cash_balance\": 1000,\n    \"cash_surrender_value\": 1000,\n    \"created_at\": \"2023-07-25T17:14:46Z\",\n    \"credit_limit\": 100,\n    \"currency_code\": \"USD\",\n    \"day_payment_is_due\": 20,\n    \"death_benefit\": 1000,\n    \"federal_insurance_status\": \"INSURED\",\n    \"guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n    \"holdings_value\": 1000,\n    \"id\": \"1040434698\",\n    \"imported_at\": \"2015-10-13T17:57:37.000Z\",\n    \"institution_code\": \"3af3685e-05d9-7060-359f-008d0755e993\",\n    \"insured_name\": \"Tommy Shelby\",\n    \"interest_rate\": 1,\n    \"is_closed\": false,\n    \"is_hidden\": false,\n    \"is_manual\": false,\n    \"last_payment\": 100,\n    \"last_payment_at\": \"2023-07-25T17:14:46Z\",\n    \"loan_amount\": 1000,\n    \"margin_balance\": 1000,\n    \"matures_on\": \"2015-10-13T17:57:37.000Z\",\n    \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"member_id\": \"member123\",\n    \"member_is_managed_by_user\": false,\n    \"metadata\": \"some metadata\",\n    \"minimum_balance\": 100,\n    \"minimum_payment\": 10,\n    \"name\": \"Test account 2\",\n    \"nickname\": \"My Checking\",\n    \"original_balance\": 10,\n    \"pay_out_amount\": 10,\n    \"payment_due_at\": \"2015-10-13T17:57:37.000Z\",\n    \"payoff_balance\": 10,\n    \"premium_amount\": 1,\n    \"property_type\": \"VEHICLE\",\n    \"routing_number\": \"68899990000000\",\n    \"started_on\": \"2015-10-13T17:57:37.000Z\",\n    \"statement_balance\": 100.1,\n    \"subtype\": \"NONE\",\n    \"today_ugl_amount\": 1000.5,\n    \"today_ugl_percentage\": 6.9,\n    \"total_account_value\": 1,\n    \"total_account_value_ugl\": 1.1,\n    \"type\": \"SAVINGS\",\n    \"updated_at\": \"2016-10-13T18:08:00.000Z\",\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3a23b234-b391-44e5-a587-72e27bdc350b",
+          "name": "Update account by member",
+          "request": {
+            "name": "Update account by member",
+            "description": {
+              "content": "This endpoint allows you to update certain attributes of an `account` resource, including manual accounts. For manual accounts, you can update every field listed. For aggregated accounts, you can only update `is_business`, `is_hidden` and `metadata`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "accounts",
+                ":account_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account_guid",
+                  "description": "(Required) The unique id for an `account`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"account\": {\n    \"account_subtype\": \"<string>\",\n    \"account_type\": \"<string>\",\n    \"apr\": \"<number>\",\n    \"apy\": \"<number>\",\n    \"available_balance\": \"<number>\",\n    \"balance\": \"<number>\",\n    \"cash_surrender_value\": \"<number>\",\n    \"credit_limit\": \"<number>\",\n    \"currency_code\": \"<string>\",\n    \"death_benefit\": \"<integer>\",\n    \"interest_rate\": \"<number>\",\n    \"is_business\": \"<boolean>\",\n    \"is_closed\": \"<boolean>\",\n    \"is_hidden\": \"<boolean>\",\n    \"loan_amount\": \"<number>\",\n    \"metadata\": \"<string>\",\n    \"name\": \"<string>\",\n    \"nickname\": \"<string>\",\n    \"original_balance\": \"<number>\",\n    \"property_type\": \"<string>\",\n    \"skip_webhook\": \"<boolean>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dff98962-2e63-4690-953a-3724a4e20587",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "accounts",
+                    ":account_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_guid",
+                      "description": "(Required) The unique id for an `account`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"account\": {\n    \"account_subtype\": \"PERSONAL\",\n    \"account_type\": \"SAVINGS\",\n    \"apr\": 1,\n    \"apy\": 1,\n    \"available_balance\": 1000,\n    \"balance\": 1000,\n    \"cash_surrender_value\": 1000,\n    \"credit_limit\": 100,\n    \"currency_code\": \"USD\",\n    \"death_benefit\": 1000,\n    \"interest_rate\": 1,\n    \"is_business\": false,\n    \"is_closed\": false,\n    \"is_hidden\": false,\n    \"loan_amount\": 1000,\n    \"metadata\": \"some metadata\",\n    \"name\": \"Test account 2\",\n    \"nickname\": \"Swiss Account\",\n    \"original_balance\": 10,\n    \"property_type\": \"VEHICLE\",\n    \"skip_webhook\": true\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"account\": {\n    \"account_number\": \"5366\",\n    \"account_ownership\": \"INDIVIDUAL\",\n    \"annuity_policy_to_date\": \"2016-10-13T17:57:37.000Z\",\n    \"annuity_provider\": \"Metlife\",\n    \"annuity_term_year\": 2048,\n    \"apr\": 1,\n    \"apy\": 1,\n    \"available_balance\": 1000,\n    \"available_credit\": 1000,\n    \"balance\": 10000,\n    \"cash_balance\": 1000,\n    \"cash_surrender_value\": 1000,\n    \"created_at\": \"2023-07-25T17:14:46Z\",\n    \"credit_limit\": 100,\n    \"currency_code\": \"USD\",\n    \"day_payment_is_due\": 20,\n    \"death_benefit\": 1000,\n    \"federal_insurance_status\": \"INSURED\",\n    \"guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n    \"holdings_value\": 1000,\n    \"id\": \"1040434698\",\n    \"imported_at\": \"2015-10-13T17:57:37.000Z\",\n    \"institution_code\": \"3af3685e-05d9-7060-359f-008d0755e993\",\n    \"insured_name\": \"Tommy Shelby\",\n    \"interest_rate\": 1,\n    \"is_closed\": false,\n    \"is_hidden\": false,\n    \"is_manual\": false,\n    \"last_payment\": 100,\n    \"last_payment_at\": \"2023-07-25T17:14:46Z\",\n    \"loan_amount\": 1000,\n    \"margin_balance\": 1000,\n    \"matures_on\": \"2015-10-13T17:57:37.000Z\",\n    \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"member_id\": \"member123\",\n    \"member_is_managed_by_user\": false,\n    \"metadata\": \"some metadata\",\n    \"minimum_balance\": 100,\n    \"minimum_payment\": 10,\n    \"name\": \"Test account 2\",\n    \"nickname\": \"My Checking\",\n    \"original_balance\": 10,\n    \"pay_out_amount\": 10,\n    \"payment_due_at\": \"2015-10-13T17:57:37.000Z\",\n    \"payoff_balance\": 10,\n    \"premium_amount\": 1,\n    \"property_type\": \"VEHICLE\",\n    \"routing_number\": \"68899990000000\",\n    \"started_on\": \"2015-10-13T17:57:37.000Z\",\n    \"statement_balance\": 100.1,\n    \"subtype\": \"NONE\",\n    \"today_ugl_amount\": 1000.5,\n    \"today_ugl_percentage\": 6.9,\n    \"total_account_value\": 1,\n    \"total_account_value_ugl\": 1.1,\n    \"type\": \"SAVINGS\",\n    \"updated_at\": \"2016-10-13T18:08:00.000Z\",\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "45b89b4c-ab7a-4112-9bc1-12d622fdd48b",
+          "name": "Aggregate member",
+          "request": {
+            "name": "Aggregate member",
+            "description": {
+              "content": "Calling this endpoint initiates an aggregation event for the member. This brings in the latest account and transaction data from the connected institution. If this data has recently been updated, MX may not initiate an aggregation event.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "aggregate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4630b1a6-2307-4316-8f73-6e0699feb59e",
+              "name": "Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "aggregate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"member\": {\n    \"aggregated_at\": \"2016-10-13T18:07:57.000Z\",\n    \"background_aggregation_is_disabled\": false,\n    \"connection_status\": \"CONNECTED\",\n    \"guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"id\": \"unique_id\",\n    \"institution_code\": \"chase\",\n    \"is_being_aggregated\": false,\n    \"is_managed_by_user\": false,\n    \"is_manual\": false,\n    \"is_oauth\": false,\n    \"metadata\": \"\\\\\\\"credentials_last_refreshed_at\\\\\\\": \\\\\\\"2015-10-15\\\\\\\"\",\n    \"most_recent_job_detail_code\": \"(deprecated)\",\n    \"most_recent_job_detail_text\": \"(deprecated)\",\n    \"name\": \"Chase Bank\",\n    \"oauth_window_uri\": \"https://mxbank.mx.com/oauth/authorize?client_id=b8OikQ4Ep3NuSUrQ13DdvFuwpNx-qqoAsJDVAQCyLkQ&redirect_uri=https%3A%2F%2Fint-app.moneydesktop.com%2Foauth%2Fredirect_from&response_type=code&scope=openid&state=d745bd4ee6f0f9c184757f574bcc2df2\",\n    \"successfully_aggregated_at\": \"2016-10-13T17:57:38.000Z\",\n    \"use_cases\": [\n      \"PFM\",\n      \"IAV\"\n    ],\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f7d8e453-3634-4030-a15c-ad93213eb0fc",
+          "name": "List member challenges",
+          "request": {
+            "name": "List member challenges",
+            "description": {
+              "content": "Use this endpoint for information on what multi-factor authentication challenges need to be answered in order to aggregate a member. If the aggregation is not challenged, i.e., the member does not have a connection status of `CHALLENGED`, then code `204 No Content` will be returned. If the aggregation has been challenged, i.e., the member does have a connection status of `CHALLENGED`, then code `200 OK` will be returned - along with the corresponding credentials.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "challenges"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "43d4bdc2-58aa-4ffa-bcd2-5644cc2f854b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "challenges"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"challenges\": [\n    {\n      \"field_name\": \"Who is this guy?\",\n      \"guid\": \"CRD-ce76d2e3-86bd-ec4a-ec52-eb53b5194bf5\",\n      \"image_data\": \"Who is this guy?\",\n      \"image_options\": [\n        {\n          \"data_uri\": \"data:image/png;base64,iVBORw0KGgoAAAANSUh ... more image data ...\",\n          \"label\": \"IMAGE_1\",\n          \"value\": \"image_data\"\n        },\n        {\n          \"data_uri\": \"data:image/png;base64,iVBORw0KGgoAAAANSUh ... more image data ...\",\n          \"label\": \"IMAGE_1\",\n          \"value\": \"image_data\"\n        }\n      ],\n      \"label\": \"Who is this guy?\",\n      \"options\": [\n        {\n          \"label\": \"IMAGE_1\",\n          \"value\": \"image_data\"\n        },\n        {\n          \"label\": \"IMAGE_1\",\n          \"value\": \"image_data\"\n        }\n      ],\n      \"type\": \"IMAGE_DATA\"\n    },\n    {\n      \"field_name\": \"Who is this guy?\",\n      \"guid\": \"CRD-ce76d2e3-86bd-ec4a-ec52-eb53b5194bf5\",\n      \"image_data\": \"Who is this guy?\",\n      \"image_options\": [\n        {\n          \"data_uri\": \"data:image/png;base64,iVBORw0KGgoAAAANSUh ... more image data ...\",\n          \"label\": \"IMAGE_1\",\n          \"value\": \"image_data\"\n        },\n        {\n          \"data_uri\": \"data:image/png;base64,iVBORw0KGgoAAAANSUh ... more image data ...\",\n          \"label\": \"IMAGE_1\",\n          \"value\": \"image_data\"\n        }\n      ],\n      \"label\": \"Who is this guy?\",\n      \"options\": [\n        {\n          \"label\": \"IMAGE_1\",\n          \"value\": \"image_data\"\n        },\n        {\n          \"label\": \"IMAGE_1\",\n          \"value\": \"image_data\"\n        }\n      ],\n      \"type\": \"IMAGE_DATA\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bad79027-50e7-49e8-8969-0fb3379a27f7",
+          "name": "Check balances",
+          "request": {
+            "name": "Check balances",
+            "description": {
+              "content": "This endpoint operates much like the aggregate member endpoint except that it gathers only account balance information; it does not gather any transaction data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "check_balance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2ae8bc02-874d-4e1e-86b5-45ade4999f4d",
+              "name": "Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "check_balance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"member\": {\n    \"aggregated_at\": \"2016-10-13T18:07:57.000Z\",\n    \"background_aggregation_is_disabled\": false,\n    \"connection_status\": \"CONNECTED\",\n    \"guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"id\": \"unique_id\",\n    \"institution_code\": \"chase\",\n    \"is_being_aggregated\": false,\n    \"is_managed_by_user\": false,\n    \"is_manual\": false,\n    \"is_oauth\": false,\n    \"metadata\": \"\\\\\\\"credentials_last_refreshed_at\\\\\\\": \\\\\\\"2015-10-15\\\\\\\"\",\n    \"most_recent_job_detail_code\": \"(deprecated)\",\n    \"most_recent_job_detail_text\": \"(deprecated)\",\n    \"name\": \"Chase Bank\",\n    \"oauth_window_uri\": \"https://mxbank.mx.com/oauth/authorize?client_id=b8OikQ4Ep3NuSUrQ13DdvFuwpNx-qqoAsJDVAQCyLkQ&redirect_uri=https%3A%2F%2Fint-app.moneydesktop.com%2Foauth%2Fredirect_from&response_type=code&scope=openid&state=d745bd4ee6f0f9c184757f574bcc2df2\",\n    \"successfully_aggregated_at\": \"2016-10-13T17:57:38.000Z\",\n    \"use_cases\": [\n      \"PFM\",\n      \"IAV\"\n    ],\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c72a67c8-6984-47bd-8721-dad388801fe6",
+          "name": "List member credentials",
+          "request": {
+            "name": "List member credentials",
+            "description": {
+              "content": "This endpoint returns an array which contains information on every non-MFA credential associated with a specific member.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "credentials"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e7f6e3e8-52af-40b1-bd7f-cd3fd25c12bc",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "credentials"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"credentials\": [\n    {\n      \"display_order\": 1,\n      \"field_name\": \"LOGIN\",\n      \"field_type\": \"TEXT\",\n      \"guid\": \"CRD-1ec152cd-e628-e81a-e852-d1e7104624da\",\n      \"label\": \"Username\",\n      \"type\": \"TEXT\"\n    },\n    {\n      \"display_order\": 1,\n      \"field_name\": \"LOGIN\",\n      \"field_type\": \"TEXT\",\n      \"guid\": \"CRD-1ec152cd-e628-e81a-e852-d1e7104624da\",\n      \"label\": \"Username\",\n      \"type\": \"TEXT\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6df2e45e-2b72-4442-8ce4-afaff8966deb",
+          "name": "Extend history",
+          "request": {
+            "name": "Extend history",
+            "description": {
+              "content": "Some institutions allow developers to access an extended transaction history with up to 24 months of data associated with a particular member. The process for fetching and then reading this extended transaction history is much like standard aggregation, and it may trigger multi-factor authentication.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "extend_history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique identifier for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique identifier for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2817e317-5a2a-4b8d-a8df-78771dbb6a61",
+              "name": "Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "extend_history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique identifier for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique identifier for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"member\": {\n    \"aggregated_at\": \"2016-10-13T18:07:57.000Z\",\n    \"background_aggregation_is_disabled\": false,\n    \"connection_status\": \"CONNECTED\",\n    \"guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"id\": \"unique_id\",\n    \"institution_code\": \"chase\",\n    \"is_being_aggregated\": false,\n    \"is_managed_by_user\": false,\n    \"is_manual\": false,\n    \"is_oauth\": false,\n    \"metadata\": \"\\\\\\\"credentials_last_refreshed_at\\\\\\\": \\\\\\\"2015-10-15\\\\\\\"\",\n    \"most_recent_job_detail_code\": \"(deprecated)\",\n    \"most_recent_job_detail_text\": \"(deprecated)\",\n    \"name\": \"Chase Bank\",\n    \"oauth_window_uri\": \"https://mxbank.mx.com/oauth/authorize?client_id=b8OikQ4Ep3NuSUrQ13DdvFuwpNx-qqoAsJDVAQCyLkQ&redirect_uri=https%3A%2F%2Fint-app.moneydesktop.com%2Foauth%2Fredirect_from&response_type=code&scope=openid&state=d745bd4ee6f0f9c184757f574bcc2df2\",\n    \"successfully_aggregated_at\": \"2016-10-13T17:57:38.000Z\",\n    \"use_cases\": [\n      \"PFM\",\n      \"IAV\"\n    ],\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4865a81b-d6c0-44bf-b7c7-959d6b9776b7",
+          "name": "Fetch Rewards",
+          "request": {
+            "name": "Fetch Rewards",
+            "description": {
+              "content": "Calling this endpoint initiates an aggregation-type event which will gather the member's rewards information, as well as account and transaction information. Rewards data is also gathered with daily background aggregations.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "fetch_rewards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique identifier for the member. Defined by MX."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "56eed4e8-4d16-4d1f-bb51-ba2aa55407dc",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "fetch_rewards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique identifier for the member. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"member\": {\n    \"aggregated_at\": \"2016-10-13T18:07:57.000Z\",\n    \"background_aggregation_is_disabled\": false,\n    \"connection_status\": \"CONNECTED\",\n    \"guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"id\": \"unique_id\",\n    \"institution_code\": \"chase\",\n    \"is_being_aggregated\": false,\n    \"is_managed_by_user\": false,\n    \"is_manual\": false,\n    \"is_oauth\": false,\n    \"metadata\": \"\\\\\\\"credentials_last_refreshed_at\\\\\\\": \\\\\\\"2015-10-15\\\\\\\"\",\n    \"most_recent_job_detail_code\": \"(deprecated)\",\n    \"most_recent_job_detail_text\": \"(deprecated)\",\n    \"name\": \"Chase Bank\",\n    \"oauth_window_uri\": \"https://mxbank.mx.com/oauth/authorize?client_id=b8OikQ4Ep3NuSUrQ13DdvFuwpNx-qqoAsJDVAQCyLkQ&redirect_uri=https%3A%2F%2Fint-app.moneydesktop.com%2Foauth%2Fredirect_from&response_type=code&scope=openid&state=d745bd4ee6f0f9c184757f574bcc2df2\",\n    \"successfully_aggregated_at\": \"2016-10-13T17:57:38.000Z\",\n    \"use_cases\": [\n      \"PFM\",\n      \"IAV\"\n    ],\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4b52a95f-26ba-4c83-a9cf-a5d079877d76",
+          "name": "Fetch statements",
+          "request": {
+            "name": "Fetch statements",
+            "description": {
+              "content": "Use this endpoint to fetch the statements associated with a particular member.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "fetch_statements"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e35eb341-5ba7-450e-abcc-6389332b58d8",
+              "name": "Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "fetch_statements"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"member\": {\n    \"aggregated_at\": \"2016-10-13T18:07:57.000Z\",\n    \"background_aggregation_is_disabled\": false,\n    \"connection_status\": \"CONNECTED\",\n    \"guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"id\": \"unique_id\",\n    \"institution_code\": \"chase\",\n    \"is_being_aggregated\": false,\n    \"is_managed_by_user\": false,\n    \"is_manual\": false,\n    \"is_oauth\": false,\n    \"metadata\": \"\\\\\\\"credentials_last_refreshed_at\\\\\\\": \\\\\\\"2015-10-15\\\\\\\"\",\n    \"most_recent_job_detail_code\": \"(deprecated)\",\n    \"most_recent_job_detail_text\": \"(deprecated)\",\n    \"name\": \"Chase Bank\",\n    \"oauth_window_uri\": \"https://mxbank.mx.com/oauth/authorize?client_id=b8OikQ4Ep3NuSUrQ13DdvFuwpNx-qqoAsJDVAQCyLkQ&redirect_uri=https%3A%2F%2Fint-app.moneydesktop.com%2Foauth%2Fredirect_from&response_type=code&scope=openid&state=d745bd4ee6f0f9c184757f574bcc2df2\",\n    \"successfully_aggregated_at\": \"2016-10-13T17:57:38.000Z\",\n    \"use_cases\": [\n      \"PFM\",\n      \"IAV\"\n    ],\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e1b63aa2-9449-4073-80bf-786ae4f02e14",
+          "name": "Fetch Tax Documents",
+          "request": {
+            "name": "Fetch Tax Documents",
+            "description": {
+              "content": "Use this endpoint to fetch (aggregate) the tax documents associated with the specified member. This request **does not** return the latest tax documents. It just starts the document aggregation process and returns the initial state of the process. You must interact with the newly aggregated data using the other document endpoints in this reference. This request may also trigger multi-factor authentication which requires end-user input and a specific process for answering authentication challenges.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "fetch_tax_documents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "892d6325-f591-4cbf-aff5-b87b5d8dbf48",
+              "name": "Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "fetch_tax_documents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"member\": {\n    \"aggregated_at\": \"2016-10-13T18:07:57.000Z\",\n    \"background_aggregation_is_disabled\": false,\n    \"connection_status\": \"CONNECTED\",\n    \"guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"id\": \"unique_id\",\n    \"institution_code\": \"chase\",\n    \"is_being_aggregated\": false,\n    \"is_managed_by_user\": false,\n    \"is_manual\": false,\n    \"is_oauth\": false,\n    \"metadata\": \"\\\\\\\"credentials_last_refreshed_at\\\\\\\": \\\\\\\"2015-10-15\\\\\\\"\",\n    \"most_recent_job_detail_code\": \"(deprecated)\",\n    \"most_recent_job_detail_text\": \"(deprecated)\",\n    \"name\": \"Chase Bank\",\n    \"oauth_window_uri\": \"https://mxbank.mx.com/oauth/authorize?client_id=b8OikQ4Ep3NuSUrQ13DdvFuwpNx-qqoAsJDVAQCyLkQ&redirect_uri=https%3A%2F%2Fint-app.moneydesktop.com%2Foauth%2Fredirect_from&response_type=code&scope=openid&state=d745bd4ee6f0f9c184757f574bcc2df2\",\n    \"successfully_aggregated_at\": \"2016-10-13T17:57:38.000Z\",\n    \"use_cases\": [\n      \"PFM\",\n      \"IAV\"\n    ],\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "576f34fe-ee71-43b9-a13c-df103b4614db",
+          "name": "List holdings by member",
+          "request": {
+            "name": "List holdings by member",
+            "description": {
+              "content": "This endpoint returns all holdings associated with the specified `member` across all accounts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "holdings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "from_date",
+                  "value": "<string>",
+                  "description": "Filter holdings from this date."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "to_date",
+                  "value": "<string>",
+                  "description": "Filter holdings to this date."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d254d5fe-e7ff-4fe8-8be8-cfb2522ef7d4",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "holdings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "from_date",
+                      "value": "2015-09-20"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "2019-10-20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"holdings\": [\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"cost_basis\": 827,\n      \"created_at\": \"2015-04-13T18:01:23.000Z\",\n      \"currency_code\": \"USD\",\n      \"cusip\": \"18383M878\",\n      \"daily_change\": 2.5,\n      \"description\": \"Guggenheim Defensive Equity ETF\",\n      \"guid\": \"HOL-d65683e8-9eab-26bb-bcfd-ced159c9abe2\",\n      \"holding_type\": \"MONEY_MARKET\",\n      \"holding_type_id\": 1,\n      \"id\": \"ID-123\",\n      \"market_value\": 989.5,\n      \"member_guid\": \"MBR-d65683e8-9eab-26bb-bcfd-ced159c9abe\",\n      \"metadata\": \"metadata\",\n      \"purchase_price\": 26.3,\n      \"shares\": 6,\n      \"symbol\": \"DEF\",\n      \"updated_at\": \"2015-04-13T18:01:23.000Z\",\n      \"user_guid\": \"USR-743e5d7f-1116-28fa-5de1-d3ba02e41d8d\"\n    },\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"cost_basis\": 827,\n      \"created_at\": \"2015-04-13T18:01:23.000Z\",\n      \"currency_code\": \"USD\",\n      \"cusip\": \"18383M878\",\n      \"daily_change\": 2.5,\n      \"description\": \"Guggenheim Defensive Equity ETF\",\n      \"guid\": \"HOL-d65683e8-9eab-26bb-bcfd-ced159c9abe2\",\n      \"holding_type\": \"MONEY_MARKET\",\n      \"holding_type_id\": 1,\n      \"id\": \"ID-123\",\n      \"market_value\": 989.5,\n      \"member_guid\": \"MBR-d65683e8-9eab-26bb-bcfd-ced159c9abe\",\n      \"metadata\": \"metadata\",\n      \"purchase_price\": 26.3,\n      \"shares\": 6,\n      \"symbol\": \"DEF\",\n      \"updated_at\": \"2015-04-13T18:01:23.000Z\",\n      \"user_guid\": \"USR-743e5d7f-1116-28fa-5de1-d3ba02e41d8d\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9ff0de7a-084c-4bc2-9a9f-9883905c3d1a",
+          "name": "Identify member",
+          "request": {
+            "name": "Identify member",
+            "description": {
+              "content": "The identify endpoint begins an identification process for an already-existing member.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "identify"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "60b53eea-6a9f-43d4-bd1e-d39caf8a0cf8",
+              "name": "Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "identify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"member\": {\n    \"aggregated_at\": \"2016-10-13T18:07:57.000Z\",\n    \"background_aggregation_is_disabled\": false,\n    \"connection_status\": \"CONNECTED\",\n    \"guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"id\": \"unique_id\",\n    \"institution_code\": \"chase\",\n    \"is_being_aggregated\": false,\n    \"is_managed_by_user\": false,\n    \"is_manual\": false,\n    \"is_oauth\": false,\n    \"metadata\": \"\\\\\\\"credentials_last_refreshed_at\\\\\\\": \\\\\\\"2015-10-15\\\\\\\"\",\n    \"most_recent_job_detail_code\": \"(deprecated)\",\n    \"most_recent_job_detail_text\": \"(deprecated)\",\n    \"name\": \"Chase Bank\",\n    \"oauth_window_uri\": \"https://mxbank.mx.com/oauth/authorize?client_id=b8OikQ4Ep3NuSUrQ13DdvFuwpNx-qqoAsJDVAQCyLkQ&redirect_uri=https%3A%2F%2Fint-app.moneydesktop.com%2Foauth%2Fredirect_from&response_type=code&scope=openid&state=d745bd4ee6f0f9c184757f574bcc2df2\",\n    \"successfully_aggregated_at\": \"2016-10-13T17:57:38.000Z\",\n    \"use_cases\": [\n      \"PFM\",\n      \"IAV\"\n    ],\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eff07606-5173-4c80-8ab9-efb528422837",
+          "name": "Request oauth window uri",
+          "request": {
+            "name": "Request oauth window uri",
+            "description": {
+              "content": "This endpoint will generate an `oauth_window_uri` for the specified `member`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "oauth_window_uri"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "client_redirect_url",
+                  "value": "<string>",
+                  "description": "A URL that MX will redirect to at the end of OAuth with additional query parameters. Only available with `referral_source=APP`."
+                },
+                {
+                  "disabled": false,
+                  "key": "enable_app2app",
+                  "value": "<string>",
+                  "description": "This indicates whether OAuth app2app behavior is enabled for institutions that support it. Defaults to `true`. This setting is not persistent."
+                },
+                {
+                  "disabled": false,
+                  "key": "referral_source",
+                  "value": "<string>",
+                  "description": "Must be either `BROWSER` or `APP` depending on the implementation. Defaults to `BROWSER`."
+                },
+                {
+                  "disabled": false,
+                  "key": "skip_aggregation",
+                  "value": "<boolean>",
+                  "description": "Setting this parameter to `true` will prevent the member from automatically aggregating after being redirected from the authorization page."
+                },
+                {
+                  "disabled": false,
+                  "key": "ui_message_webview_url_scheme",
+                  "value": "<string>",
+                  "description": "A scheme for routing the user back to the application state they were previously in. Only available with `referral_source=APP`."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6b101def-314b-4368-bd43-7533fc89a91a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "oauth_window_uri"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "client_redirect_url",
+                      "value": "https://mx.com"
+                    },
+                    {
+                      "key": "enable_app2app",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "referral_source",
+                      "value": "APP"
+                    },
+                    {
+                      "key": "skip_aggregation",
+                      "value": "false"
+                    },
+                    {
+                      "key": "ui_message_webview_url_scheme",
+                      "value": "mx"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"member\": {\n    \"guid\": \"MBR-df96fd60-7122-4464-b3c2-ff11d8c74f6f\",\n    \"oauth_window_uri\": \"https://mxbank.mx.com/oauth/authorize?client_id=b8OikQ4Ep3NuSUrQ13DdvFuwpNx-qqoAsJDVAQCyLkQ&redirect_uri=https%3A%2F%2Fint-app.moneydesktop.com%2Foauth%2Fredirect_from&response_type=code&scope=openid&state=d745bd4ee6f0f9c184757f574bcc2df2\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6786da21-a233-40fd-b27e-bd3cee81288c",
+          "name": "Resume aggregation",
+          "request": {
+            "name": "Resume aggregation",
+            "description": {
+              "content": "This endpoint answers the challenges needed when a member has been challenged by multi-factor authentication.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "resume"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"member\": {\n    \"challenges\": [\n      {\n        \"guid\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"guid\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3cdd1cb6-7c0f-4c85-a694-0bc798eae40b",
+              "name": "Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "resume"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"member\": {\n    \"challenges\": [\n      {\n        \"guid\": \"CRD-27d0edb8-1d50-5b90-bcbc-be270ca42b9f\",\n        \"value\": \"password\"\n      },\n      {\n        \"guid\": \"CRD-27d0edb8-1d50-5b90-bcbc-be270ca42b9f\",\n        \"value\": \"password\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"member\": {\n    \"aggregated_at\": \"2016-10-13T18:07:57.000Z\",\n    \"background_aggregation_is_disabled\": false,\n    \"connection_status\": \"CONNECTED\",\n    \"guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"id\": \"unique_id\",\n    \"institution_code\": \"chase\",\n    \"is_being_aggregated\": false,\n    \"is_managed_by_user\": false,\n    \"is_manual\": false,\n    \"is_oauth\": false,\n    \"metadata\": \"\\\\\\\"credentials_last_refreshed_at\\\\\\\": \\\\\\\"2015-10-15\\\\\\\"\",\n    \"most_recent_job_detail_code\": \"(deprecated)\",\n    \"most_recent_job_detail_text\": \"(deprecated)\",\n    \"name\": \"Chase Bank\",\n    \"oauth_window_uri\": \"https://mxbank.mx.com/oauth/authorize?client_id=b8OikQ4Ep3NuSUrQ13DdvFuwpNx-qqoAsJDVAQCyLkQ&redirect_uri=https%3A%2F%2Fint-app.moneydesktop.com%2Foauth%2Fredirect_from&response_type=code&scope=openid&state=d745bd4ee6f0f9c184757f574bcc2df2\",\n    \"successfully_aggregated_at\": \"2016-10-13T17:57:38.000Z\",\n    \"use_cases\": [\n      \"PFM\",\n      \"IAV\"\n    ],\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9f3d55da-7fdb-412c-997f-eb21979c08ee",
+          "name": "List Rewards",
+          "request": {
+            "name": "List Rewards",
+            "description": {
+              "content": "Use this endpoint to list all the `rewards` associated with a specified `member`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "rewards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique identifier for the member. Defined by MX."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "507dc648-76fe-4c35-9052-6836b57d2722",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "rewards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique identifier for the member. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"rewards\": [\n    {\n      \"account_guid\": \"ACT-1234\",\n      \"balance_type\": \"EXPIRING_BALANCE\",\n      \"balance\": 102,\n      \"created_at\": \"2020-01-28T21:09:01+0000\",\n      \"description\": \"A description of the reward.\",\n      \"expires_on\": \"2020-02-28T00:00:00.000Z\",\n      \"guid\": \"RWD-1234\",\n      \"member_guid\": \"MBR-4567\",\n      \"unit_type\": \"POINTS\",\n      \"updated_at\": \"2023-06-01T19:18:06.000Z\",\n      \"user_guid\": \"USR-1234\"\n    },\n    {\n      \"account_guid\": \"ACT-1234\",\n      \"balance_type\": \"EXPIRING_BALANCE\",\n      \"balance\": 102,\n      \"created_at\": \"2020-01-28T21:09:01+0000\",\n      \"description\": \"A description of the reward.\",\n      \"expires_on\": \"2020-02-28T00:00:00.000Z\",\n      \"guid\": \"RWD-1234\",\n      \"member_guid\": \"MBR-4567\",\n      \"unit_type\": \"POINTS\",\n      \"updated_at\": \"2023-06-01T19:18:06.000Z\",\n      \"user_guid\": \"USR-1234\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fdca3e21-a35b-48a6-a7c7-c0e632aada62",
+          "name": "Read Reward",
+          "request": {
+            "name": "Read Reward",
+            "description": {
+              "content": "Use this endpoint to read a specific `reward` based on its unique GUID..",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "rewards",
+                ":reward_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique identifier for the member. Defined by MX."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reward_guid",
+                  "description": "(Required) The unique identifier for the rewards. Defined by MX."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f7c1bd25-0010-468e-a7fe-8d2a08684221",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "rewards",
+                    ":reward_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique identifier for the member. Defined by MX."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reward_guid",
+                      "description": "(Required) The unique identifier for the rewards. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"reward\": {\n    \"account_guid\": \"ACT-1234\",\n    \"balance_type\": \"EXPIRING_BALANCE\",\n    \"balance\": 102,\n    \"created_at\": \"2020-01-28T21:09:01+0000\",\n    \"description\": \"A description of the reward.\",\n    \"expires_on\": \"2020-02-28T00:00:00.000Z\",\n    \"guid\": \"RWD-1234\",\n    \"member_guid\": \"MBR-4567\",\n    \"unit_type\": \"POINTS\",\n    \"updated_at\": \"2023-06-01T19:18:06.000Z\",\n    \"user_guid\": \"USR-1234\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "948e049d-ab61-4177-92ed-95775b4ec445",
+          "name": "List statements by member",
+          "request": {
+            "name": "List statements by member",
+            "description": {
+              "content": "Use this endpoint to get an array of available statements.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "statements"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e543be09-d623-4f3a-b614-f6dc0bbfd80a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "statements"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  },\n  \"statements\": [\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"content_hash\": \"ca53785b812d00ef821c3d94bfd6e5bbc0020504410589b7ea8552169f021981\",\n      \"created_at\": \"2016-10-13T18:08:00+00:00\",\n      \"guid\": \"STA-737a344b-caae-0f6e-1384-01f52e75dcb1\",\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"updated_at\": \"2016-10-13T18:09:00+00:00\",\n      \"uri\": \"uri/to/statement\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\"\n    },\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"content_hash\": \"ca53785b812d00ef821c3d94bfd6e5bbc0020504410589b7ea8552169f021981\",\n      \"created_at\": \"2016-10-13T18:08:00+00:00\",\n      \"guid\": \"STA-737a344b-caae-0f6e-1384-01f52e75dcb1\",\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"updated_at\": \"2016-10-13T18:09:00+00:00\",\n      \"uri\": \"uri/to/statement\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "88d7b5e8-acfe-4312-9c55-fdc21be7bd66",
+          "name": "Read statement by member",
+          "request": {
+            "name": "Read statement by member",
+            "description": {
+              "content": "Use this endpoint to read a JSON representation of the statement.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "statements",
+                ":statement_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "statement_guid",
+                  "description": "(Required) The unique id for a `statement`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "058e04a9-1038-44f0-893d-668262f00503",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "statements",
+                    ":statement_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "statement_guid",
+                      "description": "(Required) The unique id for a `statement`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"statement\": {\n    \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n    \"content_hash\": \"ca53785b812d00ef821c3d94bfd6e5bbc0020504410589b7ea8552169f021981\",\n    \"created_at\": \"2016-10-13T18:08:00+00:00\",\n    \"guid\": \"STA-737a344b-caae-0f6e-1384-01f52e75dcb1\",\n    \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"updated_at\": \"2016-10-13T18:09:00+00:00\",\n    \"uri\": \"uri/to/statement\",\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9783e2cd-9f67-48b3-9081-daf3a576d65d",
+          "name": "Download statement pdf",
+          "request": {
+            "name": "Download statement pdf",
+            "description": {
+              "content": "Use this endpoint to download a specified statement PDF.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "statements",
+                "{{statement_guid}}.pdf"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+pdf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "00fc6838-58a9-4e4f-9ae2-ac1bace7be62",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "statements",
+                    "{{statement_guid}}.pdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+pdf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+pdf"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e71832fa-4f41-40b4-bf30-55f4167368e9",
+          "name": "Read member status",
+          "request": {
+            "name": "Read member status",
+            "description": {
+              "content": "This endpoint provides the status of the members most recent aggregation event. This is an important step in the aggregation process, and the results returned by this endpoint should determine what you do next in order to successfully aggregate a member. MX has introduced new, more detailed information on the current status of a members connection to a financial institution and the state of its aggregation - the connection_status field. These are intended to replace and expand upon the information provided in the status field, which will soon be deprecated; support for the status field remains for the time being.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f91f8616-6a32-45b8-b5b8-55660a360c14",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"member\": {\n    \"aggregated_at\": \"2016-10-13T18:07:57.000Z\",\n    \"challenges\": [\n      {\n        \"field_name\": \"Who is this guy?\",\n        \"guid\": \"CRD-ce76d2e3-86bd-ec4a-ec52-eb53b5194bf5\",\n        \"image_data\": \"Who is this guy?\",\n        \"image_options\": [\n          {\n            \"data_uri\": \"data:image/png;base64,iVBORw0KGgoAAAANSUh ... more image data ...\",\n            \"label\": \"IMAGE_1\",\n            \"value\": \"image_data\"\n          },\n          {\n            \"data_uri\": \"data:image/png;base64,iVBORw0KGgoAAAANSUh ... more image data ...\",\n            \"label\": \"IMAGE_1\",\n            \"value\": \"image_data\"\n          }\n        ],\n        \"label\": \"Who is this guy?\",\n        \"options\": [\n          {\n            \"label\": \"IMAGE_1\",\n            \"value\": \"image_data\"\n          },\n          {\n            \"label\": \"IMAGE_1\",\n            \"value\": \"image_data\"\n          }\n        ],\n        \"type\": \"IMAGE_DATA\"\n      },\n      {\n        \"field_name\": \"Who is this guy?\",\n        \"guid\": \"CRD-ce76d2e3-86bd-ec4a-ec52-eb53b5194bf5\",\n        \"image_data\": \"Who is this guy?\",\n        \"image_options\": [\n          {\n            \"data_uri\": \"data:image/png;base64,iVBORw0KGgoAAAANSUh ... more image data ...\",\n            \"label\": \"IMAGE_1\",\n            \"value\": \"image_data\"\n          },\n          {\n            \"data_uri\": \"data:image/png;base64,iVBORw0KGgoAAAANSUh ... more image data ...\",\n            \"label\": \"IMAGE_1\",\n            \"value\": \"image_data\"\n          }\n        ],\n        \"label\": \"Who is this guy?\",\n        \"options\": [\n          {\n            \"label\": \"IMAGE_1\",\n            \"value\": \"image_data\"\n          },\n          {\n            \"label\": \"IMAGE_1\",\n            \"value\": \"image_data\"\n          }\n        ],\n        \"type\": \"IMAGE_DATA\"\n      }\n    ],\n    \"connection_status\": \"CONNECTED\",\n    \"guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"has_processed_accounts\": true,\n    \"has_processed_account_numbers\": true,\n    \"has_processed_transactions\": false,\n    \"is_authenticated\": false,\n    \"is_being_aggregated\": false,\n    \"successfully_aggregated_at\": \"2016-10-13T17:57:38.000Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ff0f3fc8-eb90-4543-9dbb-7223a8363025",
+          "name": "List Tax Documents",
+          "request": {
+            "name": "List Tax Documents",
+            "description": {
+              "content": "Use this endpoint to get a paginated list of tax documents.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "tax_documents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e922aae6-f889-4dc9-b1f5-7ac7959d6261",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "tax_documents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  },\n  \"tax_documents\": [\n    {\n      \"content_hash\": \"a16c580c4fcdfa8088edaa7b4d35b290\",\n      \"created_at\": \"2022-10-18T19:23:16Z\",\n      \"document_type\": \"TAX1099_C\",\n      \"guid\": \"TAX-ee8776ea-468b-4b02-b95d-743adf6ba50e\",\n      \"issued_on\": \"2022-03-31\",\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"tax_year\": \"2023\",\n      \"updated_at\": \"2022-10-18T19:23:16Z\",\n      \"uri\": \"/users/USR-11141024-90b3-1bce-cac9-c06ced52ab4c/members/MBR-7c6f361b-e582-15b6-60c0-358f12466b4b/tax_documents/TAX-ee8776ea-468b-4b02-b95d-743adf6ba50e.pdf\",\n      \"user_guid\": \"USR-11141024-90b3-1bce-cac9-c06ced52ab4c\"\n    },\n    {\n      \"content_hash\": \"a16c580c4fcdfa8088edaa7b4d35b290\",\n      \"created_at\": \"2022-10-18T19:23:16Z\",\n      \"document_type\": \"TAX1099_C\",\n      \"guid\": \"TAX-ee8776ea-468b-4b02-b95d-743adf6ba50e\",\n      \"issued_on\": \"2022-03-31\",\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"tax_year\": \"2023\",\n      \"updated_at\": \"2022-10-18T19:23:16Z\",\n      \"uri\": \"/users/USR-11141024-90b3-1bce-cac9-c06ced52ab4c/members/MBR-7c6f361b-e582-15b6-60c0-358f12466b4b/tax_documents/TAX-ee8776ea-468b-4b02-b95d-743adf6ba50e.pdf\",\n      \"user_guid\": \"USR-11141024-90b3-1bce-cac9-c06ced52ab4c\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ad3f3d3b-8d15-4538-b3ab-7219d7a6de6b",
+          "name": "Read a Tax Document",
+          "request": {
+            "name": "Read a Tax Document",
+            "description": {
+              "content": "Use this endpoint to read the attributes of the specified tax document.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "tax_documents",
+                ":tax_document_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tax_document_guid",
+                  "description": "(Required) The unique id for a `tax_document`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "471b1ef8-218f-4e3a-bdba-5aa185246977",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "tax_documents",
+                    ":tax_document_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tax_document_guid",
+                      "description": "(Required) The unique id for a `tax_document`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"tax_document\": {\n    \"content_hash\": \"a16c580c4fcdfa8088edaa7b4d35b290\",\n    \"created_at\": \"2022-10-18T19:23:16Z\",\n    \"document_type\": \"TAX1099_C\",\n    \"guid\": \"TAX-ee8776ea-468b-4b02-b95d-743adf6ba50e\",\n    \"issued_on\": \"2022-03-31\",\n    \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"tax_year\": \"2023\",\n    \"updated_at\": \"2022-10-18T19:23:16Z\",\n    \"uri\": \"/users/USR-11141024-90b3-1bce-cac9-c06ced52ab4c/members/MBR-7c6f361b-e582-15b6-60c0-358f12466b4b/tax_documents/TAX-ee8776ea-468b-4b02-b95d-743adf6ba50e.pdf\",\n    \"user_guid\": \"USR-11141024-90b3-1bce-cac9-c06ced52ab4c\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c555426c-4387-4b7b-87d5-e11f653371e9",
+          "name": "Download a Tax Document PDF",
+          "request": {
+            "name": "Download a Tax Document PDF",
+            "description": {
+              "content": "Use this endpoint to download a PDF version of the specified tax document. The endpoint URL is the base URL appended with the uri of the tax_document.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "tax_documents",
+                "{{tax_document_guid}}.pdf"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+pdf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c5ed672a-2467-400d-a4a6-c1ce06b1c8a7",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "tax_documents",
+                    "{{tax_document_guid}}.pdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+pdf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+pdf"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "83fe971a-b636-4f61-b1be-88ce6ea5d96b",
+          "name": "List transactions by member",
+          "request": {
+            "name": "List transactions by member",
+            "description": {
+              "content": "Requests to this endpoint return a list of transactions associated with the specified `member`, accross all accounts associated with that `member`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "from_date",
+                  "value": "<string>",
+                  "description": "Filter transactions from this date."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "to_date",
+                  "value": "<string>",
+                  "description": "Filter transactions to this date."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e014e6f7-ced4-4d35-8e42-7affa3b96fde",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "from_date",
+                      "value": "2015-09-20"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "2019-10-20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  },\n  \"transactions\": [\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"account_id\": \"account123\",\n      \"amount\": 61.11,\n      \"category\": \"Groceries\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"check_number_string\": \"6812\",\n      \"created_at\": \"2016-10-06T09:43:42.000Z\",\n      \"currency_code\": \"USD\",\n      \"date\": \"2013-09-23T00:00:00.000Z\",\n      \"description\": \"Whole foods\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": true,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_recurring\": false,\n      \"is_subscription\": false,\n      \"latitude\": -43.2075,\n      \"localized_description\": \"This is a localized_description\",\n      \"localized_memo\": \"This is a localized_memo\",\n      \"longitude\": 139.691706,\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"member_is_managed_by_user\": false,\n      \"memo\": \"This is a memo\",\n      \"merchant_category_code\": 5411,\n      \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"metadata\": \"some metadata\",\n      \"original_description\": \"WHOLEFDS TSQ 102\",\n      \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n      \"status\": \"POSTED\",\n      \"top_level_category\": \"Food & Dining\",\n      \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n      \"type\": \"DEBIT\",\n      \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    },\n    {\n      \"account_guid\": \"ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1\",\n      \"account_id\": \"account123\",\n      \"amount\": 61.11,\n      \"category\": \"Groceries\",\n      \"category_guid\": \"CAT-9588eaad-90a4-bb5c-66c8-1812503d0db8\",\n      \"check_number_string\": \"6812\",\n      \"created_at\": \"2016-10-06T09:43:42.000Z\",\n      \"currency_code\": \"USD\",\n      \"date\": \"2013-09-23T00:00:00.000Z\",\n      \"description\": \"Whole foods\",\n      \"extended_transaction_type\": \"partner_transaction_type\",\n      \"guid\": \"TRN-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"id\": \"transaction-265abee9-889b-af6a-c69b-25157db2bdd9\",\n      \"is_bill_pay\": false,\n      \"is_direct_deposit\": false,\n      \"is_expense\": true,\n      \"is_fee\": false,\n      \"is_income\": false,\n      \"is_international\": false,\n      \"is_overdraft_fee\": false,\n      \"is_payroll_advance\": false,\n      \"is_recurring\": false,\n      \"is_subscription\": false,\n      \"latitude\": -43.2075,\n      \"localized_description\": \"This is a localized_description\",\n      \"localized_memo\": \"This is a localized_memo\",\n      \"longitude\": 139.691706,\n      \"member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n      \"member_is_managed_by_user\": false,\n      \"memo\": \"This is a memo\",\n      \"merchant_category_code\": 5411,\n      \"merchant_guid\": \"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b\",\n      \"merchant_location_guid\": \"MCL-00024e59-18b5-4d79-b879-2a7896726fea\",\n      \"metadata\": \"some metadata\",\n      \"original_description\": \"WHOLEFDS TSQ 102\",\n      \"posted_at\": \"2016-10-07T06:00:00.000Z\",\n      \"status\": \"POSTED\",\n      \"top_level_category\": \"Food & Dining\",\n      \"transacted_at\": \"2016-10-06T13:00:00.000Z\",\n      \"type\": \"DEBIT\",\n      \"updated_at\": \"2016-10-07T05:49:12.000Z\",\n      \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n      \"user_id\": \"user123\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "44319f95-8639-4ba8-887e-e7fc9bb377f5",
+          "name": "Verify member",
+          "request": {
+            "name": "Verify member",
+            "description": {
+              "content": "The verify endpoint begins a verification process for a member.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "verify"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "65b7ca28-2229-40f0-ad20-4acfeeb18c60",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "verify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"member\": {\n    \"aggregated_at\": \"2016-10-13T18:07:57.000Z\",\n    \"background_aggregation_is_disabled\": false,\n    \"connection_status\": \"CONNECTED\",\n    \"guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"id\": \"unique_id\",\n    \"institution_code\": \"chase\",\n    \"is_being_aggregated\": false,\n    \"is_managed_by_user\": false,\n    \"is_manual\": false,\n    \"is_oauth\": false,\n    \"metadata\": \"\\\\\\\"credentials_last_refreshed_at\\\\\\\": \\\\\\\"2015-10-15\\\\\\\"\",\n    \"most_recent_job_detail_code\": \"(deprecated)\",\n    \"most_recent_job_detail_text\": \"(deprecated)\",\n    \"name\": \"Chase Bank\",\n    \"oauth_window_uri\": \"https://mxbank.mx.com/oauth/authorize?client_id=b8OikQ4Ep3NuSUrQ13DdvFuwpNx-qqoAsJDVAQCyLkQ&redirect_uri=https%3A%2F%2Fint-app.moneydesktop.com%2Foauth%2Fredirect_from&response_type=code&scope=openid&state=d745bd4ee6f0f9c184757f574bcc2df2\",\n    \"successfully_aggregated_at\": \"2016-10-13T17:57:38.000Z\",\n    \"use_cases\": [\n      \"PFM\",\n      \"IAV\"\n    ],\n    \"user_guid\": \"USR-fa7537f3-48aa-a683-a02a-b18940482f54\",\n    \"user_id\": \"user123\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) The unique id for a `statement`.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "statement_guid"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) The unique id for a `tax_document`.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "tax_document_guid"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b0891e89-9aa5-4e38-b154-acebdd977c63",
+    "name": "MX Platform Members API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

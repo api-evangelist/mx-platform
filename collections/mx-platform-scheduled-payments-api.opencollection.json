@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MX Platform Scheduled_payments API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Scheduled_payments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all scheduled payments associated with an insight",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/insights/:insight_guid/scheduled_payments",
+            "params": [
+              {
+                "name": "user_guid",
+                "value": "USR-1234-abcd",
+                "type": "path",
+                "description": "The unique identifier for the user. Defined by MX."
+              },
+              {
+                "name": "insight_guid",
+                "value": "BET-1234-abcd",
+                "type": "path",
+                "description": "The unique identifier for the insight. Defined by MX."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to list all the scheduled payments associated with the insight."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

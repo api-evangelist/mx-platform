@@ -1,0 +1,183 @@
+{
+  "item": [
+    {
+      "id": "b52fa93e-664d-4547-9355-71ae913c8ef6",
+      "name": "Scheduled_payments",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b648d408-a62f-4e79-9044-55f6a7fdd7cc",
+          "name": "List all scheduled payments associated with an insight",
+          "request": {
+            "name": "List all scheduled payments associated with an insight",
+            "description": {
+              "content": "Use this endpoint to list all the scheduled payments associated with the insight.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "insights",
+                ":insight_guid",
+                "scheduled_payments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique identifier for the user. Defined by MX."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "insight_guid",
+                  "description": "(Required) The unique identifier for the insight. Defined by MX."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "678d8673-e5b9-4349-8df9-cf878cb5dc1a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "insights",
+                    ":insight_guid",
+                    "scheduled_payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique identifier for the user. Defined by MX."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "insight_guid",
+                      "description": "(Required) The unique identifier for the insight. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  },\n  \"scheduled_payments\": [\n    {\n      \"amount\": 13.54,\n      \"created_at\": \"2023-04-27T23:14:16.000Z\",\n      \"description\": \"Netflix\",\n      \"guid\": \"SPA-c76e4a85-b2c4-4335-82b7-8f8b8f28c35a\",\n      \"is_completed\": false,\n      \"is_recurring\": true,\n      \"merchant_guid\": \"MCH-b8a2624c-2176-59ec-c150-37854bc38aa8\",\n      \"occurs_on\": \"2022-01-15T00:00:00.000Z\",\n      \"recurrence_day\": 15,\n      \"recurrence_type\": \"EVERY_MONTH\",\n      \"transaction_type\": \"DEBIT\",\n      \"updated_at\": \"2023-04-27T23:14:16.000Z\",\n      \"user_guid\": \"USR-72086f59-6684-4adf-8f29-c4d32db43cd7\"\n    },\n    {\n      \"amount\": 13.54,\n      \"created_at\": \"2023-04-27T23:14:16.000Z\",\n      \"description\": \"Netflix\",\n      \"guid\": \"SPA-c76e4a85-b2c4-4335-82b7-8f8b8f28c35a\",\n      \"is_completed\": false,\n      \"is_recurring\": true,\n      \"merchant_guid\": \"MCH-b8a2624c-2176-59ec-c150-37854bc38aa8\",\n      \"occurs_on\": \"2022-01-15T00:00:00.000Z\",\n      \"recurrence_day\": 15,\n      \"recurrence_type\": \"EVERY_MONTH\",\n      \"transaction_type\": \"DEBIT\",\n      \"updated_at\": \"2023-04-27T23:14:16.000Z\",\n      \"user_guid\": \"USR-72086f59-6684-4adf-8f29-c4d32db43cd7\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b510e313-b8ca-4cc5-8610-fdb7a6af2238",
+    "name": "MX Platform Scheduled_payments API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

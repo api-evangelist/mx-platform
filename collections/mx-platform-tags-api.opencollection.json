@@ -1,0 +1,207 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MX Platform Tags API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tags",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/tags",
+            "params": [
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to list all tags associated with the specified `user`. Each user includes the `Business` tag by default."
+        },
+        {
+          "info": {
+            "name": "Create tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.mx.com/users/:user_guid/tags",
+            "params": [
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use this endpoint to create a new custom tag."
+        },
+        {
+          "info": {
+            "name": "Read tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/tags/:tag_guid",
+            "params": [
+              {
+                "name": "tag_guid",
+                "value": "TAG-aef36e72-6294-4c38-844d-e573e80aed52",
+                "type": "path",
+                "description": "The unique id for a `tag`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to read the attributes of a particular tag according to its unique GUID."
+        },
+        {
+          "info": {
+            "name": "Update tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.mx.com/users/:user_guid/tags/:tag_guid",
+            "params": [
+              {
+                "name": "tag_guid",
+                "value": "TAG-aef36e72-6294-4c38-844d-e573e80aed52",
+                "type": "path",
+                "description": "The unique id for a `tag`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use this endpoint to update the name of a specific tag according to its unique GUID."
+        },
+        {
+          "info": {
+            "name": "Delete tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.mx.com/users/:user_guid/tags/:tag_guid",
+            "params": [
+              {
+                "name": "tag_guid",
+                "value": "TAG-aef36e72-6294-4c38-844d-e573e80aed52",
+                "type": "path",
+                "description": "The unique id for a `tag`."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to permanently delete a specific tag based on its unique GUID. If successful, the API will respond with status of `204 No Content`."
+        },
+        {
+          "info": {
+            "name": "List transactions by tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/tags/:tag_guid/transactions",
+            "params": [
+              {
+                "name": "from_date",
+                "value": "2015-09-20",
+                "type": "query",
+                "description": "Filter transactions from this date."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              },
+              {
+                "name": "tag_guid",
+                "value": "TAG-aef36e72-6294-4c38-844d-e573e80aed52",
+                "type": "path",
+                "description": "The unique id for a `tag`."
+              },
+              {
+                "name": "to_date",
+                "value": "2019-10-20",
+                "type": "query",
+                "description": "Filter transactions to this date."
+              },
+              {
+                "name": "user_guid",
+                "value": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                "type": "path",
+                "description": "The unique id for a `user`."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to get a list of all transactions associated with a particular tag according to the tags unique GUID. In other words, a list of all transactions that have been assigned to a particular tag using the create a tagging endpoint."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

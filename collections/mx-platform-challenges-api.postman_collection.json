@@ -1,0 +1,183 @@
+{
+  "item": [
+    {
+      "id": "41af70d8-b9ab-400e-8cfc-9dbf40e825d9",
+      "name": "Challenges",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "183716a5-2bcf-4779-9c70-2f1be3c66612",
+          "name": "List member challenges",
+          "request": {
+            "name": "List member challenges",
+            "description": {
+              "content": "Use this endpoint for information on what multi-factor authentication challenges need to be answered in order to aggregate a member. If the aggregation is not challenged, i.e., the member does not have a connection status of `CHALLENGED`, then code `204 No Content` will be returned. If the aggregation has been challenged, i.e., the member does have a connection status of `CHALLENGED`, then code `200 OK` will be returned - along with the corresponding credentials.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "challenges"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique id for a `member`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "453b3063-1fad-4bdd-a347-8c79814338f9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "challenges"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique id for a `member`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"challenges\": [\n    {\n      \"field_name\": \"Who is this guy?\",\n      \"guid\": \"CRD-ce76d2e3-86bd-ec4a-ec52-eb53b5194bf5\",\n      \"image_data\": \"Who is this guy?\",\n      \"image_options\": [\n        {\n          \"data_uri\": \"data:image/png;base64,iVBORw0KGgoAAAANSUh ... more image data ...\",\n          \"label\": \"IMAGE_1\",\n          \"value\": \"image_data\"\n        },\n        {\n          \"data_uri\": \"data:image/png;base64,iVBORw0KGgoAAAANSUh ... more image data ...\",\n          \"label\": \"IMAGE_1\",\n          \"value\": \"image_data\"\n        }\n      ],\n      \"label\": \"Who is this guy?\",\n      \"options\": [\n        {\n          \"label\": \"IMAGE_1\",\n          \"value\": \"image_data\"\n        },\n        {\n          \"label\": \"IMAGE_1\",\n          \"value\": \"image_data\"\n        }\n      ],\n      \"type\": \"IMAGE_DATA\"\n    },\n    {\n      \"field_name\": \"Who is this guy?\",\n      \"guid\": \"CRD-ce76d2e3-86bd-ec4a-ec52-eb53b5194bf5\",\n      \"image_data\": \"Who is this guy?\",\n      \"image_options\": [\n        {\n          \"data_uri\": \"data:image/png;base64,iVBORw0KGgoAAAANSUh ... more image data ...\",\n          \"label\": \"IMAGE_1\",\n          \"value\": \"image_data\"\n        },\n        {\n          \"data_uri\": \"data:image/png;base64,iVBORw0KGgoAAAANSUh ... more image data ...\",\n          \"label\": \"IMAGE_1\",\n          \"value\": \"image_data\"\n        }\n      ],\n      \"label\": \"Who is this guy?\",\n      \"options\": [\n        {\n          \"label\": \"IMAGE_1\",\n          \"value\": \"image_data\"\n        },\n        {\n          \"label\": \"IMAGE_1\",\n          \"value\": \"image_data\"\n        }\n      ],\n      \"type\": \"IMAGE_DATA\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ae0b75ea-2065-4bac-8a36-bda6e38db971",
+    "name": "MX Platform Challenges API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MX Platform Merchants API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Merchants",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List merchants",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/merchants",
+            "params": [
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              }
+            ]
+          },
+          "docs": "This endpoint returns a paginated list of all the merchants in the MX system."
+        },
+        {
+          "info": {
+            "name": "Read merchant",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/merchants/:merchant_guid",
+            "params": [
+              {
+                "name": "merchant_guid",
+                "value": "MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b",
+                "type": "path",
+                "description": "The unique id for a `merchant`."
+              }
+            ]
+          },
+          "docs": "Returns information about a particular merchant, such as a logo, name, and website."
+        },
+        {
+          "info": {
+            "name": "List all merchants associated with an insight.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.mx.com/users/:user_guid/insights/:insight_guid/merchants",
+            "params": [
+              {
+                "name": "user_guid",
+                "value": "USR-1234-abcd",
+                "type": "path",
+                "description": "The unique identifier for the user. Defined by MX."
+              },
+              {
+                "name": "insight_guid",
+                "value": "BET-1234-abcd",
+                "type": "path",
+                "description": "The unique identifier for the insight. Defined by MX."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Specify current page."
+              },
+              {
+                "name": "records_per_page",
+                "value": "10",
+                "type": "query",
+                "description": "Specify records per page."
+              }
+            ]
+          },
+          "docs": "Use this endpoint to list all the merchants associated with the insight."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

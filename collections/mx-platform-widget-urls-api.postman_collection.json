@@ -1,0 +1,176 @@
+{
+  "item": [
+    {
+      "id": "5546d0b4-1999-4810-93c8-a62e6a0a02c0",
+      "name": "Widget_urls",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3e05592e-4608-4969-a0bf-8b5a29801e0b",
+          "name": "Request widget url",
+          "request": {
+            "name": "Request widget url",
+            "description": {
+              "content": "This endpoint allows partners to get a URL by passing the `widget_type` in the request body, as well as configuring it in several different ways. In the case of Connect, that means setting the `widget_type` to `connect_widget`. Partners may also pass an optional `Accept-Language` header as well as a number of configuration options. Note that this is a `POST` request.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "widget_urls"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "The desired language of the widget.",
+                "key": "Accept-Language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"widget_url\": {\n    \"widget_type\": \"<string>\",\n    \"client_redirect_url\": \"<string>\",\n    \"color_scheme\": \"<string>\",\n    \"current_institution_code\": \"<string>\",\n    \"current_institution_guid\": \"<string>\",\n    \"current_member_guid\": \"<string>\",\n    \"disable_background_agg\": \"<boolean>\",\n    \"disable_institution_search\": \"<boolean>\",\n    \"include_identity\": \"<boolean>\",\n    \"include_transactions\": \"<boolean>\",\n    \"insight_guid\": \"<string>\",\n    \"is_mobile_webview\": \"<boolean>\",\n    \"microwidget_instance_id\": \"<string>\",\n    \"mode\": \"<string>\",\n    \"oauth_referral_source\": \"<string>\",\n    \"ui_message_version\": \"<integer>\",\n    \"ui_message_webview_url_scheme\": \"<string>\",\n    \"update_credentials\": \"<boolean>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "32730efa-f2f2-40e3-b3d6-049fb1e90b22",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "widget_urls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "The desired language of the widget.",
+                    "key": "Accept-Language",
+                    "value": "en-US"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"widget_url\": {\n    \"widget_type\": \"connect_widget\",\n    \"client_redirect_url\": \"https://mx.com\",\n    \"color_scheme\": \"light\",\n    \"current_institution_code\": \"chase\",\n    \"current_institution_guid\": \"INS-f1a3285d-e855-b61f-6aa7-8ae575c0e0e9\",\n    \"current_member_guid\": \"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b\",\n    \"disable_background_agg\": false,\n    \"disable_institution_search\": false,\n    \"include_identity\": false,\n    \"include_transactions\": true,\n    \"insight_guid\": \"BET-123\",\n    \"is_mobile_webview\": false,\n    \"microwidget_instance_id\": \"accounts_page\",\n    \"mode\": \"aggregation\",\n    \"oauth_referral_source\": \"BROWSER\",\n    \"ui_message_version\": 4,\n    \"ui_message_webview_url_scheme\": \"mx\",\n    \"update_credentials\": false\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"widget_url\": {\n    \"type\": \"connect_widget\",\n    \"url\": \"https://int-widgets.moneydesktop.com/md/connect/yxcdk7f1nb99jwApp34lA24m0AZ8rzprgmw17gm8z8h2AzjyAnd1rj42qfv42r3xnn07Amfwlg3j09hwp8bkq8tc5z21j33xjggmp2qtlpkz2v4gywfhfn31l44tx2w91bfc2thc58j4syqp0hgxcyvA4g7754hk7gjc56kt7tc36s45mmkdz2jqqqydspytmtr3dAb9jh6fkb24f3zkfpdjj0v77f0vmrtzvzxkmxz7dklsq8gd0gstkbhlw5bgpgc3m9mAtpAcr2w15gwy5xc4blgxppl42Avnm63291z3cyp0wm3lqgmvgzdAddct423gAdqxdlfx5d4mvc0ck2gt7ktqgks4vxq1pAy5\",\n    \"user_id\": \"U-jeff-201709221210\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e5c5e0aa-db63-48ff-8465-1cb8a93a73a0",
+    "name": "MX Platform Widget_urls API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

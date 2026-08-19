@@ -1,0 +1,293 @@
+{
+  "item": [
+    {
+      "id": "a6ff6dab-ea9c-43bd-8bfa-8efd00f26a73",
+      "name": "Rewards",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1929aa61-de87-4547-a64c-3691a043e18d",
+          "name": "List Rewards",
+          "request": {
+            "name": "List Rewards",
+            "description": {
+              "content": "Use this endpoint to list all the `rewards` associated with a specified `member`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "rewards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique identifier for the member. Defined by MX."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aec26ae3-3467-49fc-9200-deefa69f0e10",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "rewards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique identifier for the member. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"rewards\": [\n    {\n      \"account_guid\": \"ACT-1234\",\n      \"balance_type\": \"EXPIRING_BALANCE\",\n      \"balance\": 102,\n      \"created_at\": \"2020-01-28T21:09:01+0000\",\n      \"description\": \"A description of the reward.\",\n      \"expires_on\": \"2020-02-28T00:00:00.000Z\",\n      \"guid\": \"RWD-1234\",\n      \"member_guid\": \"MBR-4567\",\n      \"unit_type\": \"POINTS\",\n      \"updated_at\": \"2023-06-01T19:18:06.000Z\",\n      \"user_guid\": \"USR-1234\"\n    },\n    {\n      \"account_guid\": \"ACT-1234\",\n      \"balance_type\": \"EXPIRING_BALANCE\",\n      \"balance\": 102,\n      \"created_at\": \"2020-01-28T21:09:01+0000\",\n      \"description\": \"A description of the reward.\",\n      \"expires_on\": \"2020-02-28T00:00:00.000Z\",\n      \"guid\": \"RWD-1234\",\n      \"member_guid\": \"MBR-4567\",\n      \"unit_type\": \"POINTS\",\n      \"updated_at\": \"2023-06-01T19:18:06.000Z\",\n      \"user_guid\": \"USR-1234\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "41633fee-b6e9-4b09-af8d-4d3ca7f9f010",
+          "name": "Read Reward",
+          "request": {
+            "name": "Read Reward",
+            "description": {
+              "content": "Use this endpoint to read a specific `reward` based on its unique GUID..",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":user_guid",
+                "members",
+                ":member_guid",
+                "rewards",
+                ":reward_guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "user_guid",
+                  "description": "(Required) The unique id for a `user`."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "member_guid",
+                  "description": "(Required) The unique identifier for the member. Defined by MX."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reward_guid",
+                  "description": "(Required) The unique identifier for the rewards. Defined by MX."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ed4c4be4-cef6-4739-af5c-c7c0234ab737",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":user_guid",
+                    "members",
+                    ":member_guid",
+                    "rewards",
+                    ":reward_guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "user_guid",
+                      "description": "(Required) The unique id for a `user`."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "member_guid",
+                      "description": "(Required) The unique identifier for the member. Defined by MX."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reward_guid",
+                      "description": "(Required) The unique identifier for the rewards. Defined by MX."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"reward\": {\n    \"account_guid\": \"ACT-1234\",\n    \"balance_type\": \"EXPIRING_BALANCE\",\n    \"balance\": 102,\n    \"created_at\": \"2020-01-28T21:09:01+0000\",\n    \"description\": \"A description of the reward.\",\n    \"expires_on\": \"2020-02-28T00:00:00.000Z\",\n    \"guid\": \"RWD-1234\",\n    \"member_guid\": \"MBR-4567\",\n    \"unit_type\": \"POINTS\",\n    \"updated_at\": \"2023-06-01T19:18:06.000Z\",\n    \"user_guid\": \"USR-1234\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0cf5a9ba-1bf7-48df-8bd5-5196aee79cf7",
+    "name": "MX Platform Rewards API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}

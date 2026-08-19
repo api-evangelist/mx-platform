@@ -1,0 +1,261 @@
+{
+  "item": [
+    {
+      "id": "f3f2c921-7ea7-492e-9f2c-00ed1d2636dc",
+      "name": "Institution_code",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "373946c6-bd43-477d-9679-be4ed80f00fd",
+          "name": "Read institution",
+          "request": {
+            "name": "Read institution",
+            "description": {
+              "content": "This endpoint returns information about the institution specified by `institution_code`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "institutions",
+                ":institution_code"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "institution_code",
+                  "description": "(Required) The institution_code of the institution."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1fcedbf3-3903-4e89-9ac2-17f25911c484",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "institutions",
+                    ":institution_code"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "institution_code",
+                      "description": "(Required) The institution_code of the institution."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"institution\": {\n    \"code\": \"chase\",\n    \"forgot_password_url\": \"https://example.url.chase.com/forgot-password\",\n    \"forgot_username_url\": \"https://example.url.chase.com/forgot-username\",\n    \"instructional_text\": \"Some instructional text <a href=\\\"https://example.url.chase.com/instructions\\\" id=\\\"instructional_text\\\">for end users</a>.\",\n    \"medium_logo_url\": \"https://content.moneydesktop.com/storage/MD_Assets/Ipad%20Logos/100x100/default_100x100.png\",\n    \"name\": \"Chase Bank\",\n    \"small_logo_url\": \"https://content.moneydesktop.com/storage/MD_Assets/Ipad%20Logos/50x50/default_50x50.png\",\n    \"supports_account_identification\": true,\n    \"supports_account_statement\": true,\n    \"supports_account_verification\": true,\n    \"supports_oauth\": true,\n    \"supports_tax_document\": true,\n    \"supports_transaction_history\": true,\n    \"trouble_signing_in_url\": \"https://example.url.chase.com/login-trouble\",\n    \"url\": \"https://www.chase.com\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "55dfa85c-247a-4806-a638-d5411ed90c3a",
+          "name": "List institution credentials",
+          "request": {
+            "name": "List institution credentials",
+            "description": {
+              "content": "Use this endpoint to see which credentials will be needed to create a member for a specific institution.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "institutions",
+                ":institution_code",
+                "credentials"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Specify current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "records_per_page",
+                  "value": "<integer>",
+                  "description": "Specify records per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "institution_code",
+                  "description": "(Required) The institution_code of the institution."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.mx.api.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c80ce6cb-c475-4c6a-96d6-3bb4dccfb86c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "institutions",
+                    ":institution_code",
+                    "credentials"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "records_per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "institution_code",
+                      "description": "(Required) The institution_code of the institution."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.mx.api.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.mx.api.v1+json"
+                }
+              ],
+              "body": "{\n  \"credentials\": [\n    {\n      \"display_order\": 1,\n      \"field_name\": \"LOGIN\",\n      \"field_type\": \"TEXT\",\n      \"guid\": \"CRD-1ec152cd-e628-e81a-e852-d1e7104624da\",\n      \"label\": \"Username\",\n      \"type\": \"TEXT\"\n    },\n    {\n      \"display_order\": 1,\n      \"field_name\": \"LOGIN\",\n      \"field_type\": \"TEXT\",\n      \"guid\": \"CRD-1ec152cd-e628-e81a-e852-d1e7104624da\",\n      \"label\": \"Username\",\n      \"type\": \"TEXT\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"per_page\": 25,\n    \"total_entries\": 1,\n    \"total_pages\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.mx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "941618a6-a3f5-4d38-bf8a-671fcf1182af",
+    "name": "MX Platform Institution_code API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe MX Platform API is a powerful, fully-featured API designed to make\naggregating and enhancing financial data easy and reliable. It can\nseamlessly connect your app or website to tens of thousands of financial\ninstitutions.\n\nContact Support:\n Name: MX Platform API",
+      "type": "text/plain"
+    }
+  }
+}
