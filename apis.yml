@@ -34,6 +34,8 @@ apis:
   humanURL: https://docs.mx.com/
   baseURL: https://api.mx.com
   tags:
+  - Account Numbers
+  tags_raw:
   - Account_numbers
   properties:
   - type: OpenAPI
@@ -74,6 +76,8 @@ apis:
   humanURL: https://docs.mx.com/
   baseURL: https://api.mx.com
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
@@ -174,6 +178,8 @@ apis:
   humanURL: https://docs.mx.com/
   baseURL: https://api.mx.com
   tags:
+  - CheckBalance
+  tags_raw:
   - Check_balance
   properties:
   - type: OpenAPI
@@ -274,7 +280,8 @@ apis:
   description: The Default API from MX Platform — 2 operation(s) for default.
   humanURL: https://docs.mx.com/
   baseURL: https://api.mx.com
-  tags:
+  tags: []
+  tags_raw:
   - Default
   properties:
   - type: OpenAPI
@@ -656,6 +663,8 @@ apis:
   humanURL: https://docs.mx.com/
   baseURL: https://api.mx.com
   tags:
+  - Microdeposits
+  tags_raw:
   - Micro_deposits
   properties:
   - type: OpenAPI
@@ -777,6 +786,8 @@ apis:
   humanURL: https://docs.mx.com/
   baseURL: https://api.mx.com
   tags:
+  - PDF
+  tags_raw:
   - .Pdf
   properties:
   - type: OpenAPI
@@ -837,6 +848,8 @@ apis:
   humanURL: https://docs.mx.com/
   baseURL: https://api.mx.com
   tags:
+  - Scheduled Payments
+  tags_raw:
   - Scheduled_payments
   properties:
   - type: OpenAPI
@@ -1018,6 +1031,8 @@ apis:
   humanURL: https://docs.mx.com/
   baseURL: https://api.mx.com
   tags:
+  - Tax Documents
+  tags_raw:
   - Tax_documents
   properties:
   - type: OpenAPI
@@ -1058,6 +1073,8 @@ apis:
   humanURL: https://docs.mx.com/
   baseURL: https://api.mx.com
   tags:
+  - Transaction
+  tags_raw:
   - Transactions
   properties:
   - type: OpenAPI
@@ -1078,6 +1095,8 @@ apis:
   humanURL: https://docs.mx.com/
   baseURL: https://api.mx.com
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
