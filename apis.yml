@@ -46,7 +46,7 @@ apis:
   humanURL: https://docs.mx.com/
   baseURL: https://api.mx.com
   tags:
-  - Account_numbers
+  - Account Numbers
   tags_raw:
   - Account_numbers
   properties:
@@ -190,7 +190,7 @@ apis:
   humanURL: https://docs.mx.com/
   baseURL: https://api.mx.com
   tags:
-  - Check_balance
+  - CheckBalance
   tags_raw:
   - Check_balance
   properties:
@@ -675,7 +675,7 @@ apis:
   humanURL: https://docs.mx.com/
   baseURL: https://api.mx.com
   tags:
-  - Micro_deposits
+  - Microdeposits
   tags_raw:
   - Micro_deposits
   properties:
@@ -738,6 +738,8 @@ apis:
   humanURL: https://docs.mx.com/
   baseURL: https://api.mx.com
   tags:
+  - monthly cash flow profile
+  tags_raw:
   - Monthly_cash_flow_profile
   properties:
   - type: OpenAPI
@@ -798,7 +800,7 @@ apis:
   humanURL: https://docs.mx.com/
   baseURL: https://api.mx.com
   tags:
-  - .Pdf
+  - PDF
   tags_raw:
   - .Pdf
   properties:
@@ -860,7 +862,7 @@ apis:
   humanURL: https://docs.mx.com/
   baseURL: https://api.mx.com
   tags:
-  - Scheduled_payments
+  - Scheduled Payments
   tags_raw:
   - Scheduled_payments
   properties:
@@ -903,6 +905,8 @@ apis:
   humanURL: https://docs.mx.com/
   baseURL: https://api.mx.com
   tags:
+  - spending plan
+  tags_raw:
   - Spending Plan
   properties:
   - type: OpenAPI
@@ -1043,7 +1047,7 @@ apis:
   humanURL: https://docs.mx.com/
   baseURL: https://api.mx.com
   tags:
-  - Tax_documents
+  - Tax Documents
   tags_raw:
   - Tax_documents
   properties:
@@ -1065,6 +1069,8 @@ apis:
   humanURL: https://docs.mx.com/
   baseURL: https://api.mx.com
   tags:
+  - transaction rules
+  tags_raw:
   - Transaction_rules
   properties:
   - type: OpenAPI
