@@ -1170,6 +1170,8 @@ apis:
   - type: Webhooks
     url: https://docs.mx.com/resources/webhooks
 common:
+  - type: Website
+    url: https://www.mx.com/
   - type: VulnerabilityDisclosure
     url: security/mx-platform-vulnerability-disclosure.yml
   - type: DomainSecurity
