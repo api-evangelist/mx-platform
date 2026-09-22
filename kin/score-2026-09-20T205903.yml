@@ -1,31 +1,29 @@
-# Kin Score artifact — mx-platform — 2026-08-20T205517
+# Kin Score artifact — mx-platform — 2026-09-20T205903
 # The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
 ---
 kin_score:
   slug: mx-platform
-  schema_version: 0.12.0
-  scored_at: '2026-08-20'
-  run_ts: 2026-08-20T205517
-  composite: 40.2
+  schema_version: 0.22.0
+  scored_at: '2026-09-20'
+  run_ts: 2026-09-20T205903
+  composite: 43.1
   band: developing
   facets:
-    discoverability: 48.1
-    contract_quality: 59.7
-    governance: 0.0
-    operational_transparency: 52.6
-    developer_ergonomics: 16.7
-    commercial_clarity: 51.3
+    discoverability: 66.7
+    contract_quality: 58.8
     contract_governance: 0.0
+    operational_transparency: 52.6
+    developer_ergonomics: 26.2
     access_clarity: 51.3
   agent_readiness:
-    score: 29.5
+    score: 27.3
     band: agent-aware
     dimensions:
       spec_presence: true
       agentic_access: false
       reversibility_documented: false
       mcp_server: false
-      auth_clarity: false
+      auth_clarity: bearer
       idempotency: false
       error_semantics: false
       openapi_examples: verified
@@ -36,6 +34,10 @@ kin_score:
       consent_identity: false
       agent_card: false
       dry_run_mode: false
+      delegated_identity: false
+      protected_resource_metadata: false
+      dynamic_client_registration: false
+      agentic_commerce: false
   regulatory:
     applies: true
     regime: Banking & Open Finance
@@ -44,7 +46,7 @@ kin_score:
     matched_via: tags
   provenance:
     contracts:
-      total: 55
+      total: 10
       derived: 0
       coverage: 0.0
       callable: 100.0
