@@ -1,18 +1,16 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   contact:
     name: MX Platform API
     url: https://www.mx.com/products/platform-api
-  description: '
-
-    The MX Platform API is a powerful, fully-featured API designed to make
+  description: 'The MX Platform API is a powerful, fully-featured API designed to make
 
     aggregating and enhancing financial data easy and reliable. It can
 
     seamlessly connect your app or website to tens of thousands of financial
 
     institutions.'
-  title: MX Platform Institution_code API
+  title: MX Platform Institution Code API
   version: 0.1.0
 servers:
 - url: https://api.mx.com
@@ -80,6 +78,39 @@ paths:
       - Institution_code
 components:
   schemas:
+    CredentialResponse:
+      properties:
+        display_order:
+          example: 1
+          type:
+          - integer
+          - 'null'
+        field_name:
+          example: LOGIN
+          type:
+          - string
+          - 'null'
+        field_type:
+          example: TEXT
+          type:
+          - string
+          - 'null'
+        guid:
+          example: CRD-1ec152cd-e628-e81a-e852-d1e7104624da
+          type:
+          - string
+          - 'null'
+        label:
+          example: Username
+          type:
+          - string
+          - 'null'
+        type:
+          example: TEXT
+          type:
+          - string
+          - 'null'
+      type: object
     CredentialsResponseBody:
       properties:
         credentials:
@@ -89,32 +120,83 @@ components:
         pagination:
           $ref: '#/components/schemas/PaginationResponse'
       type: object
-    CredentialResponse:
+    InstitutionResponse:
       properties:
-        display_order:
-          example: 1
-          nullable: true
-          type: integer
-        field_name:
-          example: LOGIN
-          nullable: true
-          type: string
-        field_type:
-          example: TEXT
-          nullable: true
-          type: string
-        guid:
-          example: CRD-1ec152cd-e628-e81a-e852-d1e7104624da
-          nullable: true
-          type: string
-        label:
-          example: Username
-          nullable: true
-          type: string
-        type:
-          example: TEXT
-          nullable: true
-          type: string
+        code:
+          example: chase
+          type:
+          - string
+          - 'null'
+        forgot_password_url:
+          example: https://example.url.chase.com/forgot-password
+          type:
+          - string
+          - 'null'
+        forgot_username_url:
+          example: https://example.url.chase.com/forgot-username
+          type:
+          - string
+          - 'null'
+        instructional_text:
+          example: Some instructional text <a href="https://example.url.chase.com/instructions" id="instructional_text">for end users</a>.
+          type:
+          - string
+          - 'null'
+        medium_logo_url:
+          example: https://content.moneydesktop.com/storage/MD_Assets/Ipad%20Logos/100x100/default_100x100.png
+          type:
+          - string
+          - 'null'
+        name:
+          example: Chase Bank
+          type:
+          - string
+          - 'null'
+        small_logo_url:
+          example: https://content.moneydesktop.com/storage/MD_Assets/Ipad%20Logos/50x50/default_50x50.png
+          type:
+          - string
+          - 'null'
+        supports_account_identification:
+          example: true
+          type:
+          - boolean
+          - 'null'
+        supports_account_statement:
+          example: true
+          type:
+          - boolean
+          - 'null'
+        supports_account_verification:
+          example: true
+          type:
+          - boolean
+          - 'null'
+        supports_oauth:
+          example: true
+          type:
+          - boolean
+          - 'null'
+        supports_tax_document:
+          example: true
+          type:
+          - boolean
+          - 'null'
+        supports_transaction_history:
+          example: true
+          type:
+          - boolean
+          - 'null'
+        trouble_signing_in_url:
+          example: https://example.url.chase.com/login-trouble
+          type:
+          - string
+          - 'null'
+        url:
+          example: https://www.chase.com
+          type:
+          - string
+          - 'null'
       type: object
     PaginationResponse:
       properties:
@@ -130,69 +212,6 @@ components:
         total_pages:
           example: 1
           type: integer
-      type: object
-    InstitutionResponse:
-      properties:
-        code:
-          example: chase
-          nullable: true
-          type: string
-        forgot_password_url:
-          example: https://example.url.chase.com/forgot-password
-          nullable: true
-          type: string
-        forgot_username_url:
-          example: https://example.url.chase.com/forgot-username
-          nullable: true
-          type: string
-        instructional_text:
-          example: Some instructional text <a href="https://example.url.chase.com/instructions" id="instructional_text">for end users</a>.
-          nullable: true
-          type: string
-        medium_logo_url:
-          example: https://content.moneydesktop.com/storage/MD_Assets/Ipad%20Logos/100x100/default_100x100.png
-          nullable: true
-          type: string
-        name:
-          example: Chase Bank
-          nullable: true
-          type: string
-        small_logo_url:
-          example: https://content.moneydesktop.com/storage/MD_Assets/Ipad%20Logos/50x50/default_50x50.png
-          nullable: true
-          type: string
-        supports_account_identification:
-          example: true
-          nullable: true
-          type: boolean
-        supports_account_statement:
-          example: true
-          nullable: true
-          type: boolean
-        supports_account_verification:
-          example: true
-          nullable: true
-          type: boolean
-        supports_oauth:
-          example: true
-          nullable: true
-          type: boolean
-        supports_tax_document:
-          example: true
-          nullable: true
-          type: boolean
-        supports_transaction_history:
-          example: true
-          nullable: true
-          type: boolean
-        trouble_signing_in_url:
-          example: https://example.url.chase.com/login-trouble
-          nullable: true
-          type: string
-        url:
-          example: https://www.chase.com
-          nullable: true
-          type: string
       type: object
     InstitutionResponseBody:
       properties:

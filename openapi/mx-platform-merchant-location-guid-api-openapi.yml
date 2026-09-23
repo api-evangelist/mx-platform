@@ -1,18 +1,16 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   contact:
     name: MX Platform API
     url: https://www.mx.com/products/platform-api
-  description: '
-
-    The MX Platform API is a powerful, fully-featured API designed to make
+  description: 'The MX Platform API is a powerful, fully-featured API designed to make
 
     aggregating and enhancing financial data easy and reliable. It can
 
     seamlessly connect your app or website to tens of thousands of financial
 
     institutions.'
-  title: MX Platform Merchant_location_guid API
+  title: MX Platform Merchant Location Guid API
   version: 0.1.0
 servers:
 - url: https://api.mx.com
@@ -46,61 +44,73 @@ paths:
       - Merchant_location_guid
 components:
   schemas:
-    MerchantLocationResponse:
-      properties:
-        city:
-          example: Greenwood Village
-          nullable: true
-          type: string
-        country:
-          example: US
-          nullable: true
-          type: string
-        created_at:
-          example: '2020-04-13T21:05:09.000Z'
-          nullable: true
-          type: string
-        guid:
-          example: MCL-00024e59-18b5-4d79-b879-2a7896726fea
-          nullable: true
-          type: string
-        latitude:
-          example: 39.5963005
-          nullable: true
-          type: number
-        longitude:
-          example: -104.89158799999998
-          nullable: true
-          type: number
-        merchant_guid:
-          example: MCH-09466f0a-fb58-9d1a-bae2-2af0afbea621
-          nullable: true
-          type: string
-        phone_number:
-          example: (303) 689-0728
-          nullable: true
-          type: string
-        postal_code:
-          example: '801121436'
-          nullable: true
-          type: string
-        state:
-          example: CO
-          nullable: true
-          type: string
-        street_address:
-          example: 8547 E Arapahoe Rd, Ste 1
-          nullable: true
-          type: string
-        updated_at:
-          example: '2020-04-13T21:05:09.000Z'
-          nullable: true
-          type: string
-      type: object
     MerchantLocationResponseBody:
       properties:
         merchant_location:
           $ref: '#/components/schemas/MerchantLocationResponse'
+      type: object
+    MerchantLocationResponse:
+      properties:
+        city:
+          example: Greenwood Village
+          type:
+          - string
+          - 'null'
+        country:
+          example: US
+          type:
+          - string
+          - 'null'
+        created_at:
+          example: '2020-04-13T21:05:09.000Z'
+          type:
+          - string
+          - 'null'
+        guid:
+          example: MCL-00024e59-18b5-4d79-b879-2a7896726fea
+          type:
+          - string
+          - 'null'
+        latitude:
+          example: 39.5963005
+          type:
+          - number
+          - 'null'
+        longitude:
+          example: -104.89158799999998
+          type:
+          - number
+          - 'null'
+        merchant_guid:
+          example: MCH-09466f0a-fb58-9d1a-bae2-2af0afbea621
+          type:
+          - string
+          - 'null'
+        phone_number:
+          example: (303) 689-0728
+          type:
+          - string
+          - 'null'
+        postal_code:
+          example: '801121436'
+          type:
+          - string
+          - 'null'
+        state:
+          example: CO
+          type:
+          - string
+          - 'null'
+        street_address:
+          example: 8547 E Arapahoe Rd, Ste 1
+          type:
+          - string
+          - 'null'
+        updated_at:
+          example: '2020-04-13T21:05:09.000Z'
+          type:
+          - string
+          - 'null'
       type: object
   securitySchemes:
     basicAuth:

@@ -1,18 +1,16 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   contact:
     name: MX Platform API
     url: https://www.mx.com/products/platform-api
-  description: '
-
-    The MX Platform API is a powerful, fully-featured API designed to make
+  description: 'The MX Platform API is a powerful, fully-featured API designed to make
 
     aggregating and enhancing financial data easy and reliable. It can
 
     seamlessly connect your app or website to tens of thousands of financial
 
     institutions.'
-  title: MX Platform Microdeposit_guid API
+  title: MX Platform Microdeposit Guid API
   version: 0.1.0
 servers:
 - url: https://api.mx.com
@@ -47,12 +45,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MicrodepositResponseBody'
+      operationId: putMicroDepositsByMicrodepositGuidVerify
+      x-operation-id-source: derived
 components:
   schemas:
-    MicrodepositVerifyRequestBody:
+    MicrodepositVerifyRequest:
+      properties:
+        deposit_amount_1:
+          type: integer
+          example: 0.09
+        deposit_amount_2:
+          type: integer
+          example: 0.09
+    MicrodepositResponseBody:
       properties:
         micro_deposit:
-          $ref: '#/components/schemas/MicrodepositVerifyRequest'
+          $ref: '#/components/schemas/MicrodepositResponse'
       type: object
     MicrodepositResponse:
       properties:
@@ -98,18 +106,10 @@ components:
         verified_at:
           example: null
           type: string
-    MicrodepositVerifyRequest:
-      properties:
-        deposit_amount_1:
-          type: integer
-          example: 0.09
-        deposit_amount_2:
-          type: integer
-          example: 0.09
-    MicrodepositResponseBody:
+    MicrodepositVerifyRequestBody:
       properties:
         micro_deposit:
-          $ref: '#/components/schemas/MicrodepositResponse'
+          $ref: '#/components/schemas/MicrodepositVerifyRequest'
       type: object
   securitySchemes:
     basicAuth:
